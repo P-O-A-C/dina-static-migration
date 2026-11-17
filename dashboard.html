@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172f42">
+  <title>POAC | GRAND DRY CLEAN</title>
+  <link rel="stylesheet" href="css/poac.css">
+</head>
+<body class="dashboard-page">
+  <header class="dash-header">
+    <a class="dash-brand" href="index.html"><span class="mini-mark">P</span><span><b>POAC</b><small>BUSINESS WORKSPACE</small></span></a>
+    <div class="header-user"><span class="user-dot"></span><span>مساحة العمل</span><button id="logoutBtn" class="logout-button">تسجيل الخروج</button></div>
+  </header>
+  <main class="dash-main">
+    <div class="page-title"><div><span class="eyebrow">BUSINESS DASHBOARD</span><h1>GRAND DRY CLEAN</h1><p>إدارة محتوى المغسلة وخدماتها</p></div><span class="status-pill">واجهة تجريبية</span></div>
+    <section class="stats-grid">
+      <article class="stat-card"><span>الأصناف</span><strong id="itemsCount">6</strong><small>أصناف تجريبية</small></article>
+      <article class="stat-card"><span>الأقسام</span><strong>3</strong><small>غسيل وكي · تنظيف جاف · مفروشات</small></article>
+      <article class="stat-card"><span>العملة</span><strong>EGP</strong><small>الجنيه المصري</small></article>
+    </section>
+    <section class="content-card">
+      <div class="card-heading"><div><span class="eyebrow">CATALOG MANAGEMENT</span><h2>الأصناف والأسعار</h2></div><button class="gold-button" id="addItemBtn">＋ إضافة صنف</button></div>
+      <p class="muted">هذه قائمة عرض تجريبية فقط. حفظ التعديلات وربطها بـ Supabase سيتم بعد مراجعة مشروع Dina’s Corner وإعداد الصلاحيات.</p>
+      <div class="table-wrap"><table><thead><tr><th>الصنف</th><th>القسم</th><th>السعر</th><th>الحالة</th></tr></thead><tbody id="itemsTable"></tbody></table></div>
+    </section>
+    <section class="content-card settings-card">
+      <div class="card-heading"><div><span class="eyebrow">BUSINESS PROFILE</span><h2>بيانات المغسلة</h2></div></div>
+      <div class="settings-grid"><div><small>اسم النشاط</small><b>GRAND DRY CLEAN</b></div><div><small>واتساب</small><b dir="ltr">+20 100 585 4115</b></div><div><small>العملة</small><b>EGP</b></div><div><small>الطلبات</small><b>عبر واتساب</b></div></div>
+    </section>
+  </main>
+  <div class="modal-backdrop" id="modalBackdrop">
+    <form class="item-modal" id="itemForm">
+      <button type="button" id="closeModal" class="close-modal">×</button>
+      <span class="eyebrow">NEW CATALOG ITEM</span><h2>إضافة صنف تجريبي</h2>
+      <label>اسم الصنف<input id="itemName" required placeholder="مثال: قميص"></label>
+      <label>القسم<input id="itemCategory" required placeholder="مثال: غسيل وكي"></label>
+      <label>السعر بالجنيه<input id="itemPrice" type="number" min="0" step="0.01" required placeholder="0"></label>
+      <button class="login-button" type="submit">إضافة للمعاينة</button>
+      <small class="muted">لن يتم حفظ البيانات بعد إغلاق الصفحة.</small>
+    </form>
+  </div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

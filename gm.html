@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172f42">
+  <title>POAC | GRAND DRY CLEAN - GM</title>
+  <link rel="stylesheet" href="css/gm.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="side-brand" href="index.html"><span class="side-mark">P</span><span><b>POAC</b><small>BUSINESS WORKSPACE</small></span></a>
+    <div class="business-chip"><span class="chip-icon">♧</span><span><b>GRAND DRY CLEAN</b><small>GM PANEL</small></span></div>
+    <nav class="side-nav">
+      <a class="nav-link active" href="#overview" data-view="overview">▦ <span>نظرة عامة</span></a>
+      <a class="nav-link" href="#products" data-view="products">▤ <span>الأصناف والأسعار</span></a>
+      <a class="nav-link" href="#categories" data-view="categories">▦ <span>الأقسام</span></a>
+      <a class="nav-link" href="#profile" data-view="profile">⚙ <span>بيانات المغسلة</span></a>
+    </nav>
+    <div class="side-bottom"><span class="demo-dot"></span> نسخة تصميم تجريبية <a href="index.html">تسجيل الخروج ←</a></div>
+  </aside>
+
+  <main class="main-area">
+    <header class="gm-topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+      <div><span class="top-eyebrow">GENERAL MANAGER</span><b>لوحة إدارة المغسلة</b></div>
+      <div class="top-actions"><span class="demo-label">DEMO</span><span class="avatar">GM</span></div>
+    </header>
+
+    <section class="view active" id="overview">
+      <div class="welcome-row"><div><span class="eyebrow">BUSINESS OVERVIEW</span><h1>أهلاً بك في GRAND DRY CLEAN</h1><p>من هنا تقدر تدير الخدمات والأقسام والأسعار.</p></div><span class="date-label" id="todayLabel"></span></div>
+      <div class="metric-grid">
+        <article class="metric"><span>إجمالي الأصناف</span><strong id="metricProducts">6</strong><small>في قائمة الخدمات</small><i>▤</i></article>
+        <article class="metric"><span>عدد الأقسام</span><strong id="metricCategories">3</strong><small>أقسام الخدمات</small><i>▦</i></article>
+        <article class="metric"><span>أصناف بأسعار محددة</span><strong id="metricPriced">0</strong><small>جاهزة للعرض</small><i>ج.م</i></article>
+      </div>
+      <div class="panel-card quick-panel">
+        <div class="panel-title"><div><span class="eyebrow">QUICK ACTIONS</span><h2>إجراءات سريعة</h2></div></div>
+        <div class="quick-actions">
+          <button class="quick-action" data-goto="products"><span>＋</span><b>إضافة صنف جديد</b><small>أضف خدمة وسعر وصورة</small></button>
+          <button class="quick-action" data-goto="categories"><span>▦</span><b>إدارة الأقسام</b><small>تنظيم خدمات المغسلة</small></button>
+          <button class="quick-action" data-goto="profile"><span>⚙</span><b>بيانات المغسلة</b><small>مراجعة التواصل واللوكيشن</small></button>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-title"><div><span class="eyebrow">LATEST CATALOG</span><h2>الأصناف الحالية</h2></div><button class="text-button" data-goto="products">عرض الكل ←</button></div>
+        <div class="table-wrap"><table><thead><tr><th>الصنف</th><th>القسم</th><th>السعر</th><th>الحالة</th></tr></thead><tbody id="overviewRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="view" id="products">
+      <div class="page-heading"><div><span class="eyebrow">CATALOG MANAGEMENT</span><h1>الأصناف والأسعار</h1><p>إضافة وتعديل خدمات الغسيل والتنظيف.</p></div><button class="primary-action" id="newProductBtn">＋ إضافة صنف</button></div>
+      <div class="panel-card">
+        <div class="toolbar"><input id="productSearch" placeholder="ابحث عن صنف..." aria-label="بحث عن صنف"><select id="categoryFilter"><option value="">كل الأقسام</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>الصنف</th><th>القسم</th><th>السعر</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="productRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="view" id="categories">
+      <div class="page-heading"><div><span class="eyebrow">SERVICE GROUPS</span><h1>إدارة الأقسام</h1><p>الأقسام التي تظهر للعملاء في قائمة الخدمات.</p></div><button class="primary-action" id="newCategoryBtn">＋ إضافة قسم</button></div>
+      <div class="category-grid" id="categoryCards"></div>
+    </section>
+
+    <section class="view" id="profile">
+      <div class="page-heading"><div><span class="eyebrow">BUSINESS PROFILE</span><h1>بيانات المغسلة</h1><p>بيانات التواصل التي تظهر في موقع العرض.</p></div></div>
+      <form class="panel-card profile-form" id="profileForm">
+        <div class="form-grid">
+          <label>اسم النشاط<input id="businessName" value="GRAND DRY CLEAN" required></label>
+          <label>رقم واتساب<input id="businessPhone" value="01005854115" dir="ltr"></label>
+          <label>العملة<select id="businessCurrency"><option value="EGP">EGP - جنيه مصري</option></select></label>
+          <label>رابط اللوكيشن<input id="businessLocation" value="https://maps.app.goo.gl/ZDPdcdtEioTkFLXa8?g_st=iwb" dir="ltr"></label>
+        </div>
+        <div class="form-footer"><p>حفظ تجريبي داخل هذه الصفحة فقط، ولا يتم إرسال البيانات إلى خادم.</p><button class="primary-action" type="submit">حفظ المعاينة</button></div>
+        <p id="profileMessage" class="feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal-shade" id="modalShade">
+    <form class="edit-modal" id="productForm">
+      <button type="button" class="modal-close" id="modalClose">×</button>
+      <span class="eyebrow">PRODUCT DETAILS</span><h2 id="productModalTitle">إضافة صنف جديد</h2>
+      <input type="hidden" id="editingId">
+      <label>اسم الصنف<input id="pName" required placeholder="مثال: قميص"></label>
+      <label>القسم<select id="pCategory" required></select></label>
+      <label>السعر بالجنيه المصري<input id="pPrice" type="number" min="0" step="0.01" required placeholder="مثال: 35"></label>
+      <label>وصف مختصر<input id="pDescription" placeholder="مثال: غسيل وكي"></label>
+      <label>صورة الصنف<input id="pImage" type="file" accept="image/*"></label>
+      <div class="image-preview" id="imagePreview">معاينة الصورة</div>
+      <label class="switch-line"><input id="pActive" type="checkbox" checked> الصنف متاح للعرض</label>
+      <div class="modal-actions"><button type="button" class="secondary-action" id="cancelProduct">إلغاء</button><button type="submit" class="primary-action">حفظ الصنف</button></div>
+      <small class="form-hint">التغييرات تجريبية في المتصفح فقط. الصورة للمعاينة ولا تُرفع إلى GitHub أو Supabase في هذه النسخة.</small>
+    </form>
+  </div>
+
+  <div class="modal-shade" id="categoryShade">
+    <form class="edit-modal compact-modal" id="categoryForm">
+      <button type="button" class="modal-close" id="categoryClose">×</button>
+      <span class="eyebrow">SERVICE CATEGORY</span><h2>إضافة قسم</h2>
+      <label>اسم القسم<input id="newCategoryName" required placeholder="مثال: غسيل وكي"></label>
+      <div class="modal-actions"><button type="button" class="secondary-action" id="cancelCategory">إلغاء</button><button type="submit" class="primary-action">إضافة القسم</button></div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/gm.js"></script>
+</body>
+</html>
