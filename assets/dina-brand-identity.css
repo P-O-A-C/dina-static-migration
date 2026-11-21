@@ -1,0 +1,90 @@
+/* Dina's Corner official visual identity — derived from the supplied floral NFC poster. */
+:root{
+  --dc-teal:#579994;
+  --dc-teal-deep:#3F7F7B;
+  --dc-teal-soft:#E6F0ED;
+  --dc-coral:#D65370;
+  --dc-coral-deep:#B93F5D;
+  --dc-coral-soft:#F8E1E4;
+  --dc-ivory:#FFF1F3;
+  --dc-paper:#FFFCFB;
+  --dc-sage:#D5D8D4;
+  --dc-ink:#3D5D59;
+  --dc-muted:#7C8984;
+  --dc-line:#D7E4DE;
+  --dc-shadow:0 10px 26px rgba(63,127,123,.075);
+  --green:var(--dc-teal);--green2:var(--dc-teal-deep);--olive:var(--dc-teal);
+  --gold:var(--dc-sage);--gold2:#E8DAD4;--cream:var(--dc-ivory);--paper:var(--dc-paper);
+  --ink:var(--dc-ink);--muted:var(--dc-muted);--line:var(--dc-line);
+  --rose:var(--dc-coral);--rose-dark:var(--dc-coral-deep);--rose-soft:var(--dc-coral-soft);
+  --menu-cream:var(--dc-ivory);--menu-gold:var(--dc-sage);--menu-green:var(--dc-teal);
+  --pickup-navy:var(--dc-teal);--pickup-gold:var(--dc-sage);--pickup-cream:var(--dc-ivory);--pickup-paper:var(--dc-paper);--text:var(--dc-ink);
+}
+html,body{background-color:#FFF1F3!important;color:var(--dc-ink)!important}
+/* A soft rose-tinted ivory page background, consistent across all app sections. */
+body[class]{background-image:linear-gradient(145deg,#FFF8F6 0%,#FFF1F3 58%,#FCEEF1 100%)!important}
+body::before{border-color:rgba(87,153,148,.30)!important;box-shadow:inset 0 0 0 3px rgba(255,252,250,.8),inset 0 0 0 4px rgba(213,216,212,.6)!important}
+h1,h2,h3,.title,.menu-head h2,.dc-best-sellers__header h2,.dc-branches-title{color:var(--dc-teal)!important}
+.sub,.muted,.dc-action-copy,.dc-best-sellers__header>p:last-child{color:var(--dc-muted)!important}
+.topbar,.nav{background:rgba(255,252,250,.97)!important;border-color:var(--dc-line)!important}
+.brand,.field label,.pickup-field,.table th,.menu-name,.menu-item-name{color:var(--dc-teal)!important}
+.brand small,.dc-welcome-eyebrow,.dc-best-sellers__eyebrow{color:var(--dc-coral)!important}
+.brand-logo,.official-logo{background:var(--dc-ivory)!important;border-color:rgba(63,127,123,.13)!important}
+.card,.authbox,.menu-panel,.pickup-panel,.pickup-order-card,.home-offer-item{background:rgba(255,252,250,.97)!important;border-color:var(--dc-line)!important;box-shadow:var(--dc-shadow)!important}
+.auth{background:linear-gradient(145deg,#FFFCFA 0%,#F8E1E4 60%,#E6F0ED 100%)!important}
+.input,select,textarea,.field input,.field select{background:#FFFEFD!important;border-color:#C9DCD7!important;color:var(--dc-ink)!important}
+.input:focus,select:focus,textarea:focus{border-color:var(--dc-teal)!important;box-shadow:0 0 0 3px rgba(63,127,123,.12)!important}
+.btn.primary,.btn.block.primary,.menu-add-order{background:linear-gradient(135deg,var(--dc-teal),#78AAA5)!important;color:#fff!important;border:1px solid var(--dc-teal-deep)!important;box-shadow:0 5px 13px rgba(63,127,123,.11)!important}
+.btn.primary:hover,.menu-add-order:hover{background:linear-gradient(135deg,var(--dc-teal-deep),var(--dc-teal))!important}
+.btn.gold{background:var(--dc-sage)!important;color:var(--dc-ink)!important;border:1px solid #B7C5C0!important}
+.btn.soft,.icon,.menu-back{background:var(--dc-coral-soft)!important;color:var(--dc-coral-deep)!important;border:1px solid #EABFC8!important}
+.btn.danger{background:#FBE8E9!important;color:#A93650!important;border-color:#E9BBC4!important}
+.note{background:#F2F2EC!important;color:#526A66!important;border-color:rgba(63,127,123,.11)!important}
+.alert{background:#FFF0F0!important;color:#A53E55!important;border-color:#EAC4C8!important}
+.ok,.pickup-success{background:#E5F2EE!important;color:#176D68!important;border-color:#C5DED8!important}
+.hero{background:linear-gradient(135deg,var(--dc-teal) 0%,#78AAA5 100%)!important;color:#fff!important;box-shadow:0 12px 28px rgba(63,127,123,.13)!important}
+.hero h2,.hero p{color:#fff!important}.points{border-color:rgba(255,255,255,.42)!important;background:rgba(255,255,255,.15)!important}
+.member-card{background:linear-gradient(135deg,var(--dc-teal),var(--dc-teal-deep))!important;color:#fff!important}.member-card h2{color:#fff!important}
+.stat>i,.food,.avatar{background:#EAF2EF!important;color:var(--dc-teal)!important}.badge{background:var(--dc-coral-soft)!important;color:var(--dc-coral-deep)!important}
+.quick a{background:var(--dc-paper)!important;border-color:var(--dc-line)!important;color:var(--dc-teal)!important}.quick b{color:var(--dc-coral)!important}
+.nav a{color:#71817D!important}.nav a.active{background:var(--dc-teal-soft)!important;color:var(--dc-teal-deep)!important}
+.reward,.table th,.table td,.menu-item{border-color:var(--dc-line)!important}
+.reward-points,.menu-item-price,.pickup-price,.pickup-order-number,.pickup-order-total strong{color:var(--dc-coral-deep)!important}
+.menu-category{background:#F9F2EE!important;border-color:#D7E4DE!important;color:var(--dc-teal)!important;box-shadow:0 7px 18px rgba(63,127,123,.06)!important}
+.menu-category:hover,.menu-category:focus-visible{border-color:var(--dc-teal)!important;box-shadow:0 10px 22px rgba(63,127,123,.11)!important}
+.menu-category-media,.menu-category-image{background:#FBF7F4!important}.menu-head{border-color:var(--dc-line)!important}.menu-head-icon{background:var(--dc-coral-soft)!important}
+.menu-item-image,.menu-placeholder{background:#F8F3EF!important;border-color:#D7E4DE!important}.menu-item-price{background:var(--dc-coral-soft)!important;color:var(--dc-coral-deep)!important}
+.pickup-cart-dock{background:linear-gradient(135deg,var(--dc-teal),var(--dc-teal-deep))!important;color:#fff!important;border:1px solid rgba(213,216,212,.85)!important;box-shadow:0 10px 28px rgba(8,123,120,.2)!important}
+.pickup-cart-dock-copy small{color:#F1F5F2!important}.pickup-cart-dock .btn{background:var(--dc-sage)!important;color:var(--dc-ink)!important;border-color:#B7C5C0!important}
+.pickup-qty button{background:var(--dc-coral-soft)!important;color:var(--dc-coral-deep)!important;border-color:#EABFC8!important}
+.pickup-note{background:#F2F2EC!important;color:#526A66!important}.pickup-status{background:var(--dc-teal-soft)!important;color:var(--dc-teal-deep)!important}
+.gm-registration-circle{background:linear-gradient(145deg,var(--dc-teal),var(--dc-teal-deep))!important;border-color:var(--dc-sage)!important}
+.gm-hourly-chart-wrap{background:linear-gradient(to bottom,#FFFCFA 0%,#F9F3EF 100%)!important;border-color:var(--dc-line)!important}
+.gm-hourly-chart{background:repeating-linear-gradient(to top,transparent 0,transparent 48px,#E6ECE8 49px,#E6ECE8 50px)!important}
+.gm-hour-bar{background:linear-gradient(180deg,#9BC5BE 0%,var(--dc-teal) 100%)!important;box-shadow:0 2px 5px rgba(63,127,123,.11)!important}
+.gm-hour-bar.has-registrations{background:linear-gradient(180deg,#E99AAA 0%,var(--dc-coral) 100%)!important}
+/* Welcome page */
+:root{--dc-wine:var(--dc-teal);--dc-wine-deep:var(--dc-teal-deep);--dc-wine-soft:var(--dc-coral);--dc-pink:var(--dc-coral);--dc-pink-pale:var(--dc-coral-soft);--dc-cream:var(--dc-ivory);--dc-paper:var(--dc-paper);--dc-ink:var(--dc-ink);--dc-muted:var(--dc-muted);--dc-line:var(--dc-line);--dc-shadow:var(--dc-shadow)}
+body.dc-welcome-page{background:linear-gradient(145deg,#FFF8F6 0%,#FFF1F3 58%,#FCEEF1 100%)!important;color:var(--dc-ink)!important}
+.dc-welcome-shell{border-color:rgba(87,153,148,.34)!important;background:linear-gradient(145deg,#FFF8F6 0%,#FFF1F3 100%)!important;box-shadow:0 12px 34px rgba(63,127,123,.07)!important}
+.dc-action-card,.dc-best-sellers,.dc-branches-panel,.dc-talabat-card,.dc-payment-card,.dc-instagram-link{border-color:#B8D4CF!important;background:linear-gradient(145deg,#FFFCFA 0%,#F9F2EE 100%)!important;box-shadow:0 8px 22px rgba(63,127,123,.065)!important}
+.dc-action-title,.dc-best-sellers__header h2,.dc-branches-title,.dc-branch-card,.dc-payment-number{color:var(--dc-teal-deep)!important}
+.dc-action-icon{background:radial-gradient(circle,#E6F0ED 0%,#FBF7F4 74%)!important;color:var(--dc-teal)!important}
+.dc-action-icon svg{fill:rgba(63,127,123,.065)!important}
+.dc-action-arrow,.dc-best-sellers__arrow,.dc-branch-card__go,.dc-dialog .dc-branch-button:after{background:linear-gradient(135deg,var(--dc-teal),var(--dc-teal-deep))!important}
+.dc-section-heading>span,.dc-talabat-copy>strong{background:linear-gradient(135deg,var(--dc-teal),var(--dc-teal-deep))!important;border-color:var(--dc-sage)!important;color:#fff!important}
+.dc-section-heading:before,.dc-section-heading:after{background:linear-gradient(90deg,transparent,var(--dc-coral))!important}
+.dc-branch-card,.dc-best-sellers__card,.dc-dialog .dc-branch-button{border-color:#D7E4DE!important;background:#FFFCFA!important;color:var(--dc-teal-deep)!important}
+.dc-branch-card__icon{background:var(--dc-coral-soft)!important;color:var(--dc-coral-deep)!important}
+.dc-talabat-copy>span,.dc-talabat-cities span{color:var(--dc-teal-deep)!important;border-color:var(--dc-line)!important}
+.dc-payment-brand.dc-instapay{color:#193C98!important}.dc-payment-brand.dc-vodafone{color:#D51F2C!important}
+.dc-payment-number i{background:var(--dc-teal)!important;color:#fff!important}
+.dc-instagram-icon{background:linear-gradient(135deg,#8d42c8,#f04b83,#ff9b35)!important}
+.dc-copy-toast{background:var(--dc-teal-deep)!important}
+.dc-dialog{border-color:var(--dc-line)!important;background:linear-gradient(160deg,#FFFCFA,#F9F2EE)!important}
+.dc-dialog-close{color:var(--dc-teal)!important}.dc-dialog h2{color:var(--dc-teal-deep)!important}.dc-dialog-kicker{color:var(--dc-coral)!important}
+.dc-dialog .dc-branch-button:after{background:var(--dc-teal)!important}
+.dc-best-lightbox{background:rgba(9,50,49,.92)!important}
+/* Official logo sizing: keep the floral mark crisp and centered across all portals. */
+.dc-corner-logo{object-fit:contain!important}.official-logo,.brand-logo img,.public-menu-logo{object-fit:contain!important}
+@media(max-width:560px){body{background-size:42px 50px}body::before{border-color:rgba(87,153,148,.28)!important}}

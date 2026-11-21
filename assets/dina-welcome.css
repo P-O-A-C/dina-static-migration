@@ -1,0 +1,754 @@
+:root{--dc-wine:#8f2946;--dc-wine-deep:#6f1f37;--dc-wine-soft:#b64f6c;--dc-pink:#e8a0a3;--dc-pink-pale:#fae9e7;--dc-cream:#fff8f3;--dc-paper:#fffdfb;--dc-ink:#4b2832;--dc-muted:#8d777a;--dc-line:#efd3d2;--dc-shadow:0 12px 30px rgba(111,31,55,.09)}
+*{box-sizing:border-box}html{min-height:100%;background:#fff1f0}body.dc-welcome-page{position:relative;margin:0;min-height:100dvh;padding:22px 14px 36px;color:var(--dc-ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% 0%,#fff 0%,#fff6f5 43%,#f8e6e5 100%);overflow-x:hidden}
+.dc-floral{position:absolute;z-index:0;width:clamp(85px,17vw,190px);height:auto;pointer-events:none;opacity:.9}.dc-floral--tl{top:0;left:0;transform:rotate(-8deg)}.dc-floral--tr{top:0;right:0}.dc-floral--bl{bottom:0;left:0}.dc-floral--br{bottom:0;right:0;transform:scaleX(-1)}
+.dc-welcome-shell{position:relative;z-index:1;width:min(100%,1120px);margin:0 auto;padding:24px clamp(14px,3vw,32px) 28px;border:1px solid rgba(143,41,70,.28);border-radius:30px;background:linear-gradient(180deg,rgba(255,253,251,.96),rgba(255,247,244,.97));box-shadow:0 16px 45px rgba(102,36,56,.09);overflow:hidden}
+.dc-welcome-header{display:flex;align-items:center;flex-direction:column;text-align:center;padding:4px 8px 22px}.dc-corner-logo{display:block;width:clamp(145px,20vw,210px);height:auto;object-fit:contain;margin:0 auto 8px;mix-blend-mode:multiply}.dc-welcome-eyebrow{margin:0;color:var(--dc-wine-soft);font-size:clamp(9px,1.2vw,11px);font-weight:900;letter-spacing:2.2px;line-height:1.5}.dc-welcome-rule{display:flex;align-items:center;gap:13px;margin:7px auto 2px;color:var(--dc-pink);font:26px/1 Georgia,serif}.dc-welcome-rule:before,.dc-welcome-rule:after{content:"";display:block;width:62px;height:1.5px;background:linear-gradient(90deg,transparent,var(--dc-wine-soft))}.dc-welcome-rule:after{transform:scaleX(-1)}.dc-welcome-header h1{display:flex;flex-direction:column;gap:0;margin:3px 0 0;color:var(--dc-wine-deep);font:700 clamp(29px,5.1vw,48px)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.5px;text-align:center}.dc-welcome-line{display:block;font-size:.77em;font-weight:600}.dc-welcome-brand{display:block;font-size:1.05em}
+.dc-action-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:4px auto 24px;max-width:820px}.dc-action-card{display:grid;grid-template-columns:96px minmax(0,1fr) 38px;align-items:center;gap:12px;min-width:0;min-height:142px;padding:18px 18px;border:1.5px solid #e7aab5;border-radius:24px;background:linear-gradient(155deg,rgba(255,253,251,.98),rgba(255,237,237,.95));box-shadow:0 10px 24px rgba(111,31,55,.09),inset 0 0 0 3px rgba(255,255,255,.72);color:inherit;text-align:right;text-decoration:none;cursor:pointer;font:inherit;transition:transform .18s ease,box-shadow .18s ease;-webkit-tap-highlight-color:transparent}.dc-action-card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(111,31,55,.13)}.dc-action-icon{display:grid;place-items:center;width:94px;height:94px;border-radius:22px;background:radial-gradient(circle,#fae7e5 0%,#fff2ed 74%);color:var(--dc-wine)}.dc-action-icon svg{width:76px;height:76px;fill:rgba(222,117,140,.08);stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 3px 1px rgba(143,41,70,.08))}.dc-action-copy-wrap{display:flex;align-items:flex-start;flex-direction:column;gap:6px;min-width:0}.dc-action-title{color:var(--dc-wine-deep);font:700 clamp(18px,2.2vw,24px)/1.18 Georgia,"Times New Roman",serif}.dc-action-copy{color:var(--dc-muted);font-size:12px;line-height:1.4}.dc-action-arrow{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#c45a79,#812640);box-shadow:0 4px 10px rgba(111,31,55,.18);color:#fff;font:28px/1 Georgia,serif}
+.dc-visit-section{margin:15px 0 22px}.dc-section-heading{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 15px;color:white;font:700 clamp(20px,3vw,27px)/1.2 Georgia,"Times New Roman",serif;text-align:center}.dc-section-heading:before,.dc-section-heading:after{content:"";height:1.5px;flex:1;max-width:110px;background:linear-gradient(90deg,transparent,#c48c57)}.dc-section-heading>span{padding:9px 26px;border:1px solid #ddb36d;border-radius:28px;background:linear-gradient(135deg,#c9577b,#8e2448);box-shadow:0 5px 13px rgba(111,31,55,.15)}
+.dc-visit-layout{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:16px;align-items:stretch}.dc-best-sellers,.dc-branches-panel{min-width:0;padding:17px 14px;border:1.5px solid #e7aab5;border-radius:25px;background:linear-gradient(155deg,rgba(255,253,251,.98),rgba(255,237,237,.96));box-shadow:0 10px 26px rgba(111,31,55,.09),inset 0 0 0 3px rgba(255,255,255,.72);color:#76213d;overflow:hidden}.dc-best-sellers[hidden]{display:none!important}.dc-best-sellers__header{text-align:center;margin:0 0 13px}.dc-best-sellers__eyebrow{margin:0 0 4px;color:#b64f6c;font-size:9px;font-weight:900;letter-spacing:2px}.dc-best-sellers__header h2,.dc-branches-title{margin:0;color:#76213d;font:700 clamp(21px,2.5vw,27px)/1.15 Georgia,"Times New Roman",serif;text-align:center}.dc-best-sellers__header>p:last-child{margin:6px 0 0;color:#947b80;font-size:11px}.dc-best-sellers__carousel{display:grid;grid-template-columns:29px minmax(0,1fr) 29px;align-items:center;gap:6px}.dc-best-sellers__track{direction:ltr;display:flex;gap:10px;min-width:0;min-height:180px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 10px;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;touch-action:pan-x pan-y}.dc-best-sellers__track::-webkit-scrollbar{display:none}.dc-best-sellers__card{direction:rtl;display:flex;flex:0 0 min(76%,220px);min-width:0;flex-direction:column;align-items:stretch;gap:7px;padding:7px;border:1px solid #edc4ca;border-radius:17px;background:#fff;color:#76213d;text-align:center;box-shadow:0 5px 14px rgba(111,31,55,.07);cursor:zoom-in;scroll-snap-align:center;font:inherit}.dc-best-sellers__card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:11px;background:#fff0f1}.dc-best-sellers__card strong{display:block;min-height:18px;font-size:12px;line-height:1.4;overflow-wrap:anywhere}.dc-best-sellers__arrow{display:grid;place-items:center;width:29px;height:38px;padding:0;border:1px solid #e7b4c0;border-radius:20px;background:linear-gradient(135deg,#c45a79,#812640);color:#fff;font:27px/1 Georgia,serif;cursor:pointer}.dc-best-sellers__arrow:disabled{opacity:.3;cursor:default}.dc-best-sellers__hint{margin:0;color:#a1848b;text-align:center;font-size:10px}.dc-best-sellers__empty{display:grid;place-items:center;flex:1;min-height:165px;padding:15px;border:1px dashed #e6b5c0;border-radius:15px;background:rgba(255,255,255,.6);color:#a1848b;text-align:center;font-size:12px}
+.dc-branches-title{margin:1px 0 12px}.dc-branch-cards{display:grid;grid-template-columns:1fr;gap:8px}.dc-branch-card{display:grid;grid-template-columns:34px minmax(0,1fr) 27px;align-items:center;gap:9px;height:100px;min-height:100px;padding:10px 11px;border:1px solid #eac0c7;border-radius:16px;background:linear-gradient(135deg,#fff,#fff5f4);color:#6f1f37;text-decoration:none;box-shadow:0 4px 11px rgba(111,31,55,.05);transition:transform .16s ease}.dc-branch-card:hover{transform:translateY(-1px)}.dc-branch-card__icon{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#f7dbe1;color:#a42c55;font-size:22px;font-weight:800}.dc-branch-card__body{display:flex;min-width:0;flex-direction:column;gap:4px}.dc-branch-card__body strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;font-weight:850;line-height:1.3}.dc-branch-card__body small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:#765a62;font-size:11px;font-weight:550;line-height:1.45}.dc-branch-card__go{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#91294a;color:white;font-size:14px}
+.dc-talabat-card{display:grid;grid-template-columns:170px minmax(0,1fr);align-items:center;gap:17px;margin:20px 0 18px;padding:15px 20px;border:1.5px solid #e7aab5;border-radius:24px;background:linear-gradient(120deg,#fffdfb,#ffe7e9);box-shadow:0 9px 22px rgba(111,31,55,.08)}.dc-talabat-illustration{display:flex;align-items:center;justify-content:center;gap:0;min-height:85px}.dc-talabat-box{position:relative;z-index:1;display:grid;place-items:center;width:104px;height:66px;border:3px solid #dd6d15;border-radius:9px;background:linear-gradient(140deg,#ff9a27,#e65f0b);box-shadow:0 5px 9px rgba(162,76,13,.2);color:white;font-size:20px;font-weight:950;letter-spacing:-.5px;transform:rotate(-2deg)}.dc-talabat-scooter{margin-right:-11px;font-size:64px;line-height:1;filter:drop-shadow(0 3px 2px #8b405344)}.dc-talabat-copy{display:flex;align-items:center;flex-direction:column;gap:8px;text-align:center}.dc-talabat-copy>strong{display:block;width:100%;padding:8px 13px;border-radius:22px;background:linear-gradient(135deg,#c9577b,#8e2448);color:white;font-size:clamp(14px,2vw,19px);font-weight:850}.dc-talabat-copy>span{color:#8b3b53;font-size:12px;font-weight:750}.dc-talabat-cities{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.dc-talabat-cities span{min-width:110px;padding:6px 19px;border:1px solid #e7aab5;border-radius:24px;background:#fff;color:#812640;font-weight:850;text-align:center}
+.dc-payment-section{margin:15px 0 0}.dc-payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.dc-payment-card{min-width:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:13px 8px;border:1.5px solid #e7aab5;border-radius:19px;background:linear-gradient(145deg,#fffefd,#ffeff0);box-shadow:0 6px 16px rgba(111,31,55,.07);cursor:pointer;font:inherit}.dc-payment-brand{font-size:clamp(15px,2.3vw,21px);font-weight:950}.dc-instapay{color:#193c98;font-style:italic}.dc-instapay span{color:#ed4f35}.dc-vodafone{color:#d51f2c}.dc-payment-number{display:flex;align-items:center;gap:8px;color:#76213d;font-size:clamp(14px,2.3vw,20px);font-weight:900;direction:ltr}.dc-payment-number i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#a42d58;color:white;font-style:normal;font-size:16px}.dc-instagram-link{display:flex;align-items:center;justify-content:center;gap:12px;width:max-content;max-width:100%;margin:18px auto 2px;padding:10px 21px;border:1.5px solid #e7aab5;border-radius:30px;background:linear-gradient(145deg,#fffefd,#ffeff0);box-shadow:0 6px 16px rgba(111,31,55,.07);color:#76213d;text-decoration:none}.dc-instagram-link strong{font:700 17px Georgia,"Times New Roman",serif}.dc-instagram-icon{display:grid;place-items:center;width:33px;height:33px;border-radius:11px;background:linear-gradient(135deg,#8d42c8,#f04b83,#ff9b35);color:white;font-size:29px;line-height:1}.dc-instagram-link>span:last-child{font:28px/1 Georgia,serif}
+/* Refined Instagram and contact icons only; surrounding card styling is unchanged. */
+.dc-instagram-icon svg{display:block;width:20px;height:20px;color:#fff}
+.dc-contact-icon svg{display:block;width:17px;height:17px;color:#fff}
+@media(max-width:760px){.dc-contact-icon svg{width:15px;height:15px}}.dc-copy-toast{position:fixed;z-index:10060;bottom:max(22px,env(safe-area-inset-bottom));left:50%;transform:translate(-50%,12px);padding:11px 20px;border-radius:24px;background:#263b38;color:#fff;font-size:13px;font-weight:750;opacity:0;visibility:hidden;transition:.2s}.dc-copy-toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dc-dialog-backdrop{position:fixed;z-index:10000;inset:0;display:grid;place-items:center;padding:18px;background:rgba(47,22,31,.48);backdrop-filter:blur(5px)}.dc-dialog-backdrop[hidden]{display:none!important}.dc-dialog{position:relative;width:min(100%,440px);max-height:min(82dvh,650px);overflow:auto;padding:29px 20px 22px;border:1px solid #e7b8bd;border-radius:24px;background:linear-gradient(160deg,#fffefd,#fff5f0);box-shadow:0 25px 70px rgba(40,14,24,.25);text-align:center}.dc-dialog-close{position:absolute;top:11px;right:12px;width:36px;height:36px;border:1px solid var(--dc-line);border-radius:50%;background:white;color:var(--dc-wine);font-size:24px;line-height:1;cursor:pointer}.dc-dialog-kicker{margin:0;color:var(--dc-wine-soft);font-size:9px;font-weight:900;letter-spacing:1.8px}.dc-dialog h2{margin:9px 0 5px;color:var(--dc-wine-deep);font:700 27px Georgia,serif}.dc-dialog-subtitle{margin:0 0 18px;color:var(--dc-muted);font-size:12px}.dc-branch-list{display:grid;gap:9px}.dc-dialog .dc-branch-button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:54px;padding:12px 14px;border:1px solid #edc7c7;border-radius:14px;background:#fff;color:var(--dc-wine-deep);font-family:inherit;font-size:14px;font-weight:750;text-align:right;text-decoration:none;cursor:pointer}.dc-dialog .dc-branch-button:after{content:"↗";display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border-radius:50%;background:var(--dc-wine);color:white}.dc-branch-button>span{display:flex;flex-direction:column;gap:4px;min-width:0}.dc-branch-detail{display:block;color:#947b80;font-size:11px;font-weight:500;line-height:1.4}.dc-branch-loading,.dc-dialog-error{padding:16px;border-radius:13px;background:#fff;color:var(--dc-muted);font-size:13px}.dc-dialog-error{margin:12px 0 0;color:#9d2947;background:#fff0f1}
+.dc-best-lightbox{position:fixed;z-index:10050;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:54px 16px 24px;background:rgba(42,17,27,.92);line-height:normal}.dc-best-lightbox[hidden]{display:none!important}.dc-best-lightbox img{display:block;max-width:min(100%,680px);max-height:78dvh;object-fit:contain;border-radius:16px;background:#fff}.dc-best-lightbox p{margin:0;color:#fff;font-size:14px;font-weight:700;text-align:center}.dc-best-lightbox__close{position:absolute;top:max(14px,env(safe-area-inset-top));right:16px;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#ffffff18;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+@media(max-width:760px){body.dc-welcome-page{padding:10px 8px 24px}.dc-welcome-shell{padding:18px 12px 20px;border-radius:24px}.dc-welcome-header{padding-bottom:17px}.dc-corner-logo{width:min(174px,47vw)}.dc-action-grid{gap:9px;margin-bottom:18px}.dc-action-card{grid-template-columns:1fr;justify-items:center;gap:6px;min-height:142px;padding:10px 7px;border-radius:18px;text-align:center}.dc-action-icon{width:68px;height:62px;border-radius:15px;background:transparent}.dc-action-icon svg{width:60px;height:60px}.dc-action-copy-wrap{align-items:center;gap:3px}.dc-action-title{font-size:clamp(14px,3.2vw,18px)}.dc-action-copy{font-size:10px}.dc-action-arrow{width:28px;height:28px;margin-top:2px;font-size:23px}.dc-visit-layout{grid-template-columns:1fr;gap:11px}.dc-best-sellers{order:0;padding:15px 10px 12px}.dc-branches-panel{order:1;padding:14px 10px}.dc-best-sellers__track{min-height:190px}.dc-best-sellers__card{flex-basis:46%;max-width:230px}.dc-branch-card{height:100px;min-height:100px}.dc-talabat-card{grid-template-columns:105px minmax(0,1fr);gap:8px;margin:15px 0;padding:11px 9px;border-radius:19px}.dc-talabat-illustration{min-height:74px}.dc-talabat-box{width:74px;height:55px;font-size:15px}.dc-talabat-scooter{font-size:47px;margin-right:-8px}.dc-talabat-copy>strong{font-size:13px;padding:8px 6px}.dc-talabat-copy>span{font-size:11px}.dc-talabat-cities{gap:6px}.dc-talabat-cities span{min-width:83px;padding:5px 12px;font-size:12px}.dc-section-heading{margin-bottom:12px}.dc-payment-grid{gap:8px}.dc-payment-card{padding:11px 4px}.dc-payment-number{font-size:clamp(12px,3vw,16px);gap:5px}.dc-payment-number i{width:25px;height:25px;font-size:14px}.dc-instagram-link{gap:8px;padding:9px 14px}.dc-instagram-link strong{font-size:14px}}
+@media(max-width:380px){.dc-welcome-shell{padding:15px 9px 16px}.dc-action-card{min-height:133px}.dc-action-title{font-size:13px}.dc-action-copy{font-size:9px}.dc-best-sellers__card{flex-basis:68%}.dc-branch-card{grid-template-columns:29px minmax(0,1fr) 23px;padding:9px 8px;gap:7px}.dc-branch-card__icon{width:28px;height:28px}.dc-branch-card__body strong{font-size:12px}.dc-branch-card__body small{font-size:10px}.dc-talabat-card{grid-template-columns:90px minmax(0,1fr)}.dc-talabat-box{width:64px;height:49px;font-size:13px}.dc-talabat-scooter{font-size:40px}.dc-payment-brand{font-size:13px}.dc-payment-number{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.dc-action-card,.dc-branch-card,.dc-best-sellers__track,.dc-copy-toast{transition:none;scroll-behavior:auto}}
+
+
+/* Dina's Corner approved floral poster layout — final responsive refinement */
+.dc-welcome-page{background:radial-gradient(ellipse at 50% 5%,#fff9f8 0%,#ffedf0 58%,#f8dfe7 100%)}
+.dc-welcome-shell{border:1px solid #e5a8b8;border-radius:30px;background:linear-gradient(180deg,rgba(255,253,251,.97),rgba(255,244,244,.98));box-shadow:0 12px 34px rgba(116,31,61,.10)}
+.dc-welcome-header{padding-top:8px}
+.dc-corner-logo{mix-blend-mode:multiply}
+.dc-action-grid{max-width:900px;gap:14px;margin-bottom:22px}
+.dc-action-card{grid-template-columns:1fr;justify-items:center;gap:7px;min-height:190px;padding:13px 12px;border:2px solid #e6a0b4;border-radius:27px;background:linear-gradient(145deg,#fffdfc 0%,#ffedf0 100%);text-align:center;box-shadow:0 8px 20px rgba(130,39,70,.10),inset 0 0 0 3px rgba(255,255,255,.76)}
+.dc-action-icon{width:94px;height:94px;background:transparent}
+.dc-action-icon svg{width:82px;height:82px}
+.dc-action-copy-wrap{align-items:center;gap:4px}
+.dc-action-title{font-size:clamp(20px,2.4vw,26px)}
+.dc-action-copy{font-size:13px}
+.dc-action-arrow{width:40px;height:40px;margin-top:1px}
+.dc-visit-section{margin:18px 0 22px}
+.dc-visit-layout{direction:ltr;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:14px;align-items:stretch}
+.dc-best-sellers,.dc-branches-panel{direction:rtl;border:2px solid #e6a0b4;border-radius:25px;background:linear-gradient(155deg,#fffdfc 0%,#ffeff1 100%);box-shadow:0 8px 22px rgba(130,39,70,.09),inset 0 0 0 3px rgba(255,255,255,.75)}
+.dc-best-sellers{display:flex;flex-direction:column;min-height:100%;padding:16px 11px 13px}
+.dc-best-sellers__header{margin-bottom:10px}
+.dc-best-sellers__eyebrow{font-size:9px;letter-spacing:1.6px}
+.dc-best-sellers__header h2,.dc-branches-title{font-size:clamp(19px,2.2vw,26px)}
+.dc-best-sellers__header>p:last-child{font-size:11px}
+.dc-best-sellers__carousel{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px;flex:1;min-height:340px}
+.dc-best-sellers__track{align-items:stretch;min-height:340px;height:100%;padding:4px 2px 8px;gap:9px}
+.dc-best-sellers__card{flex:0 0 100%;height:100%;min-height:320px;justify-content:space-between;gap:9px;padding:8px;border:1.5px solid #e7b1bf;border-radius:20px;background:linear-gradient(160deg,#fff 0%,#fff5f5 100%);box-shadow:0 6px 16px rgba(130,39,70,.08)}
+.dc-best-sellers__card img{flex:1 1 auto;width:100%;height:0;min-height:245px;aspect-ratio:auto;object-fit:contain;border-radius:14px;background:linear-gradient(145deg,#fff9f7,#fce9ec)}
+.dc-best-sellers__card strong{flex:0 0 auto;min-height:22px;padding:3px 2px;color:#76213d;font-size:13px}
+.dc-best-sellers__arrow{width:28px;height:42px;border:1px solid #d88ca2;box-shadow:0 3px 8px rgba(111,31,55,.12)}
+.dc-best-sellers__hint{margin-top:8px;font-size:10px}
+.dc-best-sellers__empty{min-height:270px;border:1px dashed #dfa9b7;background:rgba(255,255,255,.65)}
+.dc-branches-panel{padding:16px 13px}
+.dc-branches-title{margin:1px 0 12px}
+.dc-branch-cards{gap:9px}
+.dc-branch-card{height:clamp(88px,9.4vw,108px);min-height:clamp(88px,9.4vw,108px);grid-template-columns:34px minmax(0,1fr) 29px;padding:10px 12px;border:1.5px solid #e5aab8;border-radius:21px;background:linear-gradient(120deg,#fffdfc,#ffedf0);box-shadow:0 4px 12px rgba(111,31,55,.06)}
+.dc-branch-card__icon{background:#f6dce3;color:#9c3155}
+.dc-branch-card__body strong{font-size:clamp(12px,1.25vw,15px)}
+.dc-branch-card__body small{font-size:clamp(10px,1.05vw,12px);line-height:1.4}
+.dc-branch-card__go{width:28px;height:28px}
+.dc-talabat-card{border:2px solid #e6a0b4;border-radius:26px;background:linear-gradient(120deg,#fffdfc,#ffeaed);box-shadow:0 8px 20px rgba(111,31,55,.08)}
+.dc-talabat-box{width:112px;height:76px;font-size:22px;border-width:3px}
+.dc-talabat-scooter{font-size:68px}
+.dc-payment-card,.dc-instagram-link{border:1.5px solid #e6a0b4;background:linear-gradient(145deg,#fffefd,#ffedf0);box-shadow:0 6px 16px rgba(111,31,55,.07)}
+.dc-section-heading>span{background:linear-gradient(135deg,#c9577b,#8e2448);border-color:#ddb36d}
+
+@media(max-width:760px){
+ body.dc-welcome-page{padding:5px 5px 16px;background:linear-gradient(180deg,#fff5f5,#fce8ec)}
+ .dc-welcome-shell{width:100%;padding:15px 10px 18px;border-radius:25px}
+ .dc-welcome-header{padding:0 4px 14px}
+ .dc-corner-logo{width:min(150px,39vw);margin-bottom:6px}
+ .dc-welcome-eyebrow{font-size:9px;letter-spacing:1.6px}
+ .dc-welcome-rule{margin:5px auto 1px;font-size:23px}
+ .dc-welcome-header h1{font-size:clamp(27px,7vw,35px)}
+ .dc-action-grid{grid-template-columns:1fr 1fr;gap:9px;margin:3px auto 16px}
+ .dc-action-card{min-height:150px;padding:9px 5px;border-radius:21px;gap:5px}
+ .dc-action-icon{width:68px;height:65px}
+ .dc-action-icon svg{width:62px;height:62px}
+ .dc-action-title{font-size:clamp(14px,3.8vw,18px)}
+ .dc-action-copy{font-size:10px}
+ .dc-action-arrow{width:31px;height:31px;font-size:23px}
+ .dc-visit-section{margin:12px 0 15px}
+ .dc-section-heading{gap:7px;margin-bottom:11px;font-size:clamp(17px,4.4vw,22px)}
+ .dc-section-heading:before,.dc-section-heading:after{max-width:45px}
+ .dc-section-heading>span{padding:8px 17px}
+ /* Keep the approved poster's side-by-side product/branch composition on phones. */
+ .dc-visit-layout{direction:ltr;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:8px;align-items:stretch}
+ .dc-best-sellers,.dc-branches-panel{border-radius:19px;padding:10px 7px}
+ .dc-best-sellers{min-height:100%;}
+ .dc-best-sellers__header{margin-bottom:8px}
+ .dc-best-sellers__eyebrow{font-size:7px;letter-spacing:1px}
+ .dc-best-sellers__header h2,.dc-branches-title{font-size:clamp(14px,3.8vw,18px)}
+ .dc-best-sellers__header>p:last-child{font-size:9px;line-height:1.35}
+ .dc-best-sellers__carousel{grid-template-columns:21px minmax(0,1fr) 21px;gap:3px;min-height:340px}
+ .dc-best-sellers__track{min-height:340px;height:100%;gap:7px}
+ .dc-best-sellers__card{flex-basis:100%;min-height:320px;padding:5px;border-radius:14px;gap:6px}
+ .dc-best-sellers__card img{min-height:245px;border-radius:10px;object-fit:contain}
+ .dc-best-sellers__card strong{font-size:10px;min-height:18px}
+ .dc-best-sellers__arrow{width:21px;height:34px;font-size:21px}
+ .dc-best-sellers__hint{font-size:8px;line-height:1.4;margin-top:6px}
+ .dc-best-sellers__empty{min-height:250px;padding:8px;font-size:10px}
+ .dc-branches-panel{padding:10px 7px}
+ .dc-branches-title{margin:1px 0 8px}
+ .dc-branch-cards{gap:7px}
+ .dc-branch-card{height:clamp(76px,21vw,91px);min-height:clamp(76px,21vw,91px);grid-template-columns:22px minmax(0,1fr) 20px;gap:5px;padding:6px 5px;border-radius:14px}
+ .dc-branch-card__icon{width:21px;height:21px;font-size:15px}
+ .dc-branch-card__body{gap:3px}
+ .dc-branch-card__body strong{font-size:clamp(9px,2.7vw,11px);line-height:1.25}
+ .dc-branch-card__body small{font-size:clamp(8px,2.25vw,9.5px);line-height:1.3}
+ .dc-branch-card__go{width:20px;height:20px;font-size:11px}
+ .dc-talabat-card{grid-template-columns:94px minmax(0,1fr);gap:6px;margin:12px 0;padding:9px 7px;border-radius:19px}
+ .dc-talabat-illustration{min-height:68px}
+ .dc-talabat-box{width:67px;height:52px;font-size:14px}
+ .dc-talabat-scooter{font-size:43px;margin-right:-8px}
+ .dc-talabat-copy{gap:6px}
+ .dc-talabat-copy>strong{font-size:clamp(11px,3vw,13px);padding:7px 5px;line-height:1.3}
+ .dc-talabat-copy>span{font-size:10px}
+ .dc-talabat-cities{gap:5px}
+ .dc-talabat-cities span{min-width:68px;padding:5px 8px;font-size:11px}
+ .dc-payment-section{margin-top:12px}
+ .dc-payment-grid{gap:7px}
+ .dc-payment-card{padding:10px 4px;gap:6px;border-radius:16px}
+ .dc-payment-brand{font-size:clamp(12px,3.4vw,16px)}
+ .dc-payment-number{font-size:clamp(10px,2.8vw,13px);gap:4px}
+ .dc-payment-number i{width:22px;height:22px;font-size:12px}
+ .dc-instagram-link{gap:7px;margin-top:13px;padding:8px 12px}
+ .dc-instagram-link strong{font-size:13px}
+ .dc-instagram-icon{width:29px;height:29px;font-size:25px}
+}
+@media(max-width:360px){
+ .dc-welcome-shell{padding-left:7px;padding-right:7px}
+ .dc-visit-layout{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr);gap:6px}
+ .dc-best-sellers,.dc-branches-panel{padding-left:5px;padding-right:5px}
+ .dc-branch-card{grid-template-columns:19px minmax(0,1fr) 18px;gap:4px;padding:5px 4px}
+ .dc-branch-card__body strong{font-size:8.5px}
+ .dc-branch-card__body small{font-size:7.8px}
+ .dc-talabat-card{grid-template-columns:82px minmax(0,1fr)}
+ .dc-talabat-box{width:60px;height:47px;font-size:12px}
+ .dc-talabat-scooter{font-size:38px}
+ .dc-payment-number{font-size:9.5px}
+}
+
+
+/* Best Sellers replaces the former shop photo: one uninterrupted photo fills the existing large panel. */
+.dc-best-sellers--full-frame{display:flex!important;min-width:0;min-height:100%;height:100%;padding:0!important;overflow:hidden;border:2px solid #e6a0b4;border-radius:25px;background:linear-gradient(155deg,#fffdfc 0%,#ffeff1 100%);box-shadow:0 8px 22px rgba(130,39,70,.09),inset 0 0 0 3px rgba(255,255,255,.75)}
+.dc-best-sellers--full-frame .dc-best-sellers__track{display:flex;flex:1 1 auto;align-items:stretch;gap:0;width:100%;height:100%;min-height:0;padding:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y}
+.dc-best-sellers--full-frame .dc-best-sellers__track::-webkit-scrollbar{display:none}
+.dc-best-sellers--full-frame .dc-best-sellers__card{display:block;flex:0 0 100%;width:100%;height:100%;min-height:0;margin:0;padding:0;overflow:hidden;border:0;border-radius:0;background:transparent;box-shadow:none;scroll-snap-align:start;cursor:zoom-in}
+.dc-best-sellers--full-frame .dc-best-sellers__card img{display:block;width:100%;height:100%;min-height:100%;aspect-ratio:auto;object-fit:cover;border:0;border-radius:0;background:transparent}
+.dc-best-sellers--full-frame .dc-best-sellers__empty{display:block;flex:1;min-height:100%;padding:0;border:0;border-radius:0;background:transparent}
+.dc-best-sellers--full-frame .dc-best-sellers__empty:empty{display:none}
+@media(max-width:760px){
+ .dc-best-sellers--full-frame{padding:0!important;border-radius:19px}
+ .dc-best-sellers--full-frame .dc-best-sellers__track{min-height:100%;height:100%;padding:0;gap:0}
+ .dc-best-sellers--full-frame .dc-best-sellers__card{flex:0 0 100%;height:100%;min-height:100%;padding:0;border:0;border-radius:0;box-shadow:none}
+ .dc-best-sellers--full-frame .dc-best-sellers__card img{width:100%;height:100%;min-height:100%;object-fit:cover;border-radius:0}
+}
+
+
+/* Dina's Corner — final poster-match calibration (colors, proportions, full-width shell). */
+:root{
+ --dc-wine:#a20f4b;
+ --dc-wine-deep:#7e123e;
+ --dc-wine-soft:#b83d70;
+ --dc-pink:#e99ab2;
+ --dc-pink-pale:#f8dce6;
+ --dc-cream:#fff0f3;
+ --dc-paper:#fffaf9;
+ --dc-ink:#5d2038;
+ --dc-muted:#9a6d7d;
+ --dc-line:#e9a4b8;
+ --dc-shadow:0 10px 28px rgba(126,18,62,.12);
+}
+html{background:#f8dce6!important}
+body.dc-welcome-page{
+ width:100%!important;min-width:0!important;min-height:100dvh!important;
+ padding:8px 8px 18px!important;color:var(--dc-ink)!important;
+ background:linear-gradient(180deg,#f9e2e9 0%,#f7dce5 55%,#f9e5eb 100%)!important;
+}
+.dc-welcome-shell{
+ display:block!important;width:min(100%,1000px)!important;max-width:1000px!important;
+ margin:0 auto!important;padding:22px clamp(12px,2.3vw,25px) 24px!important;
+ border:1.5px solid #e7a0b4!important;border-radius:28px!important;
+ background:linear-gradient(180deg,#fff8f7 0%,#ffeff2 100%)!important;
+ box-shadow:0 12px 32px rgba(126,18,62,.12)!important;
+}
+.dc-welcome-header{padding:4px 8px 20px!important}
+.dc-corner-logo{width:clamp(170px,22vw,230px)!important;max-height:none!important;margin:0 auto 9px!important}
+.dc-welcome-eyebrow{color:#9f174c!important;letter-spacing:2px!important}
+.dc-welcome-rule{color:#c43d72!important}
+.dc-welcome-rule:before,.dc-welcome-rule:after{background:linear-gradient(90deg,transparent,#a20f4b)!important}
+.dc-welcome-header h1{color:#86113f!important;font-size:clamp(32px,5.3vw,52px)!important}
+.dc-action-grid{max-width:900px!important;gap:16px!important;margin:4px auto 22px!important}
+.dc-action-card{
+ border:2px solid #e58eaa!important;border-radius:27px!important;
+ background:linear-gradient(145deg,#fffaf9 0%,#fbe5eb 100%)!important;
+ box-shadow:0 8px 20px rgba(126,18,62,.12),inset 0 0 0 3px rgba(255,255,255,.78)!important;
+}
+.dc-action-title{color:#81103e!important}
+.dc-action-arrow{background:linear-gradient(135deg,#c84778,#8e123f)!important}
+.dc-section-heading>span{background:linear-gradient(135deg,#c94779,#941342)!important;border-color:#d8a35f!important;color:#fff!important}
+.dc-section-heading:before,.dc-section-heading:after{background:linear-gradient(90deg,transparent,#c99a62)!important}
+.dc-visit-layout{direction:ltr!important;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)!important;gap:14px!important;align-items:stretch!important}
+.dc-best-sellers,.dc-branches-panel{
+ border:2px solid #e7a0b4!important;border-radius:25px!important;
+ background:linear-gradient(155deg,#fffaf9 0%,#fce8ed 100%)!important;
+ box-shadow:0 8px 22px rgba(126,18,62,.10),inset 0 0 0 3px rgba(255,255,255,.76)!important;
+}
+.dc-best-sellers--full-frame{padding:0!important;overflow:hidden!important}
+.dc-best-sellers--full-frame .dc-best-sellers__track{width:100%!important;height:100%!important;min-height:0!important;padding:0!important;gap:0!important}
+.dc-best-sellers--full-frame .dc-best-sellers__card{flex:0 0 100%!important;width:100%!important;height:100%!important;min-height:100%!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.dc-best-sellers--full-frame .dc-best-sellers__card img{width:100%!important;height:100%!important;min-height:100%!important;object-fit:cover!important;border:0!important;border-radius:0!important}
+.dc-branches-title{color:#81103e!important}
+.dc-branch-cards{gap:9px!important}
+.dc-branch-card{
+ height:clamp(94px,9.8vw,112px)!important;min-height:clamp(94px,9.8vw,112px)!important;
+ border:1.5px solid #e6a0b4!important;border-radius:21px!important;
+ background:linear-gradient(120deg,#fffaf9,#fbe8ed)!important;
+ color:#79123d!important;box-shadow:0 4px 12px rgba(126,18,62,.07)!important;
+}
+.dc-branch-card__icon{background:#f6d7e2!important;color:#a20f4b!important}
+.dc-branch-card__go{background:#a20f4b!important}
+.dc-branch-card__body strong{color:#78123c!important}
+.dc-branch-card__body small{color:#76505f!important}
+.dc-talabat-card,.dc-payment-card,.dc-instagram-link{
+ border:1.7px solid #e7a0b4!important;
+ background:linear-gradient(145deg,#fffaf9,#fbe7ec)!important;
+ box-shadow:0 7px 17px rgba(126,18,62,.09)!important;
+}
+.dc-talabat-copy>strong{background:linear-gradient(135deg,#c94779,#941342)!important}
+.dc-talabat-cities span{border-color:#e6a0b4!important;color:#81103e!important}
+.dc-payment-number,.dc-instagram-link{color:#81103e!important}
+.dc-best-lightbox{background:rgba(55,10,29,.94)!important}
+@media(max-width:760px){
+ body.dc-welcome-page{padding:4px 4px 14px!important;background:linear-gradient(180deg,#f9e2e9,#f7dce5)!important}
+ .dc-welcome-shell{width:100%!important;max-width:none!important;padding:14px 9px 17px!important;border-radius:23px!important}
+ .dc-welcome-header{padding:0 4px 13px!important}
+ .dc-corner-logo{width:min(165px,42vw)!important;margin-bottom:7px!important}
+ .dc-welcome-header h1{font-size:clamp(28px,7vw,37px)!important}
+ .dc-action-grid{grid-template-columns:1fr 1fr!important;gap:8px!important;margin:3px auto 14px!important}
+ .dc-action-card{min-height:145px!important;padding:8px 5px!important;border-radius:20px!important}
+ .dc-visit-section{margin:10px 0 14px!important}
+ .dc-section-heading{margin-bottom:10px!important}
+ .dc-visit-layout{direction:ltr!important;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)!important;gap:7px!important;align-items:stretch!important}
+ .dc-best-sellers,.dc-branches-panel{padding:8px 6px!important;border-radius:17px!important}
+ .dc-best-sellers--full-frame{padding:0!important}
+ .dc-branches-title{font-size:clamp(14px,3.8vw,18px)!important;margin:2px 0 8px!important}
+ .dc-branch-cards{gap:6px!important}
+ .dc-branch-card{height:clamp(78px,20vw,96px)!important;min-height:clamp(78px,20vw,96px)!important;grid-template-columns:20px minmax(0,1fr) 19px!important;gap:4px!important;padding:6px 4px!important;border-radius:13px!important}
+ .dc-branch-card__icon{width:20px!important;height:20px!important;font-size:14px!important}
+ .dc-branch-card__go{width:19px!important;height:19px!important;font-size:10px!important}
+ .dc-branch-card__body strong{font-size:clamp(8.5px,2.6vw,11px)!important}
+ .dc-branch-card__body small{font-size:clamp(7.8px,2.2vw,9.5px)!important;line-height:1.28!important}
+ .dc-best-sellers--full-frame .dc-best-sellers__track{min-height:100%!important;height:100%!important}
+ .dc-best-sellers--full-frame .dc-best-sellers__card{height:100%!important;min-height:100%!important}
+ .dc-best-sellers--full-frame .dc-best-sellers__card img{height:100%!important;min-height:100%!important;object-fit:cover!important}
+ .dc-talabat-card{grid-template-columns:88px minmax(0,1fr)!important;gap:6px!important;margin:12px 0!important;padding:9px 7px!important}
+}
+@media(max-width:360px){
+ .dc-visit-layout{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)!important;gap:5px!important}
+ .dc-branch-card{grid-template-columns:18px minmax(0,1fr) 17px!important;gap:3px!important}
+ .dc-branch-card__body strong{font-size:8px!important}
+ .dc-branch-card__body small{font-size:7.4px!important}
+}
+
+/* Subtle height reduction: keep the approved palette, card proportions and layout unchanged. */
+.dc-welcome-header{padding-bottom:16px!important}
+.dc-corner-logo{width:clamp(158px,20vw,212px)!important;margin-bottom:7px!important}
+.dc-welcome-header h1{font-size:clamp(30px,5vw,48px)!important;line-height:1.08!important;margin-top:2px!important;margin-bottom:0!important}
+.dc-welcome-eyebrow{line-height:1.2!important}
+.dc-welcome-rule{margin-top:4px!important;margin-bottom:0!important;line-height:1!important}
+.dc-section-heading{margin-top:0!important;margin-bottom:9px!important;line-height:1.08!important}
+.dc-section-heading>span{padding:7px 15px!important}
+.dc-branches-title{font-size:clamp(18px,2vw,24px)!important;line-height:1.12!important}
+@media(max-width:760px){
+ .dc-welcome-header{padding-bottom:10px!important}
+ .dc-corner-logo{width:min(150px,39vw)!important;margin-bottom:5px!important}
+ .dc-welcome-header h1{font-size:clamp(26px,6.5vw,34px)!important;line-height:1.06!important}
+ .dc-welcome-rule{font-size:21px!important;margin-top:3px!important}
+ .dc-section-heading{margin-bottom:8px!important}
+ .dc-section-heading>span{padding:6px 13px!important}
+ .dc-branches-title{font-size:clamp(13px,3.5vw,17px)!important;margin:1px 0 7px!important}
+}
+
+/* Best Sellers image panel: slightly shorter while keeping the same width and full-bleed image. */
+.dc-best-sellers--full-frame{
+ height:88%!important;
+ min-height:0!important;
+ align-self:center!important;
+}
+.dc-best-sellers--full-frame .dc-best-sellers__track,
+.dc-best-sellers--full-frame .dc-best-sellers__card,
+.dc-best-sellers--full-frame .dc-best-sellers__card img{
+ height:100%!important;
+ min-height:0!important;
+}
+
+
+/* Approved refinement: compact, equal-height branch cards; remove only the outer branch panel/title. */
+.dc-branches-panel{
+  min-width:0!important;padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;overflow:visible!important;
+}
+.dc-branches-title{display:none!important}
+.dc-branch-cards{gap:7px!important}
+.dc-branch-card{
+  height:76px!important;min-height:76px!important;max-height:76px!important;
+  padding:7px 9px!important;border:1.5px solid #e6a0b4!important;border-radius:17px!important;
+  background:linear-gradient(120deg,#fffaf9 0%,#fbe8ed 100%)!important;
+  box-shadow:0 4px 11px rgba(126,18,62,.07)!important;
+}
+.dc-branch-card__icon{background:#f6d7e2!important;color:#a20f4b!important}
+.dc-branch-card__go{background:#a20f4b!important}
+.dc-branch-card__body strong{color:#78123c!important}
+.dc-branch-card__body small{color:#76505f!important}
+.dc-talabat-card{
+  color:inherit!important;text-decoration:none!important;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.dc-talabat-card:focus-visible{outline:3px solid #a20f4b;outline-offset:3px}
+.dc-talabat-card:hover{transform:translateY(-1px)}
+@media(max-width:760px){
+  .dc-branches-panel{padding:0!important}
+  .dc-branch-cards{gap:6px!important}
+  .dc-branch-card{
+    height:72px!important;min-height:72px!important;max-height:72px!important;
+    grid-template-columns:20px minmax(0,1fr) 19px!important;gap:4px!important;padding:5px 4px!important;border-radius:13px!important;
+  }
+  .dc-branch-card__icon{width:20px!important;height:20px!important;font-size:14px!important}
+  .dc-branch-card__go{width:19px!important;height:19px!important;font-size:10px!important}
+  .dc-branch-card__body{gap:2px!important}
+  .dc-branch-card__body strong{font-size:clamp(8.5px,2.55vw,10.5px)!important;line-height:1.2!important}
+  .dc-branch-card__body small{font-size:clamp(7.5px,2.15vw,9px)!important;line-height:1.22!important}
+}
+@media(max-width:360px){
+  .dc-branch-card{height:70px!important;min-height:70px!important;max-height:70px!important;grid-template-columns:18px minmax(0,1fr) 17px!important;gap:3px!important}
+  .dc-branch-card__body strong{font-size:8px!important}
+  .dc-branch-card__body small{font-size:7.2px!important}
+}
+
+/* Keep the latest approved best-sellers image height update from the preceding ZIP. */
+.dc-best-sellers--full-frame{height:80%!important}
+
+
+/* 2026-11-15 mobile refinement: transparent logo, single featured menu card,
+   branch stack aligned exactly to the best-sellers photo, and contact footer. */
+.dc-corner-logo{
+  mix-blend-mode:normal!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+.dc-action-grid--menu-only{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  width:min(100%,640px)!important;
+  max-width:640px!important;
+  margin:5px auto 21px!important;
+}
+.dc-action-card--menu{
+  display:grid!important;
+  grid-template-columns:76px minmax(0,1fr) 44px!important;
+  align-items:center!important;
+  min-height:108px!important;
+  padding:13px 17px!important;
+  border:2px solid #e58eaa!important;
+  border-radius:24px!important;
+  background:linear-gradient(135deg,#fffaf9 0%,#f8e1e9 100%)!important;
+  box-shadow:0 9px 22px rgba(126,18,62,.11),inset 0 0 0 3px rgba(255,255,255,.8)!important;
+  text-decoration:none!important;
+}
+.dc-action-card--menu .dc-action-icon{
+  width:68px!important;height:68px!important;border-radius:19px!important;
+  background:linear-gradient(145deg,#fbe1e9,#fff7f5)!important;
+}
+.dc-action-card--menu .dc-action-icon svg{width:54px!important;height:54px!important}
+.dc-action-card--menu .dc-action-copy-wrap{gap:5px!important}
+.dc-action-card--menu .dc-action-title{font-size:clamp(22px,3.2vw,29px)!important;color:#81103e!important}
+.dc-action-card--menu .dc-action-copy{font-size:14px!important;color:#906b79!important}
+.dc-action-card--menu .dc-action-arrow{width:40px!important;height:40px!important;font-size:31px!important}
+.dc-contact-section{margin:16px 0 4px!important}
+.dc-contact-section .dc-section-heading{margin-bottom:11px!important}
+.dc-contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dc-contact-card{
+  display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;
+  padding:12px 10px;border:1.7px solid #e7a0b4;border-radius:19px;
+  background:linear-gradient(145deg,#fffaf9,#fbe7ec);
+  box-shadow:0 7px 17px rgba(126,18,62,.08);
+  color:#81103e;text-decoration:none;-webkit-tap-highlight-color:transparent;
+}
+.dc-contact-icon{display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#c94779,#941342);color:#fff;font-size:16px}
+.dc-contact-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.dc-contact-copy small{color:#987481;font-size:10px;font-weight:700;text-align:center}
+.dc-contact-copy strong{color:#81103e;font-size:clamp(13px,2vw,17px);font-weight:900;white-space:nowrap;letter-spacing:.15px}
+.dc-contact-card:focus-visible,.dc-action-card--menu:focus-visible{outline:3px solid #a20f4b;outline-offset:3px}
+@media(max-width:760px){
+  .dc-corner-logo{width:min(165px,42vw)!important;margin:0 auto 6px!important}
+  .dc-welcome-header{background:transparent!important}
+  .dc-action-grid--menu-only{width:100%!important;max-width:100%!important;margin:3px auto 15px!important}
+  .dc-action-card--menu{grid-template-columns:62px minmax(0,1fr) 38px!important;min-height:91px!important;padding:10px 11px!important;border-radius:21px!important}
+  .dc-action-card--menu .dc-action-icon{width:56px!important;height:56px!important;border-radius:16px!important}
+  .dc-action-card--menu .dc-action-icon svg{width:45px!important;height:45px!important}
+  .dc-action-card--menu .dc-action-title{font-size:clamp(20px,5.7vw,25px)!important}
+  .dc-action-card--menu .dc-action-copy{font-size:12px!important}
+  .dc-action-card--menu .dc-action-arrow{width:34px!important;height:34px!important;font-size:27px!important}
+  /* Set a phone-friendly portrait ratio for the photo and let the branch stack
+     stretch to exactly the same height. Four cards share that height evenly. */
+  .dc-visit-layout{align-items:stretch!important}
+  .dc-best-sellers--full-frame{height:auto!important;min-height:0!important;align-self:stretch!important;aspect-ratio:.47 / 1!important}
+  .dc-branches-panel{height:auto!important;min-height:0!important;align-self:stretch!important}
+  .dc-branch-cards{height:100%!important;grid-template-rows:repeat(4,minmax(0,1fr))!important;gap:5px!important}
+  .dc-branch-card{height:auto!important;min-height:0!important;max-height:none!important;padding:4px 4px!important;grid-template-columns:19px minmax(0,1fr) 18px!important;gap:4px!important;border-radius:12px!important;overflow:hidden!important}
+  .dc-branch-card__icon{width:19px!important;height:19px!important;font-size:13px!important}
+  .dc-branch-card__go{width:18px!important;height:18px!important;font-size:10px!important}
+  .dc-branch-card__body{gap:2px!important}
+  .dc-branch-card__body strong{font-size:clamp(8.6px,2.45vw,10.2px)!important;line-height:1.15!important}
+  .dc-branch-card__body small{font-size:clamp(7.8px,2.1vw,8.8px)!important;line-height:1.17!important}
+  .dc-best-sellers--full-frame .dc-best-sellers__track,
+  .dc-best-sellers--full-frame .dc-best-sellers__card,
+  .dc-best-sellers--full-frame .dc-best-sellers__card img{height:100%!important;min-height:0!important}
+  .dc-contact-section{margin:14px 0 4px!important}
+  .dc-contact-grid{gap:7px!important}
+  .dc-contact-card{gap:6px!important;padding:10px 6px!important;border-radius:15px!important}
+  .dc-contact-icon{flex-basis:26px;width:26px;height:26px;font-size:14px}
+  .dc-contact-copy small{font-size:9px}
+  .dc-contact-copy strong{font-size:clamp(11px,3.1vw,14px)!important}
+}
+@media(max-width:360px){
+  .dc-visit-layout{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)!important;gap:5px!important}
+  .dc-best-sellers--full-frame{aspect-ratio:.44 / 1!important}
+  .dc-branch-card{grid-template-columns:17px minmax(0,1fr) 16px!important;gap:3px!important}
+  .dc-branch-card__icon{width:17px!important;height:17px!important;font-size:12px!important}
+  .dc-branch-card__go{width:16px!important;height:16px!important;font-size:9px!important}
+  .dc-branch-card__body strong{font-size:8.2px!important}
+  .dc-branch-card__body small{font-size:7.6px!important}
+  .dc-contact-copy strong{font-size:10.5px!important}
+}
+
+/* Header refinement: let the logo sit directly on the page background and restore the corner florals. */
+.dc-welcome-shell{
+  background-image:
+    url("dina-floral-tl.png"),
+    url("dina-floral-tr.png"),
+    linear-gradient(180deg,#fff8f7 0%,#ffeff2 100%)!important;
+  background-repeat:no-repeat,no-repeat,no-repeat!important;
+  background-position:left top,right top,center!important;
+  background-size:clamp(100px,19vw,190px) auto,clamp(100px,19vw,190px) auto,100% 100%!important;
+}
+.dc-floral--tl,.dc-floral--tr{display:none!important}
+.dc-corner-logo{
+  display:block!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  mix-blend-mode:normal!important;
+}
+.dc-welcome-header{background:transparent!important}
+@media(max-width:760px){
+  .dc-welcome-shell{
+    background-size:clamp(92px,24vw,126px) auto,clamp(92px,24vw,126px) auto,100% 100%!important;
+    background-position:left top,right top,center!important;
+  }
+  .dc-corner-logo{width:min(165px,42vw)!important;margin:0 auto 6px!important}
+}
+
+/* Desktop layout calibration: restore balanced proportions on laptop/desktop screens.
+   Phone rules above remain unchanged; the photo and four branch cards share one height. */
+@media (min-width: 900px){
+  body.dc-welcome-page{
+    padding:24px clamp(18px,3vw,42px) 42px!important;
+  }
+  .dc-welcome-shell{
+    width:min(100%,1240px)!important;
+    max-width:1240px!important;
+    padding:30px clamp(26px,3.2vw,48px) 38px!important;
+    border-radius:32px!important;
+  }
+  .dc-welcome-header{padding:8px 12px 24px!important}
+  .dc-corner-logo{width:clamp(190px,17vw,250px)!important;margin-bottom:9px!important}
+  .dc-welcome-eyebrow{font-size:12px!important;letter-spacing:2.6px!important}
+  .dc-welcome-rule{font-size:29px!important;margin:7px auto 3px!important}
+  .dc-welcome-header h1{font-size:clamp(42px,3.7vw,56px)!important;line-height:1.08!important}
+
+  .dc-action-grid--menu-only{
+    width:min(100%,860px)!important;
+    max-width:860px!important;
+    margin:8px auto 30px!important;
+  }
+  .dc-action-card--menu{
+    grid-template-columns:82px minmax(0,1fr) 46px!important;
+    min-height:126px!important;
+    padding:16px 24px!important;
+    border-radius:26px!important;
+  }
+  .dc-action-card--menu .dc-action-icon{width:72px!important;height:72px!important}
+  .dc-action-card--menu .dc-action-icon svg{width:58px!important;height:58px!important}
+  .dc-action-card--menu .dc-action-title{font-size:30px!important}
+  .dc-action-card--menu .dc-action-copy{font-size:15px!important}
+  .dc-action-card--menu .dc-action-arrow{width:42px!important;height:42px!important}
+
+  .dc-visit-section{margin:22px 0 28px!important}
+  .dc-section-heading{margin-bottom:18px!important}
+  .dc-section-heading>span{padding:10px 30px!important}
+  .dc-visit-layout{
+    direction:ltr!important;
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;
+    gap:22px!important;
+    align-items:stretch!important;
+  }
+  .dc-best-sellers--full-frame{
+    display:flex!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    align-self:stretch!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border-radius:26px!important;
+  }
+  .dc-best-sellers--full-frame .dc-best-sellers__track,
+  .dc-best-sellers--full-frame .dc-best-sellers__card,
+  .dc-best-sellers--full-frame .dc-best-sellers__card img{
+    height:100%!important;
+    min-height:100%!important;
+  }
+  .dc-branches-panel{height:auto!important;min-height:0!important;align-self:stretch!important}
+  .dc-branch-cards{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:repeat(4,112px)!important;
+    gap:12px!important;
+  }
+  .dc-branch-card{
+    display:grid!important;
+    grid-template-columns:40px minmax(0,1fr) 34px!important;
+    gap:12px!important;
+    width:100%!important;
+    height:112px!important;
+    min-height:112px!important;
+    max-height:112px!important;
+    padding:12px 16px!important;
+    border-radius:20px!important;
+  }
+  .dc-branch-card__icon{width:36px!important;height:36px!important;font-size:22px!important}
+  .dc-branch-card__go{width:30px!important;height:30px!important;font-size:16px!important}
+  .dc-branch-card__body{gap:5px!important}
+  .dc-branch-card__body strong{font-size:16px!important;line-height:1.3!important}
+  .dc-branch-card__body small{font-size:13px!important;line-height:1.4!important}
+
+  .dc-talabat-card{
+    grid-template-columns:210px minmax(0,1fr)!important;
+    gap:24px!important;
+    margin:24px 0 22px!important;
+    padding:20px 26px!important;
+    border-radius:27px!important;
+  }
+  .dc-talabat-illustration{min-height:108px!important}
+  .dc-talabat-box{width:124px!important;height:78px!important;font-size:23px!important}
+  .dc-talabat-scooter{font-size:76px!important}
+  .dc-talabat-copy>strong{font-size:21px!important;padding:10px 18px!important}
+  .dc-talabat-copy>span{font-size:14px!important}
+  .dc-talabat-cities span{min-width:130px!important;padding:8px 22px!important;font-size:16px!important}
+  .dc-payment-section{margin-top:20px!important}
+  .dc-payment-grid{gap:18px!important}
+  .dc-payment-card{min-height:92px!important;padding:16px!important;border-radius:22px!important}
+  .dc-instagram-link{margin-top:20px!important;padding:12px 24px!important}
+  .dc-contact-section{margin:22px 0 6px!important}
+  .dc-contact-grid{gap:16px!important}
+  .dc-contact-card{min-height:76px!important;padding:16px 20px!important;border-radius:22px!important}
+  .dc-contact-copy strong{font-size:18px!important}
+}
+
+/* Desktop photo/branch alignment: make the product image frame exactly match
+   the full four-card branch stack. Kept outside the mobile breakpoint. */
+@media (min-width: 761px) {
+  .dc-visit-layout {
+    align-items: start !important;
+  }
+  .dc-branches-panel {
+    height: 325px !important;
+    min-height: 325px !important;
+    max-height: 325px !important;
+    align-self: start !important;
+  }
+  .dc-branch-cards {
+    display: grid !important;
+    height: 325px !important;
+    grid-template-rows: repeat(4, 76px) !important;
+    gap: 7px !important;
+  }
+  .dc-branch-card {
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+  .dc-best-sellers--full-frame {
+    height: 325px !important;
+    min-height: 325px !important;
+    max-height: 325px !important;
+    align-self: start !important;
+  }
+  .dc-best-sellers--full-frame .dc-best-sellers__track,
+  .dc-best-sellers--full-frame .dc-best-sellers__card,
+  .dc-best-sellers--full-frame .dc-best-sellers__card img {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+}
+
+
+/* Social links: Instagram and Facebook, aligned as one compact group. */
+.dc-social-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  margin:18px auto 2px;
+  flex-wrap:wrap;
+}
+.dc-social-links>.dc-instagram-link{margin:0!important}
+.dc-facebook-link{
+  display:grid;
+  place-items:center;
+  flex:0 0 54px;
+  width:54px;
+  height:54px;
+  border:1.5px solid #e7aab5;
+  border-radius:18px;
+  background:linear-gradient(145deg,#fffefd,#ffeff0);
+  box-shadow:0 6px 16px rgba(111,31,55,.07);
+  color:#1877f2;
+  text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.dc-facebook-link:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(111,31,55,.12)}
+.dc-facebook-link:focus-visible{outline:3px solid #a20f4b;outline-offset:3px}
+.dc-facebook-link svg{display:block;width:37px;height:37px}
+@media(max-width:760px){
+  .dc-social-links{gap:8px;margin:14px auto 2px}
+  .dc-facebook-link{flex-basis:43px;width:43px;height:43px;border-radius:14px}
+  .dc-facebook-link svg{width:31px;height:31px}
+}
+
+
+/* Social links: show a clear text label for both Instagram and Facebook. */
+.dc-social-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  justify-content:center;
+  gap:10px;
+  width:min(100%,620px);
+  margin:18px auto 2px;
+}
+.dc-social-links>.dc-instagram-link,
+.dc-social-links>.dc-facebook-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  min-height:54px;
+  height:auto;
+  box-sizing:border-box;
+  margin:0!important;
+  padding:9px 10px;
+  border:1.5px solid #e7aab5;
+  border-radius:30px;
+  background:linear-gradient(145deg,#fffefd,#ffeff0);
+  box-shadow:0 6px 16px rgba(111,31,55,.07);
+  text-decoration:none;
+}
+.dc-social-links>.dc-instagram-link strong,
+.dc-social-links>.dc-facebook-link strong{
+  min-width:0;
+  color:#76213d;
+  font:700 clamp(11px,1.2vw,15px) Georgia,"Times New Roman",serif;
+  line-height:1.15;
+  text-align:center;
+  white-space:normal;
+}
+.dc-social-links>.dc-facebook-link{
+  color:#1877f2;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.dc-social-links>.dc-facebook-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(111,31,55,.12);
+}
+.dc-social-links>.dc-facebook-link:focus-visible{
+  outline:3px solid #a20f4b;
+  outline-offset:3px;
+}
+.dc-social-links>.dc-facebook-link svg{
+  display:block;
+  flex:0 0 29px;
+  width:29px;
+  height:29px;
+}
+.dc-social-links>.dc-instagram-link .dc-instagram-icon{
+  flex:0 0 29px;
+  width:29px;
+  height:29px;
+  font-size:25px;
+}
+.dc-social-links>.dc-instagram-link>span:last-child{
+  display:none;
+}
+@media(max-width:760px){
+  .dc-social-links{gap:8px;margin:14px auto 2px}
+  .dc-social-links>.dc-instagram-link,
+  .dc-social-links>.dc-facebook-link{gap:5px;min-height:48px;padding:7px 6px}
+  .dc-social-links>.dc-instagram-link strong,
+  .dc-social-links>.dc-facebook-link strong{font-size:clamp(10px,2.9vw,12px)}
+  .dc-social-links>.dc-instagram-link .dc-instagram-icon{flex-basis:25px;width:25px;height:25px;font-size:22px}
+  .dc-social-links>.dc-facebook-link svg{flex-basis:25px;width:25px;height:25px}
+}
+
+
+/* GM-managed branch cards: preserve the approved design for any number of active branches. */
+.dc-branches-panel .dc-branch-loading{
+  display:grid;place-items:center;min-height:100px;padding:14px 10px;
+  border:1px dashed #e5b2bf;border-radius:14px;background:rgba(255,255,255,.62);
+  color:#8f6573;text-align:center;font-size:12px;line-height:1.5;
+}
+.dc-branch-card--unlinked{cursor:default;pointer-events:none;}
+.dc-branch-card--unlinked .dc-branch-card__go{background:#bda3ad;color:#fff;}
+@media(max-width:760px){
+  .dc-branch-cards{grid-template-rows:repeat(var(--dc-branch-count,4),minmax(0,1fr))!important;}
+  .dc-best-sellers--full-frame{aspect-ratio:var(--dc-branch-photo-ratio,.47 / 1)!important;}
+}
+
+
+/* Desktop branch stack stays aligned with the photo while GM can add or remove branches. */
+@media(min-width:761px){
+  .dc-visit-layout{align-items:stretch!important;}
+  .dc-branches-panel{
+    height:auto!important;min-height:0!important;max-height:none!important;
+    padding:0!important;align-self:stretch!important;
+  }
+  .dc-branch-cards{
+    display:grid!important;height:auto!important;
+    grid-template-rows:repeat(var(--dc-branch-count,4),76px)!important;
+    gap:7px!important;
+  }
+  .dc-branch-card{height:76px!important;min-height:76px!important;max-height:76px!important;}
+  .dc-best-sellers--full-frame{
+    height:100%!important;min-height:0!important;max-height:none!important;
+    align-self:stretch!important;
+  }
+}
