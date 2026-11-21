@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF1F3">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dina's Corner">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest?v=20261115-welcome-poster-match-v6">
+<link rel="apple-touch-icon" href="assets/dina-corner-icon-192.png">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Dina's Corner — explore our menu, discover customer favourites and find our branches.">
+<title>Dina's Corner | Welcome</title>
+<link rel="stylesheet" href="assets/dina-welcome.css?v=20261117-official-brand-mark-v1">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.105.0"></script>
+<script src="assets/tenant-config.js?v=20261115-welcome-poster-match-v6"></script>
+
+<style id="dc-payment-cards-small-adjustment">
+  /* Payment cards only: balanced dimensions and a clearer InstaPay wordmark */
+  .dc-payment-section .dc-payment-grid {
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .dc-payment-section .dc-payment-grid > .dc-payment-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 76px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dc-payment-section .dc-payment-brand.dc-instapay {
+    font-size: clamp(23px, 3vw, 29px) !important;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .dc-payment-section .dc-payment-brand.dc-vodafone {
+    font-size: clamp(17px, 2.2vw, 21px);
+    line-height: 1.15;
+  }
+
+  @media (max-width: 600px) {
+    .dc-payment-section .dc-payment-grid > .dc-payment-card {
+      min-height: 66px;
+      padding: 9px 10px;
+    }
+
+    .dc-payment-section .dc-payment-brand.dc-instapay {
+      font-size: clamp(19px, 4.4vw, 24px) !important;
+    }
+
+    .dc-payment-section .dc-payment-brand.dc-vodafone {
+      font-size: clamp(14px, 3.2vw, 17px);
+    }
+  }
+</style>
+
+<style id="dc-mobile-cards-final-layout">
+  /* One consistent mobile layout: full-width branch and payment cards, without forced row stretching. */
+  @media (max-width: 760px) {
+    .dc-visit-layout {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 10px !important;
+      align-items: start !important;
+    }
+
+    .dc-branches-panel {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      box-sizing: border-box !important;
+      gap: 6px !important;
+      padding: 0 !important;
+      overflow: visible !important;
+    }
+
+    .dc-branches-panel .dc-branch-cards {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      grid-template-rows: none !important;
+      grid-auto-rows: 44px !important;
+      align-content: start !important;
+      gap: 4px !important;
+      row-gap: 4px !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .dc-branches-panel .dc-branch-card {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+      height: 44px !important;
+      min-height: 44px !important;
+      max-height: 44px !important;
+      margin: 0 !important;
+      padding: 0 12px !important;
+      overflow: hidden !important;
+      border-radius: 14px !important;
+    }
+
+    .dc-branches-panel .dc-branch-card__body {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      text-align: center !important;
+    }
+
+    .dc-branches-panel .dc-branch-card__body strong {
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      text-align: center !important;
+      font-size: clamp(11px, 3.1vw, 13px) !important;
+      line-height: 1.2 !important;
+    }
+
+    .dc-branches-panel .dc-branch-card__body small,
+    .dc-branches-panel .dc-branch-card__icon,
+    .dc-branches-panel .dc-branch-card__go {
+      display: none !important;
+    }
+
+    .dc-branches-panel .dc-payment-section {
+      display: block !important;
+      flex: 0 0 auto !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 2px 0 0 !important;
+      padding: 0 !important;
+    }
+
+    .dc-branches-panel .dc-payment-section .dc-section-heading {
+      margin: 0 auto 5px !important;
+      gap: 5px !important;
+      font-size: 15px !important;
+      line-height: 1.2 !important;
+    }
+
+    .dc-branches-panel .dc-payment-section .dc-section-heading > span {
+      padding: 4px 13px !important;
+    }
+
+    .dc-branches-panel .dc-payment-grid {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      grid-auto-rows: 44px !important;
+      align-content: start !important;
+      gap: 4px !important;
+      row-gap: 4px !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .dc-branches-panel .dc-payment-grid > .dc-payment-card {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+      height: 44px !important;
+      min-height: 44px !important;
+      max-height: 44px !important;
+      margin: 0 !important;
+      padding: 5px 12px !important;
+      gap: 6px !important;
+      border-radius: 14px !important;
+      line-height: 1.1 !important;
+    }
+
+    .dc-branches-panel .dc-payment-brand.dc-instapay {
+      margin: 0 !important;
+      font-size: 19px !important;
+      line-height: 1.1 !important;
+      white-space: nowrap !important;
+    }
+
+    .dc-branches-panel .dc-payment-brand.dc-vodafone {
+      margin: 0 !important;
+      font-size: 15px !important;
+      line-height: 1.1 !important;
+      white-space: nowrap !important;
+    }
+  }
+</style>
+
+
+<style id="dc-mobile-image-card-height-adjustment">
+  /* Mobile only: reduce the featured photo card height while keeping its width and image crop. */
+  @media (max-width: 760px) {
+    .dc-best-sellers--full-frame {
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: .75 / 1 !important;
+      align-self: stretch !important;
+    }
+    .dc-best-sellers--full-frame .dc-best-sellers__track,
+    .dc-best-sellers--full-frame .dc-best-sellers__card,
+    .dc-best-sellers--full-frame .dc-best-sellers__card img {
+      height: 100% !important;
+      min-height: 0 !important;
+    }
+  }
+</style>
+
+
+<style id="dc-mobile-images-right-layout">
+  /* Mobile only: place the animated product photos on the left, with branch/payment cards beside them on the right. */
+  @media (max-width: 760px) {
+    .dc-visit-layout {
+      display: grid !important;
+      direction: rtl !important;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr) !important;
+      grid-template-rows: auto !important;
+      grid-auto-flow: row !important;
+      align-items: stretch !important;
+      gap: 8px !important;
+      width: 100% !important;
+    }
+
+    .dc-visit-layout > .dc-best-sellers {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      order: 0 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: auto !important;
+      align-self: stretch !important;
+    }
+
+    .dc-visit-layout > .dc-branches-panel {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+      order: 1 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      height: auto !important;
+      min-height: 0 !important;
+      align-self: stretch !important;
+      box-sizing: border-box !important;
+    }
+
+    .dc-best-sellers--full-frame .dc-best-sellers__track,
+    .dc-best-sellers--full-frame .dc-best-sellers__card,
+    .dc-best-sellers--full-frame .dc-best-sellers__card img {
+      height: 100% !important;
+      min-height: 0 !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .dc-visit-layout {
+      grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr) !important;
+      gap: 6px !important;
+    }
+  }
+</style>
+
+
+<style id="dc-mobile-two-column-final">
+/* Mobile: product photos LEFT; branch and payment cards RIGHT. */
+@media (max-width: 760px) {
+  .dc-visit-layout { display:grid!important; direction:ltr!important; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important; grid-template-rows:auto!important; grid-auto-flow:row!important; align-items:stretch!important; gap:8px!important; width:100%!important; }
+  .dc-visit-layout > .dc-best-sellers { grid-column:1!important; grid-row:1!important; order:0!important; width:100%!important; min-width:0!important; height:auto!important; min-height:0!important; aspect-ratio:auto!important; align-self:stretch!important; padding:5px!important; box-sizing:border-box!important; }
+  .dc-visit-layout > .dc-branches-panel { grid-column:2!important; grid-row:1!important; order:0!important; width:100%!important; min-width:0!important; height:auto!important; min-height:0!important; align-self:stretch!important; padding:5px!important; box-sizing:border-box!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-branch-cards { display:flex!important; flex-direction:column!important; height:auto!important; gap:5px!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-branch-card { flex:0 0 auto!important; width:100%!important; min-height:44px!important; height:44px!important; max-height:44px!important; box-sizing:border-box!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-payment-section { margin-top:7px!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-section-heading { margin:4px 0 6px!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-payment-grid { display:flex!important; flex-direction:column!important; gap:5px!important; }
+  .dc-visit-layout > .dc-branches-panel .dc-payment-card { width:100%!important; min-height:44px!important; height:44px!important; box-sizing:border-box!important; }
+  .dc-best-sellers--full-frame .dc-best-sellers__track, .dc-best-sellers--full-frame .dc-best-sellers__card, .dc-best-sellers--full-frame .dc-best-sellers__card img { height:100%!important; min-height:0!important; }
+}
+@media (max-width:360px) { .dc-visit-layout { grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)!important; gap:6px!important; } }
+</style>
+
+
+<style id="dc-soft-botanical-card-finish">
+:root {
+  /* Soft Dina’s Corner palette: rose, sage green and champagne gold */
+  --dc-frame-rose: #D99EAF;
+  --dc-frame-rose-soft: #F2D8DE;
+  --dc-frame-sage: #B8C8B2;
+  --dc-frame-gold: #E7D5A8;
+  --dc-frame-gold-light: #F7EDCF;
+}
+/* A gentle rose frame with quiet sage and champagne highlights across Welcome. */
+.dc-welcome-shell,
+.dc-action-card,
+.dc-branch-card,
+.dc-payment-card,
+.dc-talabat-card,
+.dc-instagram-link,
+.dc-facebook-link,
+.dc-contact-grid > *,
+.dc-best-sellers,
+.dc-best-sellers__card {
+  border-color: var(--dc-frame-rose) !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 237, 207, .78),
+    0 0 0 2px rgba(184, 200, 178, .28),
+    0 5px 12px rgba(174, 108, 129, .10),
+    inset 0 0 0 1px rgba(231, 213, 168, .52),
+    inset 0 1px 4px rgba(255, 250, 246, .78),
+    inset 0 -1px 2px rgba(184, 200, 178, .13) !important;
+}
+/* Section labels use a muted rose gradient and soft botanical/champagne edging. */
+.dc-section-heading > span {
+  background: linear-gradient(135deg, #EBC4CD 0%, #DFA7B7 100%) !important;
+  border-color: var(--dc-frame-rose) !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 237, 207, .82),
+    0 0 0 2px rgba(184, 200, 178, .24),
+    0 4px 9px rgba(174, 108, 129, .10),
+    inset 0 1px 4px rgba(255, 250, 246, .76) !important;
+}
+/* A small sage-and-champagne accent replaces the stronger pink sparkle. */
+.dc-action-card--menu {
+  position: relative !important;
+  overflow: hidden !important;
+  border-width: 2px !important;
+}
+.dc-action-card--menu::after {
+  content: "✦";
+  position: absolute;
+  inset-inline-end: 13px;
+  top: 7px;
+  color: var(--dc-frame-sage);
+  font-size: 17px;
+  line-height: 1;
+  text-shadow: 0 0 3px rgba(247, 237, 207, .92), 0 1px 3px rgba(174, 108, 129, .14);
+  pointer-events: none;
+}
+/* Remove the city availability text and city labels from the Talabat card */
+.dc-talabat-copy > span,
+.dc-talabat-cities { display: none !important; }
+/* Shorter Talabat card while keeping the illustration and order title */
+.dc-talabat-card {
+  min-height: 0 !important;
+  padding: 7px 12px !important;
+  margin-block: 10px !important;
+  gap: 8px !important;
+}
+.dc-talabat-illustration { min-height: 54px !important; }
+.dc-talabat-box { height: 49px !important; }
+.dc-talabat-scooter { font-size: 43px !important; }
+.dc-talabat-copy { gap: 0 !important; }
+.dc-talabat-copy > strong { padding: 7px 9px !important; line-height: 1.25 !important; }
+@media (max-width: 760px) {
+  .dc-talabat-card { padding: 5px 8px !important; margin-block: 8px !important; }
+  .dc-talabat-illustration { min-height: 48px !important; }
+  .dc-talabat-box { height: 43px !important; }
+  .dc-talabat-scooter { font-size: 38px !important; }
+  .dc-talabat-copy > strong { padding: 6px 6px !important; }
+}
+/* Welcome page: keep the Talabat button slightly shorter, with a small gap before the scooter. */
+.dc-talabat-card {
+  display: flex !important;
+  flex-direction: row !important;
+  direction: rtl !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.dc-talabat-illustration {
+  flex: 0 0 clamp(125px, 22vw, 170px) !important;
+  min-width: 0 !important;
+}
+.dc-talabat-copy {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+.dc-talabat-copy > strong {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 760px) {
+  .dc-talabat-card { gap: 7px !important; }
+  .dc-talabat-illustration { flex-basis: clamp(105px, 29vw, 130px) !important; }
+}
+</style>
+
+
+<style id="dc-header-logo-florals-cleanup">
+/* Header-only refinement: remove the strip and divider below the logo. */
+.dc-welcome-eyebrow,
+.dc-welcome-rule { display: none !important; }
+.dc-welcome-header {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 2px 8px 14px !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+}
+.dc-corner-logo {
+  display: block !important;
+  width: clamp(158px, 20vw, 190px) !important;
+  max-width: 52vw !important;
+  height: auto !important;
+  margin: 0 auto 5px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  object-fit: contain !important;
+  mix-blend-mode: multiply !important;
+}
+/* Balanced floral corners frame the centered logo without covering it. */
+.dc-welcome-shell {
+  background-image:
+    url("assets/dina-floral-tl.png"),
+    url("assets/dina-floral-tr.png"),
+    linear-gradient(180deg,#fff8f7 0%,#ffeff2 100%) !important;
+  background-repeat: no-repeat,no-repeat,no-repeat !important;
+  background-position: left 4px top 3px,right 4px top 3px,center !important;
+  background-size: clamp(78px,10vw,118px) auto,clamp(78px,10vw,118px) auto,100% 100% !important;
+}
+@media (max-width: 760px) {
+  .dc-welcome-shell {
+    background-position: left 2px top 2px,right 2px top 2px,center !important;
+    background-size: clamp(76px,23vw,96px) auto,clamp(76px,23vw,96px) auto,100% 100% !important;
+  }
+  .dc-welcome-header { padding: 0 4px 11px !important; }
+  .dc-corner-logo { width: min(158px,43vw) !important; max-width: 43vw !important; margin-bottom: 3px !important; }
+}
+</style>
+
+
+<style id="dc-welcome-photo-fills-frame">
+/* Keep the featured product photo flush with the inside edge of its frame. */
+.dc-visit-layout > .dc-best-sellers.dc-best-sellers--full-frame {
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+.dc-best-sellers--full-frame .dc-best-sellers__track,
+.dc-best-sellers--full-frame .dc-best-sellers__card,
+.dc-best-sellers--full-frame .dc-best-sellers__card img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.dc-best-sellers--full-frame .dc-best-sellers__card img {
+  display: block !important;
+  object-fit: cover !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+</style>
+
+
+
+<style id="dc-readable-headings-refinement">
+/* Improve title contrast while preserving Dina's Corner's soft rose/sage/champagne palette. */
+.dc-welcome-header h1,
+.dc-welcome-header h1 .dc-welcome-line,
+.dc-welcome-header h1 .dc-welcome-brand {
+  color: #842D50 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.82), 0 2px 5px rgba(132,45,80,.12) !important;
+}
+.dc-action-card .dc-action-title {
+  color: #8B3457 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.88) !important;
+}
+.dc-action-card .dc-action-copy {
+  color: #72505F !important;
+  font-weight: 650 !important;
+}
+/* Section heading pills: richer dusty rose gives white lettering clear contrast. */
+.dc-section-heading > span {
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #D08AA0 0%, #B96582 100%) !important;
+  border-color: #B96B85 !important;
+  text-shadow: 0 1px 2px rgba(91,35,58,.42) !important;
+  box-shadow: 0 4px 10px rgba(145,73,101,.16), inset 0 1px 3px rgba(255,255,255,.55) !important;
+}
+.dc-section-heading::before,
+.dc-section-heading::after {
+  background: linear-gradient(90deg, transparent, #C98299) !important;
+}
+/* Branch names and supporting text stay dark enough against the pale cards. */
+.dc-branch-card__body strong {
+  color: #762A4A !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.86) !important;
+}
+.dc-branch-card__body small {
+  color: #6D4B59 !important;
+  font-weight: 650 !important;
+}
+.dc-talabat-copy > strong {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 2px rgba(91,35,58,.40) !important;
+  background: linear-gradient(135deg, #D08AA0 0%, #B96582 100%) !important;
+}
+.dc-contact-section .dc-section-heading > span,
+.dc-payment-section .dc-section-heading > span { color: #FFFFFF !important; }
+.dc-contact-copy small { color: #795466 !important; font-weight: 800 !important; }
+.dc-contact-copy strong,
+.dc-instagram-link strong,
+.dc-facebook-link strong { color: #782A4A !important; }
+</style>
+
+<link rel="stylesheet" href="assets/dina-brand-identity.css?v=20261117-card-floral-accent-v1">
+<link rel="stylesheet" href="assets/dc-whatsapp-order.css?v=20261121-wa-order-v3">
+</head>
+<body class="dc-welcome-page dc-welcome-html-mode">
+<img class="dc-floral dc-floral--tl" src="assets/dina-floral-tl.png" alt="" aria-hidden="true">
+<img class="dc-floral dc-floral--tr" src="assets/dina-floral-tr.png" alt="" aria-hidden="true">
+<main class="dc-welcome-shell" aria-label="Dina’s Corner welcome page">
+  <header class="dc-welcome-header">
+    <img class="dc-corner-logo" src="assets/dina-corner-logo-transparent.png" alt="Dina’s Corner Healthy Bakery">
+    <h1><span class="dc-welcome-line">Welcome to</span><span class="dc-welcome-brand">Dina’s Corner</span></h1>
+  </header>
+
+  <section class="dc-action-grid dc-action-grid--menu-only" aria-label="Dina’s Corner menu and online ordering">
+    <a class="dc-action-card dc-action-card--menu dc-order-now-home" id="viewMenuLink" href="menu.html" aria-label="View our menu and order now">
+      <span class="dc-action-copy-wrap"><strong class="dc-action-title">View Our Menu &amp; Order Now</strong><span class="dc-action-copy">Choose your items and order on WhatsApp</span></span>
+      <span class="dc-action-arrow" aria-hidden="true">›</span>
+    </a>
+  </section>
+
+  <section class="dc-visit-section" aria-labelledby="visitTitle">
+    <h2 class="dc-section-heading" id="visitTitle"><span>Our Branches</span></h2>
+    <div class="dc-visit-layout">
+      <section class="dc-best-sellers dc-best-sellers--full-frame" id="dcBestSellers" aria-label="Dina’s Corner best-selling products">
+        <div class="dc-best-sellers__track" id="dcBestSellersTrack" tabindex="0" role="region" aria-label="Best-selling products. Swipe left or right to explore.">
+          <div class="dc-best-sellers__empty" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="dc-branches-panel" aria-label="Branch locations">
+        <div class="dc-branch-cards" id="dcBranchCards" aria-live="polite" aria-busy="true">
+          <div class="dc-branch-loading">Loading branches…</div>
+        </div>
+        <section class="dc-payment-section" aria-labelledby="paymentTitle">
+          <h2 class="dc-section-heading" id="paymentTitle"><span> Ease Payment</span></h2>
+          <div class="dc-payment-grid">
+            <a class="dc-payment-card" href="https://ipn.eg/S/dinakhaledzakaria/instapay/1lXywS" target="_blank" rel="noopener noreferrer" aria-label="Pay with InstaPay" style="text-decoration:none;color:inherit"><strong class="dc-payment-brand dc-instapay">InstaPay<span>›</span></strong></a>
+            <a class="dc-payment-card" id="vodafoneCashTransferLink" href="http://vf.eg/vfcash?id=mt&amp;qrId=biSpPu&amp;qrString=01eedd4e79838704931825fda0ef14264500c9b5f290687af5d8d3ecb5a95398" onclick="return copyAndOpenVodafoneCash(event)" aria-label="نسخ رقم محفظة دينا كورنر وفتح Vodafone Cash"><strong class="dc-payment-brand dc-vodafone">▣ Vodafone Cash</strong></a>
+          </div>
+        </section>
+      </section>
+    </div>
+  </section>
+
+  <a class="dc-talabat-card" href="https://www.talabat.com/egypt/dinas-corner" target="_blank" rel="noopener noreferrer" aria-label="Order Dina’s Corner on Talabat">
+    <div class="dc-talabat-illustration" aria-hidden="true"><span class="dc-talabat-box">talabat</span><span class="dc-talabat-scooter">🛵</span></div>
+    <div class="dc-talabat-copy"><strong> Order From Talabat </strong></div>
+  </a>
+
+
+  <nav class="dc-social-links" aria-label="Dina’s Corner social media">
+    <a class="dc-instagram-link" href="https://www.instagram.com/dinas_corner_healthy?vrfl=MWVqN2J4ejN4M2F5cA==" target="_blank" rel="noopener noreferrer" aria-label="Follow Dina’s Corner on Instagram"><span class="dc-instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.5" r="1.25" fill="currentColor"/></svg></span><strong>Follow Us on Instagram</strong><span aria-hidden="true">›</span></a>
+    <a class="dc-facebook-link" href="https://www.facebook.com/share/g/1FXw3FBZbP/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow Dina’s Corner on Facebook" title="Dina’s Corner on Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.55c0-.93.26-1.56 1.6-1.56h1.7V3.12c-.3-.04-1.35-.12-2.56-.12-2.53 0-4.26 1.54-4.26 4.37V9.6H7.1v3.2h2.78V21h3.52z"/></svg>
+      <strong>Follow Us on Facebook</strong>
+    </a>
+  </nav>
+
+  <section class="dc-contact-section" aria-labelledby="contactTitle">
+    <h2 class="dc-section-heading" id="contactTitle"><span> Contact us </span></h2>
+    <div class="dc-contact-grid">
+      <a class="dc-contact-card" href="tel:01066670803" aria-label="Call mobile number 01066670803"><span class="dc-contact-icon dc-contact-icon--mobile" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="6.5" y="2.2" width="11" height="19.6" rx="2.1" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18.2h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="dc-contact-copy"><small>Mobile</small><strong dir="ltr">01066670803</strong></span></a>
+      <a class="dc-contact-card" href="tel:0403596418" aria-label="Call landline number 0403596418"><span class="dc-contact-icon dc-contact-icon--landline" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5.1 4.7c.3-.8 1.2-1.2 2-.9l2.3.9c.8.3 1.2 1.2.9 2l-.8 2a14.3 14.3 0 0 0 5.8 5.8l2-.8c.8-.3 1.7.1 2 .9l.9 2.3c.3.8-.1 1.7-.9 2-1.4.6-3 .6-4.5 0A18.1 18.1 0 0 1 5.1 9.2c-.6-1.5-.6-3.1 0-4.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="dc-contact-copy"><small>Landline</small><strong dir="ltr">0403596418</strong></span></a>
+    </div>
+  </section>
+  <div id="copyToast" class="dc-copy-toast" role="status" aria-live="polite">Copied Successfully!</div>
+</main>
+
+<div class="dc-best-lightbox" id="dcBestSellersLightbox" hidden role="dialog" aria-modal="true" aria-label="Product photo preview">
+  <button class="dc-best-lightbox__close" id="dcBestSellersLightboxClose" type="button" aria-label="Close product photo">×</button>
+  <img id="dcBestSellersLightboxImage" alt="">
+
+</div>
+
+<script>
+async function copyPaymentNumber(number){
+  const toast=document.getElementById('copyToast');
+  try{await navigator.clipboard.writeText(number);toast.textContent='Copied Successfully!';}
+  catch(_){toast.textContent='Please copy the number: '+number;}
+  toast.classList.add('show');clearTimeout(window.copyToastTimer);window.copyToastTimer=setTimeout(()=>toast.classList.remove('show'),2200);
+}
+
+// On one tap, copy Dina's wallet number first, then open the official Vodafone Cash QR link.
+// The customer may still need to paste the copied number inside the Vodafone app.
+async function copyAndOpenVodafoneCash(event){
+  event.preventDefault();
+  const link=event.currentTarget;
+  const number='01002348055';
+  const toast=document.getElementById('copyToast');
+  let copied=false;
+
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(number);
+      copied=true;
+    }
+  }catch(_){ /* Use the compatibility fallback below. */ }
+
+  if(!copied){
+    let field;
+    try{
+      field=document.createElement('textarea');
+      field.value=number;
+      field.setAttribute('readonly','');
+      field.style.position='fixed';
+      field.style.left='-9999px';
+      field.style.top='0';
+      document.body.appendChild(field);
+      field.select();
+      copied=document.execCommand('copy');
+    }catch(_){
+      copied=false;
+    }finally{
+      if(field) field.remove();
+    }
+  }
+
+  if(toast){
+    toast.textContent=copied
+      ? 'Copied .'
+      : 'wallet num : 01002348055';
+    toast.classList.add('hiden');
+  }
+
+  window.location.href=link.href;
+  return false;
+}
+</script>
+<script src="assets/config.js?v=20261115-welcome-poster-match-v6"></script>
+<script src="assets/dina-branch-maps.js?v=20261116-exact-owner-maps-v5-mafaza"></script>
+<script src="assets/app.js?v=20261116-exact-owner-maps-v5-mafaza"></script>
+<script src="assets/dina-welcome.js?v=20261117-gm-branch-location-fix-v1"></script>
+<script src="assets/dina-best-sellers.js?v=20261115-best-sellers-autoplay-2s-v1"></script>
+</body>
+</html>

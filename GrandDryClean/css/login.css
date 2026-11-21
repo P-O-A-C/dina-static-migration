@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--navy:#0B4935;--gold:#D3A13D;--ink:#2E2922;--muted:#81786D;--line:#E8DFD2;--cream:#F7F1E7}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 14% 12%,#e5eee9,transparent 30%),var(--cream);font-family:"Cairo",Tahoma,sans-serif;color:var(--ink)}
+.login-card{width:min(940px,100%);min-height:550px;background:#fff;border:1px solid #E8DFD2;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 24px 70px #0B493518}
+.visual-panel{padding:52px clamp(28px,5vw,60px);background:linear-gradient(145deg,#0B4935,#07513A);color:#fff;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;overflow:hidden}
+.visual-panel:before,.visual-panel:after{content:"";position:absolute;border:1px solid #ffffff20;border-radius:50%;width:350px;height:350px;right:-185px;top:-170px}.visual-panel:after{width:240px;height:240px;right:-130px;top:-115px;border-color:#D3A13D66}
+.symbol{width:55px;height:55px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:34px Georgia;margin-bottom:21px}
+.visual-panel>span,.eyebrow{font-size:9px;font-weight:800;letter-spacing:1.8px;color:var(--gold)}
+.visual-panel h1{font-size:clamp(35px,4.5vw,52px);line-height:1.2;letter-spacing:3px;margin:13px 0}.visual-panel h1 em{font-style:normal;color:#e0c99c}
+.visual-panel p{color:#E3E0D5;font-size:12px;line-height:2}.visual-line{width:65px;height:3px;background:var(--gold);margin:22px 0}.visual-panel small{font-size:8px;letter-spacing:1.6px;color:#c4d4d8}
+.form-panel{padding:58px clamp(27px,5vw,62px);display:flex;flex-direction:column;justify-content:center}.form-panel h2{font-size:25px;color:var(--navy);margin:8px 0 5px}.intro{font-size:11px;color:var(--muted);line-height:2;margin:0}
+.form-panel form{display:grid;gap:8px;margin-top:23px}.form-panel label{font-size:11px;font-weight:700;color:var(--navy);margin-top:6px}.form-panel input{height:47px;border:1px solid var(--line);border-radius:7px;background:#fbfcfa;padding:0 13px;direction:ltr;text-align:left;font:12px "Cairo";outline-color:var(--gold)}
+.form-panel button{height:48px;margin-top:13px;border:0;border-radius:7px;background:var(--navy);color:white;font:800 12px "Cairo";cursor:pointer}.form-panel button:disabled{opacity:.6;cursor:wait}.form-panel button span{color:var(--gold);margin-right:10px}
+.message{background:#fff5e6;color:#826b43;padding:9px 11px;border-radius:6px;font-size:10px;line-height:1.8;overflow-wrap:anywhere}.message[hidden]{display:none}.customer-link{font-size:10px;color:#507b8a;margin-top:16px;text-decoration:none}
+.form-panel footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:29px;padding-top:14px;gap:10px}.form-panel footer strong{font-size:9px;letter-spacing:1.1px;color:var(--navy)}.form-panel footer span{font-size:8px;letter-spacing:1px;color:#98a3a5}
+@media(max-width:700px){body{padding:12px;place-items:start center}.login-card{grid-template-columns:1fr;max-width:480px;min-height:0;border-radius:15px}.visual-panel{min-height:205px;padding:24px 27px}.symbol{width:40px;height:40px;font-size:26px;margin-bottom:9px}.visual-panel h1{font-size:32px;margin:7px 0}.visual-panel p{font-size:10px;margin:4px 0}.visual-line{margin:9px 0;width:45px}.visual-panel small{font-size:7px}.form-panel{padding:29px 25px 24px}.form-panel h2{font-size:22px}.form-panel footer{margin-top:22px}}
+
+
+/* GRAND DRY CLEAN — signature identity */
+:root{--brown:#302119;--emerald:#07513A;--navy:#0B4935;--gold:#D3A13D;--ink:#2E2922;--muted:#81786D;--line:#E8DFD2;--cream:#F7F1E7}
+body{background:radial-gradient(circle at 14% 12%,#EAF0E8,transparent 30%),var(--cream)}
+.login-card{border-color:#E8DFD2;box-shadow:0 24px 70px #3021191a}
+.visual-panel{background:linear-gradient(145deg,#302119 0%,#3A2A21 43%,#07513A 100%)}
+.visual-panel:after{border-color:#D3A13D88}
+.visual-panel h1 em{color:#E9C979}
+.symbol{background:#ffffff0c;box-shadow:0 0 0 5px #D3A13D12}
+.form-panel h2,.form-panel label{color:#07513A}
+@media(max-width:700px){.visual-panel{background:linear-gradient(145deg,#302119,#07513A)}}
+
+/* MOBILE REFINEMENT — GRAND DRY CLEAN LOGIN */
+@media (max-width: 700px) {
+  html, body { max-width:100%; }
+  body { min-height:100dvh; padding:12px; place-items:center; }
+  .login-card { width:100%; max-width:480px; min-height:0; }
+  .visual-panel { min-height:190px; padding:22px 23px; }
+  .visual-panel h1 { font-size:clamp(27px, 8vw, 32px); letter-spacing:1.5px; }
+  .visual-panel p { max-width:100%; font-size:11px; line-height:1.8; }
+  .form-panel { padding:26px 21px 22px; }
+  .form-panel h2 { font-size:21px; }
+  .form-panel label { font-size:11px; }
+  .form-panel input { height:46px; font-size:13px; }
+  .form-panel button { min-height:46px; font-size:12px; }
+  .form-panel footer { flex-wrap:wrap; margin-top:20px; }
+}
+@media (max-width: 380px) {
+  body { padding:8px; }
+  .login-card { border-radius:13px; }
+  .visual-panel { min-height:170px; padding:18px 18px; }
+  .symbol { width:36px; height:36px; font-size:23px; }
+  .visual-panel h1 { font-size:27px; }
+  .form-panel { padding:22px 17px 18px; }
+  .form-panel footer strong { font-size:8px; }
+}
+

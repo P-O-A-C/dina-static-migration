@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--green:#07513A;--green-2:#0B6845;--gold:#D3A13D;--cream:#F7F1E7;--ink:#2E2922;--muted:#81786D;--line:#E8DFD2;--white:#fff;--shadow:0 12px 30px rgba(34,38,30,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Cairo",Tahoma,sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.order-header{min-height:78px;background:#fff;border-bottom:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px clamp(16px,5vw,72px)}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;color:var(--green)}
+.brand-logo{width:58px;height:58px;object-fit:contain;flex:0 0 auto}
+.brand-type{display:grid;gap:3px;min-width:0}
+.brand-type strong{font-family:Georgia,serif;font-size:16px;letter-spacing:1px;color:var(--green)}
+.brand-type small{font-size:9px;color:var(--muted);font-weight:700}
+.header-contact{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;border:1px solid var(--gold);padding:10px 15px;border-radius:24px;font-size:10px;font-weight:800;white-space:nowrap}
+.header-contact span{color:#F2D17D}
+.page-wrap{width:min(1160px,calc(100% - 40px));margin:0 auto}
+.catalog-section{padding:42px 0 54px}
+.section-intro{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:21px}
+.eyebrow{display:block;color:#B58324;font-size:9px;letter-spacing:1.8px;font-weight:900}
+.section-intro h1{font-size:clamp(25px,3.2vw,34px);color:var(--green);margin:5px 0 3px;font-weight:900}
+.section-intro p{font-size:11px;color:var(--muted);margin:0;line-height:1.9}
+.category-tabs{display:flex;gap:9px;overflow-x:auto;padding:2px 1px 15px;scrollbar-width:none}
+.category-tabs::-webkit-scrollbar{display:none}
+.category-tab{border:1px solid var(--line);background:#fff;color:#61746B;border-radius:24px;padding:9px 17px;font-size:10px;font-weight:800;white-space:nowrap;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.category-tab:hover{border-color:#B8CDBF}
+.category-tab.active{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 5px 13px #07513A22}
+.catalog-status{font-size:10px;color:var(--muted);margin:0 0 12px;min-height:18px}
+.catalog-status:empty{display:none}
+.products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(40,38,25,.045);transition:transform .18s,border-color .18s,box-shadow .18s}
+.service-card:hover{transform:translateY(-2px);border-color:#D5B978;box-shadow:var(--shadow)}
+.service-image-wrap{height:235px;background:#fff;display:grid;place-items:center;overflow:hidden}
+.service-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:8px;background:#fff}
+.service-image[hidden]{display:none}
+.service-image-empty{width:100%;height:100%;background:linear-gradient(145deg,#fff,#F9F6EF)}
+.service-info{padding:14px 16px 16px;display:grid;gap:6px;flex:1}
+.service-info h2{font-size:15px;color:var(--green);margin:0;font-weight:900}
+.service-price{justify-self:start;display:inline-flex;align-items:center;color:var(--green);font-size:12px;font-weight:900;white-space:nowrap;background:#eaf2eb;border:1px solid #d8e7d8;border-radius:8px;padding:6px 9px}
+.service-info p{font-size:10px;line-height:1.9;color:var(--muted);margin:0;min-height:19px}
+.catalog-empty{grid-column:1/-1;text-align:center;background:#fff;border:1px dashed #D9CEB8;border-radius:12px;padding:28px 16px;color:var(--muted);font-size:12px}
+.ironing-prices-section{margin-top:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+.ironing-prices-section[hidden]{display:none}
+.ironing-prices-heading{margin:0 0 18px;padding:18px 20px;background:linear-gradient(145deg,#fffdf8,#f1f6f0);border:1px solid #e4d6b8;border-radius:15px}
+.ironing-prices-heading h2{font-size:clamp(20px,2.6vw,27px);color:var(--green);margin:5px 0 4px;font-weight:900}
+.ironing-prices-heading p{font-size:11px;line-height:1.9;color:var(--muted);margin:0}
+.ironing-prices-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ironing-product-card{min-width:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(40,38,30,.045);transition:transform .18s,border-color .18s,box-shadow .18s}
+.ironing-product-card:hover{transform:translateY(-2px);border-color:#D5B978;box-shadow:var(--shadow)}
+.ironing-product-image-wrap{height:210px;background:#fff;display:grid;place-items:center;overflow:hidden}
+.ironing-product-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:8px;background:#fff}
+.ironing-product-image-empty{width:100%;height:100%;background:linear-gradient(145deg,#fff,#F9F6EF)}
+.ironing-product-info{padding:12px 14px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex:1}
+.ironing-product-info h3{min-width:0;margin:0;color:var(--green);font-size:13px;font-weight:900;line-height:1.7}
+.ironing-product-price{flex:0 0 auto;color:var(--green);font-size:12px;font-weight:900;white-space:nowrap;background:#eaf2eb;border:1px solid #d8e7d8;border-radius:8px;padding:6px 9px}
+.catalog-note{display:flex;align-items:center;gap:10px;background:#EAF0E8;border:1px solid #DCE6DB;border-radius:10px;padding:13px 15px;margin-top:20px}
+.catalog-note>span{color:#B58324}
+.catalog-note p{flex:1;margin:0;font-size:10px;line-height:1.8;color:#53665C}
+.catalog-note a{color:var(--green);font-size:10px;font-weight:900;white-space:nowrap}
+.order-footer{min-height:76px;background:#302119;border-top:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,5vw,72px);color:#F7F1E7;font-size:9px}
+.footer-brand{display:flex;align-items:center;gap:8px;color:#F7F1E7;font-weight:900;letter-spacing:.5px}
+.footer-brand img{width:34px;height:34px;object-fit:contain;background:#fff;border-radius:50%}
+.order-footer>a:last-child{color:#E2D8C8;font-weight:800}
+@media(max-width:800px){.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.ironing-prices-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-image-wrap{height:190px}.service-info{padding:12px}.service-info h2{font-size:13px}}
+@media(max-width:560px){.order-header{min-height:66px;padding:7px 11px;gap:8px}.brand-logo{width:45px;height:45px}.brand-type strong{font-size:12px;letter-spacing:.5px}.brand-type small{font-size:8px}.header-contact{padding:8px 10px;font-size:9px}.page-wrap{width:calc(100% - 24px)}.catalog-section{padding:26px 0 34px}.section-intro{margin-bottom:15px}.section-intro h1{font-size:23px}.section-intro p{font-size:9px}.category-tabs{gap:7px;padding-bottom:12px}.category-tab{padding:8px 12px;font-size:9px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ironing-prices-heading{margin-bottom:12px;padding:14px 12px;border-radius:12px}.ironing-prices-heading p{font-size:9px}.ironing-prices-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ironing-product-card{border-radius:10px}.ironing-product-image-wrap{height:135px}.ironing-product-info{padding:9px;align-items:flex-start;flex-direction:column;gap:5px}.ironing-product-info h3,.ironing-product-price{font-size:11px}.ironing-product-price{padding:5px 7px}.service-card{border-radius:10px}.service-image-wrap{height:145px}.service-image{padding:4px}.service-info{padding:9px;gap:4px}.service-info h2{font-size:12px}.service-info p{font-size:9px;line-height:1.7}.catalog-note{align-items:flex-start;padding:10px;gap:7px}.catalog-note p{font-size:9px}.catalog-note a{font-size:9px}.order-footer{flex-wrap:wrap;justify-content:center;text-align:center;padding:12px;gap:8px 14px}.footer-brand{width:100%;justify-content:center}}
+@media(max-width:360px){.products-grid,.ironing-prices-grid{gap:7px}.service-image-wrap{height:128px}.ironing-product-image-wrap{height:118px}.service-info h2{font-size:11px}.ironing-product-info{padding:8px}.ironing-product-info h3,.ironing-product-price{font-size:10px}}
+
+
+/* Branch links and Flash payment on the services catalogue page */
+.order-branches-section{margin:0 auto 48px;padding:24px 22px;background:linear-gradient(140deg,#fffdf8,#f0f5ef);border:1px solid #e6dccb;border-radius:18px;box-shadow:0 8px 26px rgba(40,38,25,.05)}
+.order-branches-heading{margin-bottom:16px}
+.order-branches-heading h2{margin:5px 0 3px;color:var(--green);font-size:clamp(20px,2.5vw,26px);font-weight:900}
+.order-branches-heading p{margin:0;color:var(--muted);font-size:11px;line-height:1.8}
+.order-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.order-branch-card{min-width:0;display:flex;flex-direction:column;gap:8px;padding:17px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 4px 14px rgba(30,50,35,.035);transition:transform .16s,border-color .16s}
+.order-branch-card:hover{transform:translateY(-2px);border-color:#d7bd82}
+.order-branch-tag{align-self:flex-start;background:#eaf2eb;color:var(--green);border:1px solid #d8e7d8;border-radius:20px;padding:4px 9px;font-size:9px;font-weight:900}
+.order-branch-card strong{color:var(--green);font-size:13px;line-height:1.7}
+.order-branch-card small{color:var(--muted);font-size:10px;line-height:1.9}
+.order-branch-card b{margin-top:auto;color:#9a6d1f;font-size:10px}
+.order-flash-card .order-branch-tag{background:#eef3fb;border-color:#d9e3f1;color:#174f86}
+@media(max-width:800px){.order-branch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.order-branches-section{margin-bottom:28px;padding:16px 12px;border-radius:13px}.order-branch-grid{grid-template-columns:1fr;gap:9px}.order-branch-card{padding:13px}.order-branch-card strong{font-size:12px}.order-branch-card small{font-size:9px}}
+
+/* Express menu mode: all listed item prices are increased by 30%. */
+.express-mode-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px;padding:15px 18px;border:1px solid #dfc88e;border-radius:13px;background:linear-gradient(120deg,#fffdf7,#f3ead8);box-shadow:0 5px 16px rgba(60,45,20,.05)}
+.express-mode-banner[hidden]{display:none}
+.express-mode-banner>div{display:grid;gap:3px}
+.express-mode-kicker{color:#a77925;font-size:8px;font-weight:900;letter-spacing:1.5px}
+.express-mode-banner strong{color:var(--green);font-size:15px;font-weight:900}
+.express-mode-banner p{margin:0;color:var(--muted);font-size:10px;line-height:1.8}
+.express-mode-banner a{color:var(--green);font-size:10px;font-weight:900;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.service-price-block{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.service-price-block del{color:#93897d;font-size:10px;font-weight:700}
+.service-price-express{background:#fff0d0;border-color:#e6c77f;color:#6d4c12}
+@media(max-width:560px){.express-mode-banner{align-items:flex-start;padding:12px;gap:6px}.express-mode-banner strong{font-size:12px}.express-mode-banner p,.express-mode-banner a{font-size:9px}.service-price-block{gap:5px}.service-price-block del{font-size:9px}}

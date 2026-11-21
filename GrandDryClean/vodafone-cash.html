@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#c92532">
+  <meta name="description" content="رقم محفظة GRAND DRY CLEAN على Vodafone Cash">
+  <title>Vodafone Cash | GRAND DRY CLEAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light;--green:#07513a;--gold:#d3a13d;--red:#c92532;--ink:#173c31;--muted:#817b70;--cream:#f7f0e5}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:var(--cream);font-family:Cairo,Arial,sans-serif;color:var(--ink);display:flex;align-items:center;justify-content:center;padding:24px}
+    .wallet-page{width:min(100%,520px);background:#fff;border:1px solid #eadcc6;border-radius:24px;box-shadow:0 14px 38px rgba(51,38,20,.10);overflow:hidden}
+    .wallet-top{padding:22px 26px;background:linear-gradient(135deg,#fff,#f7f1e8);border-bottom:1px solid #eadcc6;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:900;color:var(--green);font-size:15px;letter-spacing:.5px}
+    .brand small{display:block;font-size:10px;color:var(--muted);font-weight:600;letter-spacing:0}
+    .provider{display:flex;align-items:center;gap:8px;color:var(--red);font-weight:900;direction:ltr;font-size:15px}
+    .provider-mark{width:34px;height:34px;border-radius:11px;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900}
+    .wallet-content{padding:34px 28px 30px;text-align:center}
+    .eyebrow{margin:0 0 8px;color:#a77a27;font-size:11px;font-weight:900;letter-spacing:2px;direction:ltr}
+    h1{margin:0;color:var(--green);font-size:clamp(24px,6vw,32px);font-weight:900}
+    .hint{margin:10px 0 24px;color:var(--muted);font-size:13px}
+    .number-card{padding:20px 14px;border:1px solid #efc7c9;border-radius:18px;background:#fff8f8}
+    .number-label{display:block;color:#8e7777;font-size:12px;font-weight:700;margin-bottom:8px}
+    .wallet-number{display:block;direction:ltr;unicode-bidi:plaintext;color:var(--red);font-size:clamp(28px,8vw,38px);font-weight:900;letter-spacing:1px}
+    .copy-button{margin-top:18px;width:100%;border:0;border-radius:14px;background:var(--red);color:#fff;padding:14px 18px;font:800 15px Cairo,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 14px rgba(201,37,50,.18)}
+    .copy-button:focus-visible,.back-link:focus-visible{outline:3px solid rgba(201,37,50,.25);outline-offset:3px}
+    .copy-status{min-height:24px;margin:10px 0 0;color:var(--green);font-size:12px;font-weight:800}
+    .wallet-note{margin:12px 0 0;color:var(--muted);font-size:11px;line-height:1.8}
+    .wallet-footer{padding:0 28px 26px;text-align:center}
+    .back-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:var(--green);font-size:13px;font-weight:900;text-decoration:none;border:1px solid #d7e2d9;border-radius:12px;padding:10px 18px;background:#f5faf6}
+    @media(max-width:420px){body{padding:14px}.wallet-top{padding:18px}.wallet-content{padding:28px 18px 24px}.wallet-footer{padding:0 18px 20px}}
+  </style>
+</head>
+<body>
+  <main class="wallet-page">
+    <header class="wallet-top">
+      <div class="brand">GRAND DRY CLEAN<small>المغسلة الفاخرة</small></div>
+      <div class="provider"><span class="provider-mark">V</span><span>Vodafone Cash</span></div>
+    </header>
+    <section class="wallet-content" aria-labelledby="walletTitle">
+      <p class="eyebrow">MOBILE WALLET</p>
+      <h1 id="walletTitle">فودافون كاش</h1>
+      <p class="hint">رقم محفظة GRAND DRY CLEAN</p>
+      <div class="number-card">
+        <span class="number-label">رقم التليفون / المحفظة</span>
+        <strong class="wallet-number" id="walletNumber">01037626070</strong>
+      </div>
+      <button class="copy-button" id="copyWalletNumber" type="button">نسخ رقم المحفظة</button>
+      <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+      <p class="wallet-note">انسخ الرقم واستخدمه لإتمام التحويل من خلال تطبيق Vodafone Cash.</p>
+    </section>
+    <footer class="wallet-footer">
+      <a class="back-link" href="index.html">العودة إلى الصفحة الرئيسية</a>
+    </footer>
+  </main>
+  <script>
+    (() => {
+      const button = document.getElementById('copyWalletNumber');
+      const numberEl = document.getElementById('walletNumber');
+      const status = document.getElementById('copyStatus');
+      if (!button || !numberEl || !status) return;
+      button.addEventListener('click', async () => {
+        const number = numberEl.textContent.trim();
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(number);
+          } else {
+            const helper = document.createElement('textarea');
+            helper.value = number;
+            helper.setAttribute('readonly', '');
+            helper.style.position = 'fixed'; helper.style.opacity = '0';
+            document.body.appendChild(helper); helper.select();
+            const copied = document.execCommand('copy'); helper.remove();
+            if (!copied) throw new Error('Clipboard unavailable');
+          }
+          status.textContent = 'تم نسخ رقم المحفظة بنجاح';
+          button.textContent = 'تم النسخ ✓';
+          window.setTimeout(() => { button.textContent = 'نسخ رقم المحفظة'; }, 1800);
+        } catch (error) {
+          status.textContent = 'رقم المحفظة: ' + number;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
