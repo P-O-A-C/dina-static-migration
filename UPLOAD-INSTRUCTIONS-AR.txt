@@ -1,0 +1,25 @@
+تحديث Best Sellers في صفحة Welcome — Dina's Corner
+
+1) ارفع الملفات التالية إلى مستودع Dina-s-Corner مع الحفاظ على المسارات:
+   welcome.html
+   sw.js
+   GM/gm-dashboard.html
+   GM/gm-home-products.html
+   assets/dina-welcome.css
+   assets/dina-best-sellers.js
+
+2) افتح Supabase > SQL Editor ونفّذ مرة واحدة محتويات:
+   SUPABASE-BEST-SELLERS-SETUP.sql
+
+3) بعد النشر افتح GM Dashboard ثم Best Sellers:
+   - ارفع صورًا جديدة، أو
+   - اختر منتجًا نشطًا له صورة من المنيو الحالي.
+   - رتّب الصور بالأسهم، أو احذف أي صورة.
+
+4) صفحة Welcome تعرض الصور النشطة في شريط أفقي يمكن سحبه باللمس، ويمكن الضغط على الصورة لعرضها بحجم أكبر.
+
+ملاحظات:
+- لا تستبدل مجلد assets بالكامل ولا تحذف الصور أو الملفات الأخرى.
+- لا تغيّر إعدادات Supabase الحالية. ملف SQL يضيف/يحدّث سياسات Best Sellers فقط.
+- لا يتم عرض القسم إذا لم توجد صور نشطة.
+- ملفات Welcome والـ GM تبقى في أماكنها الحالية.
