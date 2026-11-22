@@ -14,7 +14,6 @@
 <meta name="description" content="Dina's Corner — explore our menu, discover customer favourites and find our branches.">
 <title>Dina's Corner | Welcome</title>
 <link rel="stylesheet" href="assets/dina-welcome.css?v=20261117-official-brand-mark-v1">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.105.0"></script>
 <script src="assets/tenant-config.js?v=20261115-welcome-poster-match-v6"></script>
 
 <style id="dc-payment-cards-small-adjustment">
@@ -664,10 +663,11 @@ async function copyAndOpenVodafoneCash(event){
   return false;
 }
 </script>
-<script src="assets/config.js?v=20261115-welcome-poster-match-v6"></script>
+<script src="assets/static-runtime.js?v=20261122-static-v1"></script>
 <script src="assets/dina-branch-maps.js?v=20261116-exact-owner-maps-v5-mafaza"></script>
-<script src="assets/app.js?v=20261116-exact-owner-maps-v5-mafaza"></script>
-<script src="assets/dina-welcome.js?v=20261117-gm-branch-location-fix-v1"></script>
-<script src="assets/dina-best-sellers.js?v=20261115-best-sellers-autoplay-2s-v1"></script>
+
+<script src="assets/dina-welcome.js?v=20261122-static-v1"></script>
+<script src="assets/dina-best-sellers.js?v=20261122-static-v1"></script>
+<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=20261122-static-v1").catch(error => console.warn("Service worker registration failed:", error))); }</script>
 </body>
 </html>

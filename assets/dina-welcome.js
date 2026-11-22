@@ -35,17 +35,11 @@
     branchCards.setAttribute('aria-busy', 'true');
     branchCards.innerHTML = '<div class="dc-branch-loading">جارٍ تحميل الفروع…</div>';
     try {
-      const client = window.sb;
-      if (!client || typeof client.from !== 'function') {
-        throw new Error('Branch list is unavailable. Check the public locations read permission.');
-      }
-      const { data, error } = await client.from('locations')
-        .select('id,name,city,address,maps_url,is_active,created_at')
-        .eq('is_active', true)
-        .order('created_at', { ascending: true });
-      if (error) throw error;
-
-      const branches = (Array.isArray(data) ? data : []).filter((row) => row && String(row.name || '').trim());
+      if (!window.DinaStaticData) throw new Error('Local branch data loader is unavailable.');
+      const data = await window.DinaStaticData.readJson('data/locations.json');
+      const branches = (Array.isArray(data) ? data : [])
+        .filter((row) => row && row.is_active !== false && String(row.name || '').trim())
+        .sort((a, b) => String(a.created_at || '').localeCompare(String(b.created_at || '')));
       renderedBranchCount = branches.length || 4;
       syncBranchLayout(renderedBranchCount);
       if (!branches.length) {
@@ -63,7 +57,7 @@
           : `<div class="dc-branch-card dc-branch-card--unlinked" aria-disabled="true" title="لم تتم إضافة رابط خرائط دقيق لهذا الفرع بعد">${body}</div>`;
       }).join('');
     } catch (error) {
-      console.error('Dina’s Corner branches could not be loaded:', error);
+      console.error('Dina’s Corner local branches could not be loaded:', error);
       renderedBranchCount = 4;
       syncBranchLayout(renderedBranchCount);
       branchCards.innerHTML = '<div class="dc-branch-loading" role="status">تعذر تحميل الفروع الآن. يرجى تحديث الصفحة.</div>';

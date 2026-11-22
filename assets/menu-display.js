@@ -131,8 +131,8 @@
   window.addEventListener('storage',event=>{
     if(event.key===CART_KEY){renderCartPanel();if(activeCategoryName)renderItems(activeCategoryName);}
   });
-  // Only display categories that are actually saved in this POACustomers database.
-  // There is deliberately no demo/fallback catalog; the owner creates their own menu.
+  // Display the categories exported for this storefront from its local static JSON catalog.
+  // There is deliberately no generated demo catalog or runtime database dependency.
   function normalizeCategoryRows(rows){
     return (Array.isArray(rows)?rows:[])
       .filter(r=>r && String(r.name||'').trim() && r.is_active!==false && String(r.status||'active').toLowerCase()!=='inactive')
@@ -170,9 +170,9 @@
     if(itemsLoaded)return;
     if(itemsLoading)return itemsLoading;
     itemsLoading=(async()=>{
-      const result=await sb.from('menu_items').select('*').order('created_at',{ascending:true});
-      if(result.error)throw result.error;
-      items=Array.isArray(result.data)?result.data:[];
+      if(!window.DinaStaticData)throw new Error('Local menu data loader is unavailable.');
+      const rows=await window.DinaStaticData.readJson('data/menu-items.json');
+      items=(Array.isArray(rows)?rows:[]).slice().sort((a,b)=>String(a.created_at||'').localeCompare(String(b.created_at||'')));
       window.POACurrentMenuItems=items;
       itemsLoaded=true;
     })().finally(()=>{itemsLoading=null;});
@@ -278,12 +278,10 @@
   });
 
   async function loadMenu(){
-    if(!window.sb)throw new Error('Supabase configuration is not available.');
-    // Render categories as soon as their query returns. Menu items are fetched only
-    // when a category is opened, so a large catalogue does not hold back the first screen.
-    const categoryResult=await sb.from('menu_categories').select('id,name,icon,image_url,sort_order,is_active,status').order('sort_order',{ascending:true});
-    if(categoryResult.error)throw categoryResult.error;
-    categories=normalizeCategoryRows(Array.isArray(categoryResult.data)?categoryResult.data:[]);
+    if(!window.DinaStaticData)throw new Error('Local menu data loader is unavailable.');
+    // Load the small category file first; product details are loaded only after a category opens.
+    const categoryRows=await window.DinaStaticData.readJson('data/menu-categories.json');
+    categories=normalizeCategoryRows(categoryRows);
     renderCategories();
     if(!isStandaloneMenu)renderCartPanel();
     const params=new URLSearchParams(window.location.search);
@@ -303,6 +301,6 @@
   if(!isStandaloneMenu){renderCartPanel();if(location.hash==='#menu-cart')openCart();}
   loadMenu().catch(err=>{
     categories=[];items=[];categoriesView.hidden=false;itemsView.hidden=true;
-    categoriesView.innerHTML='<div class="menu-error"><strong>Menu could not be loaded from the database.</strong><br>'+esc(err?.message||'Please try again later.')+'<br><small>Ask the company administrator to verify the menu database setup.</small></div>';
+    categoriesView.innerHTML='<div class="menu-error"><strong>Menu could not be loaded from the local files.</strong><br>'+esc(err?.message||'Please try again later.')+'<br><small>Please check that the data folder is uploaded with the website files.</small></div>';
   });
 })();

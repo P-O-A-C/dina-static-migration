@@ -1,8 +1,7 @@
 [
   {
     "id": "0405a780-ffd3-46ec-91cc-933f769da15c",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779417519-ddj2dsujx5f.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779417519-ddj2dsujx5f.jpg",
+    "image_url": "images/home-featured/1794779417519-ddj2dsujx5f.jpg",
     "image_name": "-.jpg",
     "sort_order": 13,
     "is_active": true,
@@ -12,8 +11,7 @@
   },
   {
     "id": "1f1d7aab-06db-4c05-b3ed-1c2734d4d1e5",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779405097-634xbwj8yqh.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779405097-634xbwj8yqh.jpg",
+    "image_url": "images/home-featured/1794779405097-634xbwj8yqh.jpg",
     "image_name": "7223d011-013b-4030-9e07-3ad7d5bc14df.png",
     "sort_order": 5,
     "is_active": true,
@@ -23,8 +21,7 @@
   },
   {
     "id": "1f9aae8c-5f10-4b03-9620-ba1f5a1599dc",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794781539371-nou2lk8g18.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794781539371-nou2lk8g18.jpg",
+    "image_url": "images/home-featured/1794781539371-nou2lk8g18.jpg",
     "image_name": "IMG_E1253.JPG",
     "sort_order": 12,
     "is_active": true,
@@ -34,8 +31,7 @@
   },
   {
     "id": "3aa05519-8e0e-401a-bcb1-fdffc69ac470",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779399359-1u57pxliljq.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779399359-1u57pxliljq.jpg",
+    "image_url": "images/home-featured/1794779399359-1u57pxliljq.jpg",
     "image_name": "033-oat-tortilla-bread-egp-215-00.jpg",
     "sort_order": 4,
     "is_active": true,
@@ -45,8 +41,7 @@
   },
   {
     "id": "401d2ecf-117c-4a6d-a13b-39d60b70d469",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-menu-images/807cbd58-438d-40bc-9a04-62758e2f4562/items/1794692257062-1b204sg1v3t.jpg",
-    "storage_path": null,
+    "image_url": "images/items/1794692257062-1b204sg1v3t.jpg",
     "image_name": "كنافه اساور",
     "sort_order": 1,
     "is_active": true,
@@ -56,8 +51,7 @@
   },
   {
     "id": "7fd8226a-c492-4204-a969-0fbec64918d1",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779415086-zr33qbkheu8.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779415086-zr33qbkheu8.jpg",
+    "image_url": "images/home-featured/1794779415086-zr33qbkheu8.jpg",
     "image_name": "-.jpg",
     "sort_order": 14,
     "is_active": true,
@@ -67,8 +61,7 @@
   },
   {
     "id": "89902588-e03c-433e-aee1-705a8e6f4b64",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779406739-aeh5xx749x.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779406739-aeh5xx749x.jpg",
+    "image_url": "images/home-featured/1794779406739-aeh5xx749x.jpg",
     "image_name": "405776b0-e963-401c-b34a-1f5592701826.png",
     "sort_order": 7,
     "is_active": true,
@@ -78,8 +71,7 @@
   },
   {
     "id": "8b16d1af-5b5a-4ca4-9a35-7ca0870ffe73",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794772247028-9s2g3kzc7r.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794772247028-9s2g3kzc7r.jpg",
+    "image_url": "images/home-featured/1794772247028-9s2g3kzc7r.jpg",
     "image_name": "IMG_E1233.JPG",
     "sort_order": 2,
     "is_active": true,
@@ -89,8 +81,7 @@
   },
   {
     "id": "a1724e9b-6c9c-48f0-8e79-8480c12d8771",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779414228-ru3pj0bfnb.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779414228-ru3pj0bfnb.jpg",
+    "image_url": "images/home-featured/1794779414228-ru3pj0bfnb.jpg",
     "image_name": "-.jpg",
     "sort_order": 11,
     "is_active": true,
@@ -100,8 +91,7 @@
   },
   {
     "id": "a49c6d51-5e41-43a6-bee9-d016cd7e6d9e",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779410973-aj9syx3smlg.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779410973-aj9syx3smlg.jpg",
+    "image_url": "images/home-featured/1794779410973-aj9syx3smlg.jpg",
     "image_name": "IMG_E1235.JPG",
     "sort_order": 8,
     "is_active": true,
@@ -111,8 +101,7 @@
   },
   {
     "id": "b0744d29-c16b-432c-b17e-59c439affb26",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779411917-ehiv3wsrpgr.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779411917-ehiv3wsrpgr.jpg",
+    "image_url": "images/home-featured/1794779411917-ehiv3wsrpgr.jpg",
     "image_name": "IMG_E1243.JPG",
     "sort_order": 10,
     "is_active": true,
@@ -122,8 +111,7 @@
   },
   {
     "id": "c4a7bf01-0579-4a45-b07a-ec52cd9a1af5",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779409918-g2idi9nap1f.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779409918-g2idi9nap1f.jpg",
+    "image_url": "images/home-featured/1794779409918-g2idi9nap1f.jpg",
     "image_name": "IMG_1254.PNG",
     "sort_order": 6,
     "is_active": true,
@@ -133,8 +121,7 @@
   },
   {
     "id": "d62ab58e-cb4c-4777-8c49-7a1e627a80b0",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779389060-upn84ujb249.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779389060-upn84ujb249.jpg",
+    "image_url": "images/home-featured/1794779389060-upn84ujb249.jpg",
     "image_name": "9d20ea0d-3944-42a6-ab76-4ae1b26eeefc.png",
     "sort_order": 3,
     "is_active": true,
@@ -144,8 +131,7 @@
   },
   {
     "id": "e1ff0acf-ca48-4cb2-8b8f-7159a757fb7c",
-    "image_url": "https://nbwqoknkpkqgorxtyjnm.supabase.co/storage/v1/object/public/poac-home-featured-products/807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779412921-12uimulmyha.jpg",
-    "storage_path": "807cbd58-438d-40bc-9a04-62758e2f4562/home-featured/1794779412921-12uimulmyha.jpg",
+    "image_url": "images/home-featured/1794779412921-12uimulmyha.jpg",
     "image_name": "IMG_E1251.JPG",
     "sort_order": 9,
     "is_active": true,

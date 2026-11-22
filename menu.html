@@ -11,11 +11,8 @@
 <link rel="stylesheet" href="assets/dina-theme.css?v=20261116-gm-managed-locations-v1">
 <link rel="stylesheet" href="assets/menu-display.css?v=20261116-gm-managed-locations-v1">
 <link rel="stylesheet" href="assets/public-menu-premium.css?v=20261116-gm-managed-locations-v1">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.105.0"></script>
-<script src="assets/tenant-config.js?v=20261116-gm-managed-locations-v1"></script>
-<script src="assets/config.js?v=20261116-gm-managed-locations-v1"></script>
-<script src="assets/public-menu-client.js?v=20261116-gm-managed-locations-v1"></script>
-<script>window.sb = window.POA_PUBLIC_MENU_DB || null;</script>
+<script src="assets/tenant-config.js?v=20261122-static-v1"></script>
+<script src="assets/static-runtime.js?v=20261122-static-v1"></script>
 <link rel="stylesheet" href="assets/dina-brand-identity.css?v=20261117-soft-rose-background-v1">
 <link rel="stylesheet" href="assets/dc-whatsapp-order.css?v=20261121-wa-order-v2">
 </head>
@@ -37,7 +34,8 @@
   <footer class="public-menu-footer">Dina’s Corner <span>·</span> Made with care</footer>
 </main>
 <script src="assets/dina-branch-maps.js?v=20261116-gm-managed-locations-v1"></script>
-<script src="assets/menu-display.js?v=20261121-whatsapp-cart-v1"></script>
+<script src="assets/menu-display.js?v=20261122-static-v1"></script>
 <script src="assets/dc-whatsapp-order.js?v=20261121-wa-order-v1"></script>
+<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=20261122-static-v1").catch(error => console.warn("Service worker registration failed:", error))); }</script>
 </body>
 </html>

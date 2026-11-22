@@ -70,17 +70,17 @@
   }
   async function load(){
     try{
-      const client=window.sb;
-      if(!client||typeof client.from!=='function')throw new Error('Supabase client unavailable');
-      const {data,error}=await client.from('home_featured_products')
-        .select('id,image_url,sort_order')
-        .eq('is_active',true).order('sort_order',{ascending:true}).limit(24);
-      if(error)throw error;
-      items=Array.isArray(data)?data:[];render();
+      if(!window.DinaStaticData)throw new Error('Local featured images loader is unavailable.');
+      const data=await window.DinaStaticData.readJson('data/home-featured-products.json');
+      items=(Array.isArray(data)?data:[])
+        .filter(row=>row&&row.is_active!==false&&row.image_url)
+        .sort((a,b)=>Number(a.sort_order||0)-Number(b.sort_order||0))
+        .slice(0,24);
+      render();
     }catch(error){
       section.hidden=false;
       track.innerHTML='<div class="dc-best-sellers__empty" aria-live="polite"></div>';
-      console.warn('Welcome Best Sellers could not be loaded. Check the public read policy for home_featured_products.',error);
+      console.warn('Welcome featured images could not be loaded. Check the local data and images folders.',error);
     }
   }
   $('dcBestSellersLightboxClose')?.addEventListener('click',closePreview);

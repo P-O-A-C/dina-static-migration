@@ -1,4 +1,4 @@
-const CACHE = "poac-unified-v35-dina-compact-add-button";
+const CACHE = "poac-unified-v36-dina-static-menu";
 const SHELL = [
   "./index.html",
   "./login.html",
@@ -25,6 +25,11 @@ const SHELL = [
   "./assets/dc-whatsapp-order.js",
   "./assets/dina-best-sellers.js",
   "./assets/public-menu-review-link.js",
+  "./data/menu-categories.json",
+  "./data/menu-items.json",
+  "./data/locations.json",
+  "./data/home-featured-products.json",
+  "./assets/static-runtime.js",
   "./Dina'sCorner/index.html",
   "./Dina'sCorner/login.html",
   "./Dina'sCorner/welcome.html",
