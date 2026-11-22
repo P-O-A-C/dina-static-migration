@@ -1,0 +1,54 @@
+[
+  {
+    "id": "d4e8db59-fc17-4403-8254-ac8ab90d4e99",
+    "name": "stadium tanta",
+    "city": "tanta",
+    "address": "stadium tanta in front of sale sucer",
+    "phone": "01066670803",
+    "maps_url": "https://maps.app.goo.gl/e3K3bkv4ryo5RJK49",
+    "is_active": true,
+    "created_at": "2026-10-22 20:42:22.108645+00",
+    "updated_at": "2026-11-16 00:16:59.993968+00",
+    "latitude": 30.8113691650085,
+    "longitude": 30.9952322667496
+  },
+  {
+    "id": "e06eb70a-5157-4120-8762-d64cc77f7b40",
+    "name": "Main Branch Tanta",
+    "city": "Tanta",
+    "address": "alnadi",
+    "phone": "01282471226",
+    "maps_url": "https://www.google.com/maps/place/Dina%E2%80%99s+corner/@30.7945554,30.9908864,19z/data=!4m6!3m5!1s0x14f7c9836030bd29:0xd49ba7d188f2ad2c!8m2!3d30.7949154!4d30.990128!16s%2Fg%2F11txdnm_37?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+    "is_active": true,
+    "created_at": "2026-10-19 09:05:10.229743+00",
+    "updated_at": "2026-11-17 06:09:49.794839+00",
+    "latitude": 30.7950720485958,
+    "longitude": 30.990385495697
+  },
+  {
+    "id": "e5e54452-df62-449c-abf7-e5432c5d5f1e",
+    "name": "Al-Banafsig Cairo",
+    "city": "cairo",
+    "address": "Cairo albanafsig",
+    "phone": "01066670803",
+    "maps_url": "https://www.google.com/maps/place/Dina+Corner/@30.0340827,31.4681215,20z/data=!4m6!3m5!1s0x1458230027c2ce0b:0xb07d08dc6cc2970!8m2!3d30.0340827!4d31.4683951!16s%2Fg%2F11ylwkzlpq?hl=en&entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "is_active": true,
+    "created_at": "2026-10-22 20:46:09.845396+00",
+    "updated_at": "2026-11-17 06:10:02.876672+00",
+    "latitude": 30.0341709383519,
+    "longitude": 31.4684058256997
+  },
+  {
+    "id": "f7c3d837-478a-4087-ae90-b297a7732b36",
+    "name": "Mafaza Al-Sabil Tanta",
+    "city": "Tanta",
+    "address": "Hassan Hassib Street, Tanta",
+    "phone": null,
+    "maps_url": "https://maps.app.goo.gl/QT7pU69m9vBfVGNF9",
+    "is_active": true,
+    "created_at": "2026-11-16 00:29:56.815207+00",
+    "updated_at": "2026-11-17 06:09:35.975494+00",
+    "latitude": null,
+    "longitude": null
+  }
+]
