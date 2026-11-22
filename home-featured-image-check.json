@@ -1,0 +1,7 @@
+{
+  "home_featured_records": 14,
+  "unique_storage_paths": 13,
+  "downloaded_images": 13,
+  "all_storage_paths_present": true,
+  "note": "14 active database rows? Verify is_active values in CSV. There are 13 unique storage paths/files."
+}
