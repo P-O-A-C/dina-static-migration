@@ -2,7 +2,7 @@
   {
     "id": "0bc8ab25-fc4f-4791-a7ea-590348d035ce",
     "name": "مخبوزات بدقيق اللوز",
-    "image_url": "images/categories/1794688137512-ay2uhu2c9fv.webp",
+    "image_url": "images/categories/category-01.webp",
     "icon": "☕",
     "sort_order": 70,
     "status": "active",
@@ -13,7 +13,7 @@
   {
     "id": "0cf9f929-9657-45ce-b7d4-dd67438a82d7",
     "name": "مخبوزات حبه كامله",
-    "image_url": "images/categories/1794688134579-c9bgvpvaats.webp",
+    "image_url": "images/categories/category-02.webp",
     "icon": "☕",
     "sort_order": 50,
     "status": "active",
@@ -24,7 +24,7 @@
   {
     "id": "163123c2-b1cf-41a3-90d3-1c67000765e4",
     "name": "بسكويت شوفان",
-    "image_url": "images/categories/1794688139263-zyo4t28w28s.webp",
+    "image_url": "images/categories/category-03.webp",
     "icon": "☕",
     "sort_order": 90,
     "status": "active",
@@ -35,7 +35,7 @@
   {
     "id": "1bf97464-86a8-459d-bc22-a39bb75b2ad1",
     "name": "خبز صحي",
-    "image_url": "images/categories/1794688132980-sgmktay1xqd.webp",
+    "image_url": "images/categories/category-04.webp",
     "icon": "☕",
     "sort_order": 30,
     "status": "active",
@@ -46,7 +46,7 @@
   {
     "id": "3256f5c2-1206-4529-a648-7612c944edac",
     "name": "ساندوتش",
-    "image_url": "images/categories/1794688131013-aec6jtnfwq.webp",
+    "image_url": "images/categories/category-05.webp",
     "icon": "☕",
     "sort_order": 10,
     "status": "active",
@@ -57,7 +57,7 @@
   {
     "id": "abd9d90b-ce03-467d-9f7b-91fa10866a47",
     "name": "مخبوزات الشوفان وحبه كامله",
-    "image_url": "images/categories/1794688627349-v442hqa1dil.webp",
+    "image_url": "images/categories/category-06.webp",
     "icon": "☕",
     "sort_order": 100,
     "status": "active",
@@ -68,7 +68,7 @@
   {
     "id": "db72638f-d8f4-43d3-9c24-71d4f717870a",
     "name": "خلطات طبيعيه",
-    "image_url": "images/categories/1794769552883-lou0cz93fg.webp",
+    "image_url": "images/categories/category-07.webp",
     "icon": "☕",
     "sort_order": 110,
     "status": "active",
@@ -79,7 +79,7 @@
   {
     "id": "e4a75363-e58c-40ad-8b41-45edbd104d87",
     "name": "سناكس",
-    "image_url": "images/categories/1794688136133-v1fxb2ycbil.webp",
+    "image_url": "images/categories/category-08.webp",
     "icon": "☕",
     "sort_order": 60,
     "status": "active",
