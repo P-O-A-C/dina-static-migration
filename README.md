@@ -1,48 +1,20 @@
-# Dina's Corner
+# POAC — Unified Repository
 
-Welcome to Dina's Corner, a new project repository.
+This repository contains Dina’s Corner, Grand Dry Clean, and POAC administration files.
 
-## Overview
+## Main entry points
+- Dina’s Corner customer welcome page: `welcome.html`
+- Dina’s Corner menu and WhatsApp ordering: `menu.html`
+- POAC unified login: `index.html`
+- Grand Dry Clean customer home: `GrandDryClean/index.html`
+- POAC Admin: `POAC-Admin/index.html`
 
-This repository is currently being set up as the home for Dina's Corner. It can be used for:
+## Dina’s Corner static status
+The public customer pages in the repository root are detached from Supabase in this snapshot. They load catalogue, branch, and featured-image data from local `data/*.json` files and local files in `images/`. Menu orders are handed off to WhatsApp.
 
-- project documentation
-- source code
-- assets and static content
-- future app or site development
+This does **not** mean every POAC component is detached. Older management pages under `Dina'sCorner/`, the POAC login, and Grand Dry Clean still contain Supabase-dependent code. Do not remove shared configuration until those applications are migrated separately.
 
-## Repository status
+See `GITHUB-MIGRATION-REVIEW-AR.md` for the detailed audit and `data/README-AR.md` for the static data inventory.
 
-This repository is intentionally minimal right now and ready for the project to grow.
-
-## Getting started
-
-1. Clone the repository.
-2. Open the project in your preferred editor or IDE.
-3. Start building the app, site, or service for Dina's Corner.
-
-```bash
-git clone https://github.com/POACustomers/Dina-s-Corner.git
-cd Dina-s-Corner
-```
-
-## Notes
-
-- Update this README as the project evolves.
-- Add setup instructions, architecture notes, and usage guidance as needed.
-- Keep project documentation current for contributors and users.
-
-## License
-
-This project does not currently specify a license.
-
-
-## Welcome Best Sellers
-
-The Welcome page reads active rows from `public.home_featured_products` and displays them in a swipeable carousel. GM manages this list from `GM/gm-home-products.html`, which supports image uploads and selecting active menu products that already have an image. Run `SUPABASE-BEST-SELLERS-SETUP.sql` once in the Dina's Corner Supabase project to configure public active-photo reads and GM-only write access.
-
-
-راجع `POAC-ROUTING-NOTES-AR.md` لمعرفة آلية بوابة POAC وروابط العملاء المباشرة.
-
-
-راجع `LOGIN-ROUTES-AR.md` لمسارات الدخول المستقلة وروابط العملاء المباشرة.
+## Important hosting limitation
+GitHub Pages is static hosting. It can serve JSON and images for reading, but it cannot securely save browser edits to repository files, provide a database, or implement protected admin writes by itself. Keep access tokens and secrets out of browser JavaScript.
