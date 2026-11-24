@@ -1,4 +1,4 @@
-// Tenant identity/configuration for this deployment. Keep independent from POAC corporate branding and Supabase credentials.
+// Tenant identity/configuration for this deployment. Keep this static business configuration independent from POAC corporate branding.
 window.POA_TENANT_CONFIG = Object.freeze({
   "TENANT_ID": "dina-corner",
   "BRAND_NAME": "Dina's Corner",

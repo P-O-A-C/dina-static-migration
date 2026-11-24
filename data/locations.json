@@ -43,7 +43,7 @@
     "name": "Mafaza Al-Sabil Tanta",
     "city": "Tanta",
     "address": "Hassan Hassib Street, Tanta",
-    "phone": null,
+    "phone": "",
     "maps_url": "https://maps.app.goo.gl/QT7pU69m9vBfVGNF9",
     "is_active": true,
     "created_at": "2026-11-16 00:29:56.815207+00",

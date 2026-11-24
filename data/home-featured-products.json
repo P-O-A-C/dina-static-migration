@@ -1,73 +1,12 @@
 [
   {
-    "id": "0405a780-ffd3-46ec-91cc-933f769da15c",
-    "image_url": "images/home-featured/featured-01.jpg",
-    "image_name": "-.jpg",
-    "sort_order": 13,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:18.504435+00",
-    "updated_at": "2026-11-18 04:30:55.55+00"
-  },
-  {
-    "id": "1f1d7aab-06db-4c05-b3ed-1c2734d4d1e5",
-    "image_url": "images/home-featured/featured-02.jpg",
-    "image_name": "7223d011-013b-4030-9e07-3ad7d5bc14df.png",
-    "sort_order": 5,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:06.946102+00",
-    "updated_at": "2026-11-18 04:30:54.123+00"
-  },
-  {
-    "id": "1f9aae8c-5f10-4b03-9620-ba1f5a1599dc",
-    "image_url": "images/home-featured/featured-03.jpg",
-    "image_name": "IMG_E1253.JPG",
-    "sort_order": 12,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 22:25:40.930032+00",
-    "updated_at": "2026-11-18 04:30:55.366+00"
-  },
-  {
-    "id": "3aa05519-8e0e-401a-bcb1-fdffc69ac470",
-    "image_url": "images/home-featured/featured-04.jpg",
-    "image_name": "033-oat-tortilla-bread-egp-215-00.jpg",
-    "sort_order": 4,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:05.19458+00",
-    "updated_at": "2026-11-18 04:30:53.95+00"
-  },
-  {
     "id": "401d2ecf-117c-4a6d-a13b-39d60b70d469",
     "image_url": "images/items/item-045.jpg",
     "image_name": "كنافه اساور",
     "sort_order": 1,
     "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
     "created_at": "2026-11-15 19:45:43.574582+00",
     "updated_at": "2026-11-18 04:30:53.436+00"
-  },
-  {
-    "id": "7fd8226a-c492-4204-a969-0fbec64918d1",
-    "image_url": "images/home-featured/featured-06.jpg",
-    "image_name": "-.jpg",
-    "sort_order": 14,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:16.153571+00",
-    "updated_at": "2026-11-18 04:30:55.71+00"
-  },
-  {
-    "id": "89902588-e03c-433e-aee1-705a8e6f4b64",
-    "image_url": "images/home-featured/featured-07.jpg",
-    "image_name": "405776b0-e963-401c-b34a-1f5592701826.png",
-    "sort_order": 7,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:08.07897+00",
-    "updated_at": "2026-11-18 04:30:54.468+00"
   },
   {
     "id": "8b16d1af-5b5a-4ca4-9a35-7ca0870ffe73",
@@ -75,49 +14,8 @@
     "image_name": "IMG_E1233.JPG",
     "sort_order": 2,
     "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
     "created_at": "2026-11-15 19:50:47.836988+00",
     "updated_at": "2026-11-18 04:30:53.621+00"
-  },
-  {
-    "id": "a1724e9b-6c9c-48f0-8e79-8480c12d8771",
-    "image_url": "images/home-featured/featured-09.jpg",
-    "image_name": "-.jpg",
-    "sort_order": 11,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:15.370334+00",
-    "updated_at": "2026-11-18 04:30:55.197+00"
-  },
-  {
-    "id": "a49c6d51-5e41-43a6-bee9-d016cd7e6d9e",
-    "image_url": "images/home-featured/featured-10.jpg",
-    "image_name": "IMG_E1235.JPG",
-    "sort_order": 8,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:12.06119+00",
-    "updated_at": "2026-11-18 04:30:54.645+00"
-  },
-  {
-    "id": "b0744d29-c16b-432c-b17e-59c439affb26",
-    "image_url": "images/home-featured/featured-11.jpg",
-    "image_name": "IMG_E1243.JPG",
-    "sort_order": 10,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:13.022505+00",
-    "updated_at": "2026-11-18 04:30:54.998+00"
-  },
-  {
-    "id": "c4a7bf01-0579-4a45-b07a-ec52cd9a1af5",
-    "image_url": "images/home-featured/featured-12.jpg",
-    "image_name": "IMG_1254.PNG",
-    "sort_order": 6,
-    "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
-    "created_at": "2026-11-15 21:50:11.020745+00",
-    "updated_at": "2026-11-18 04:30:54.293+00"
   },
   {
     "id": "d62ab58e-cb4c-4777-8c49-7a1e627a80b0",
@@ -125,9 +23,53 @@
     "image_name": "9d20ea0d-3944-42a6-ab76-4ae1b26eeefc.png",
     "sort_order": 3,
     "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
     "created_at": "2026-11-15 21:49:59.566548+00",
     "updated_at": "2026-11-18 04:30:53.79+00"
+  },
+  {
+    "id": "3aa05519-8e0e-401a-bcb1-fdffc69ac470",
+    "image_url": "images/home-featured/featured-04.jpg",
+    "image_name": "033-oat-tortilla-bread-egp-215-00.jpg",
+    "sort_order": 4,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:05.19458+00",
+    "updated_at": "2026-11-18 04:30:53.95+00"
+  },
+  {
+    "id": "1f1d7aab-06db-4c05-b3ed-1c2734d4d1e5",
+    "image_url": "images/home-featured/featured-02.jpg",
+    "image_name": "7223d011-013b-4030-9e07-3ad7d5bc14df.png",
+    "sort_order": 5,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:06.946102+00",
+    "updated_at": "2026-11-18 04:30:54.123+00"
+  },
+  {
+    "id": "c4a7bf01-0579-4a45-b07a-ec52cd9a1af5",
+    "image_url": "images/home-featured/featured-12.jpg",
+    "image_name": "IMG_1254.PNG",
+    "sort_order": 6,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:11.020745+00",
+    "updated_at": "2026-11-18 04:30:54.293+00"
+  },
+  {
+    "id": "89902588-e03c-433e-aee1-705a8e6f4b64",
+    "image_url": "images/home-featured/featured-07.jpg",
+    "image_name": "405776b0-e963-401c-b34a-1f5592701826.png",
+    "sort_order": 7,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:08.07897+00",
+    "updated_at": "2026-11-18 04:30:54.468+00"
+  },
+  {
+    "id": "a49c6d51-5e41-43a6-bee9-d016cd7e6d9e",
+    "image_url": "images/home-featured/featured-10.jpg",
+    "image_name": "IMG_E1235.JPG",
+    "sort_order": 8,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:12.06119+00",
+    "updated_at": "2026-11-18 04:30:54.645+00"
   },
   {
     "id": "e1ff0acf-ca48-4cb2-8b8f-7159a757fb7c",
@@ -135,8 +77,52 @@
     "image_name": "IMG_E1251.JPG",
     "sort_order": 9,
     "is_active": true,
-    "created_by": "807cbd58-438d-40bc-9a04-62758e2f4562",
     "created_at": "2026-11-15 21:50:13.970469+00",
     "updated_at": "2026-11-18 04:30:54.83+00"
+  },
+  {
+    "id": "b0744d29-c16b-432c-b17e-59c439affb26",
+    "image_url": "images/home-featured/featured-11.jpg",
+    "image_name": "IMG_E1243.JPG",
+    "sort_order": 10,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:13.022505+00",
+    "updated_at": "2026-11-18 04:30:54.998+00"
+  },
+  {
+    "id": "a1724e9b-6c9c-48f0-8e79-8480c12d8771",
+    "image_url": "images/home-featured/featured-09.jpg",
+    "image_name": "-.jpg",
+    "sort_order": 11,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:15.370334+00",
+    "updated_at": "2026-11-18 04:30:55.197+00"
+  },
+  {
+    "id": "1f9aae8c-5f10-4b03-9620-ba1f5a1599dc",
+    "image_url": "images/home-featured/featured-03.jpg",
+    "image_name": "IMG_E1253.JPG",
+    "sort_order": 12,
+    "is_active": true,
+    "created_at": "2026-11-15 22:25:40.930032+00",
+    "updated_at": "2026-11-18 04:30:55.366+00"
+  },
+  {
+    "id": "0405a780-ffd3-46ec-91cc-933f769da15c",
+    "image_url": "images/home-featured/featured-01.jpg",
+    "image_name": "-.jpg",
+    "sort_order": 13,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:18.504435+00",
+    "updated_at": "2026-11-18 04:30:55.55+00"
+  },
+  {
+    "id": "7fd8226a-c492-4204-a969-0fbec64918d1",
+    "image_url": "images/home-featured/featured-06.jpg",
+    "image_name": "-.jpg",
+    "sort_order": 14,
+    "is_active": true,
+    "created_at": "2026-11-15 21:50:16.153571+00",
+    "updated_at": "2026-11-18 04:30:55.71+00"
   }
 ]

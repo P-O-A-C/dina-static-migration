@@ -1,36 +1,14 @@
 [
   {
-    "id": "0bc8ab25-fc4f-4791-a7ea-590348d035ce",
-    "name": "مخبوزات بدقيق اللوز",
-    "image_url": "images/categories/category-01.webp",
+    "id": "3256f5c2-1206-4529-a648-7612c944edac",
+    "name": "ساندوتش",
+    "image_url": "images/categories/category-05.webp",
     "icon": "☕",
-    "sort_order": 70,
+    "sort_order": 10,
     "status": "active",
     "is_active": true,
-    "created_at": "2026-10-23 18:36:28.677652+00",
-    "updated_at": "2026-10-23 18:36:28.677652+00"
-  },
-  {
-    "id": "0cf9f929-9657-45ce-b7d4-dd67438a82d7",
-    "name": "مخبوزات حبه كامله",
-    "image_url": "images/categories/category-02.webp",
-    "icon": "☕",
-    "sort_order": 50,
-    "status": "active",
-    "is_active": true,
-    "created_at": "2026-10-23 18:08:19.885194+00",
-    "updated_at": "2026-10-23 18:08:19.885194+00"
-  },
-  {
-    "id": "163123c2-b1cf-41a3-90d3-1c67000765e4",
-    "name": "بسكويت شوفان",
-    "image_url": "images/categories/category-03.webp",
-    "icon": "☕",
-    "sort_order": 90,
-    "status": "active",
-    "is_active": true,
-    "created_at": "2026-10-24 15:35:40.338811+00",
-    "updated_at": "2026-10-24 15:35:40.338811+00"
+    "created_at": "2026-10-22 18:20:36.869583+00",
+    "updated_at": "2026-10-22 18:20:36.869583+00"
   },
   {
     "id": "1bf97464-86a8-459d-bc22-a39bb75b2ad1",
@@ -44,15 +22,48 @@
     "updated_at": "2026-10-23 12:16:12.887515+00"
   },
   {
-    "id": "3256f5c2-1206-4529-a648-7612c944edac",
-    "name": "ساندوتش",
-    "image_url": "images/categories/category-05.webp",
+    "id": "0cf9f929-9657-45ce-b7d4-dd67438a82d7",
+    "name": "مخبوزات حبه كامله",
+    "image_url": "images/categories/category-02.webp",
     "icon": "☕",
-    "sort_order": 10,
+    "sort_order": 50,
     "status": "active",
     "is_active": true,
-    "created_at": "2026-10-22 18:20:36.869583+00",
-    "updated_at": "2026-10-22 18:20:36.869583+00"
+    "created_at": "2026-10-23 18:08:19.885194+00",
+    "updated_at": "2026-10-23 18:08:19.885194+00"
+  },
+  {
+    "id": "e4a75363-e58c-40ad-8b41-45edbd104d87",
+    "name": "سناكس",
+    "image_url": "images/categories/category-08.webp",
+    "icon": "☕",
+    "sort_order": 60,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-10-23 18:31:19.795199+00",
+    "updated_at": "2026-10-23 18:31:19.795199+00"
+  },
+  {
+    "id": "0bc8ab25-fc4f-4791-a7ea-590348d035ce",
+    "name": "مخبوزات بدقيق اللوز",
+    "image_url": "images/categories/category-01.webp",
+    "icon": "☕",
+    "sort_order": 70,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-10-23 18:36:28.677652+00",
+    "updated_at": "2026-10-23 18:36:28.677652+00"
+  },
+  {
+    "id": "163123c2-b1cf-41a3-90d3-1c67000765e4",
+    "name": "بسكويت شوفان",
+    "image_url": "images/categories/category-03.webp",
+    "icon": "☕",
+    "sort_order": 90,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-10-24 15:35:40.338811+00",
+    "updated_at": "2026-10-24 15:35:40.338811+00"
   },
   {
     "id": "abd9d90b-ce03-467d-9f7b-91fa10866a47",
@@ -75,16 +86,5 @@
     "is_active": true,
     "created_at": "2026-11-15 18:01:24.82318+00",
     "updated_at": "2026-11-15 18:01:24.82318+00"
-  },
-  {
-    "id": "e4a75363-e58c-40ad-8b41-45edbd104d87",
-    "name": "سناكس",
-    "image_url": "images/categories/category-08.webp",
-    "icon": "☕",
-    "sort_order": 60,
-    "status": "active",
-    "is_active": true,
-    "created_at": "2026-10-23 18:31:19.795199+00",
-    "updated_at": "2026-10-23 18:31:19.795199+00"
   }
 ]
