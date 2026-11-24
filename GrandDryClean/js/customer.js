@@ -5,20 +5,36 @@
   let dots = Array.from(document.querySelectorAll(".slider-dot"));
   const slider = document.querySelector(".promo-slider");
 
-  // These are the two confirmed public branch locations supplied for GRAND DRY CLEAN.
-  // They are also synchronized to gdc_branches by the accompanying SQL script.
-  const REQUESTED_BRANCHES = [
-    {
-      name: "فرع كارفور – جراند سيتي",
-      address: "كارفور، زهراء المعادي، عمارة C10، جراند سيتي – معمار المرشدي، شارع السعادة، القاهرة",
-      map_url: "https://maps.app.goo.gl/o4SEa5YtgdVmok287"
-    },
-    {
-      name: "فرع أمام شبانة – شارع الخمسين",
-      address: "زهراء المعادي، عمارة 1، بلوك 42، الشطر الثامن، شارع الخمسين، أمام شبانة، القاهرة",
-      map_url: "https://maps.app.goo.gl/3rMbgmgMvmLA5yym7"
-    }
-  ];
+  // Offline fallback matching the latest exported branch records.
+  const FALLBACK_BRANCHES = [
+  {
+    "id": "c8d9bc98-6699-43d2-8a3c-4775f726c3d8",
+    "name": "جراند دراي كلين (1) – كارفور جراند سيتي",
+    "phone": "01141262821",
+    "address": "زهراء المعادي، عمارة C10، جراند سيتي – معمار المرشدي، شارع السعادة، القاهرة، مصر",
+    "map_url": "https://maps.app.goo.gl/o4SEa5YtgdVmok287",
+    "is_active": true,
+    "sort_order": 10
+  },
+  {
+    "id": "bcbb92b6-4029-4ad1-b179-0bf7424c9e48",
+    "name": "جراند دراي كلين (2) – أمام شبانة",
+    "phone": "",
+    "address": "زهراء المعادي، عمارة 1، بلوك 42، الشطر الثامن، شارع الخمسين، أمام شبانة، القاهرة، مصر",
+    "map_url": "https://maps.app.goo.gl/3rMbgmgMvmLA5yym7",
+    "is_active": true,
+    "sort_order": 20
+  },
+  {
+    "id": "fe04f61e-d682-4b1f-9c93-249fd63e27e4",
+    "name": "التجمع حي البنفسج",
+    "phone": "01141262821",
+    "address": "2FM9+J8V امام مدرسة بدايه - هايبر كارفور البنفسج، التجمع الاول-حي البنفسج، محافظة القاهرة",
+    "map_url": "https://maps.app.goo.gl/bqkd76f4tntXbjje9",
+    "is_active": true,
+    "sort_order": 20
+  }
+];
 
   let activeSlide = 0;
   let rotationTimer = null;
@@ -67,19 +83,20 @@
     }
   }
 
-  function getPublicSupabaseClient() {
-    const cfg = window.POA_CONFIG || {};
-    if (!window.supabase?.createClient || !cfg.SUPABASE_URL || !cfg.SUPABASE_PUBLISHABLE_KEY) {
-      throw new Error("إعدادات الاتصال بقاعدة البيانات غير متاحة.");
+  async function readLocalJson(path) {
+    const response = await fetch(path, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`تعذر قراءة ${path}: HTTP ${response.status}`);
+    return response.json();
+  }
+
+  async function imageIsAvailable(path) {
+    if (!path) return false;
+    try {
+      const response = await fetch(path, { method: "HEAD", cache: "force-cache" });
+      return response.ok;
+    } catch (_) {
+      return false;
     }
-    if (!window.__GDC_PUBLIC_CLIENT__) {
-      window.__GDC_PUBLIC_CLIENT__ = window.supabase.createClient(
-        cfg.SUPABASE_URL,
-        cfg.SUPABASE_PUBLISHABLE_KEY,
-        { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } }
-      );
-    }
-    return window.__GDC_PUBLIC_CLIENT__;
   }
 
   function safeWebUrl(value) {
@@ -139,64 +156,92 @@
     const container = document.getElementById("publicBranches");
     if (!container) return;
     try {
-      const client = getPublicSupabaseClient();
-      const { data, error } = await client
-        .from("gdc_branches")
-        .select("id,name,phone,address,map_url,is_active,sort_order")
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true })
-        .order("created_at", { ascending: true });
-      if (error) throw error;
-      const savedRows = Array.isArray(data) ? data : [];
-      // Map the first two saved branch records to the latest confirmed locations.
-      // This makes the updated locations visible immediately after GitHub deployment,
-      // while the SQL script below also saves the same details in Supabase.
-      const confirmedRows = REQUESTED_BRANCHES.map((branch, index) => ({
-        ...(savedRows[index] || {}),
-        ...branch,
-        phone: savedRows[index]?.phone || ""
-      }));
-      const extraRows = savedRows.slice(REQUESTED_BRANCHES.length);
-      renderPublicBranches([...confirmedRows, ...extraRows]);
+      const rows = await readLocalJson("data/branches.json");
+      const activeRows = (Array.isArray(rows) ? rows : [])
+        .filter(row => row && row.is_active !== false)
+        .sort((a, b) => Number(a.sort_order || 0) - Number(b.sort_order || 0));
+      renderPublicBranches(activeRows.length ? activeRows : FALLBACK_BRANCHES);
     } catch (error) {
-      console.warn("GRAND DRY CLEAN public branches query failed; showing confirmed map links:", error);
-      // Keep the two user-confirmed branch cards visible even if the database
-      // migration has not been run or the public branch query is temporarily unavailable.
-      renderPublicBranches(REQUESTED_BRANCHES);
+      console.warn("GRAND DRY CLEAN local branches unavailable; using bundled branch details:", error);
+      renderPublicBranches(FALLBACK_BRANCHES);
     }
   }
 
   async function loadManagedSlides() {
     if (!slider) return;
     try {
-      const client = getPublicSupabaseClient();
-      const { data, error } = await client.from("gdc_home_slides").select("id,image_url,alt_text,sort_order,is_active").eq("is_active", true).order("sort_order", { ascending: true });
-      if (error) throw error;
-      if (!Array.isArray(data) || !data.length) return;
-      const slidesMarkup = data.map((row, index) => {
+      const rows = await readLocalJson("data/home-slides.json");
+      const activeRows = (Array.isArray(rows) ? rows : [])
+        .filter(row => row && row.is_active !== false && row.image_url)
+        .sort((a, b) => Number(a.sort_order || 0) - Number(b.sort_order || 0));
+
+      // Only use exported slides whose local image files have been uploaded.
+      // If none are present yet, keep the existing three bundled slides visible.
+      const checks = await Promise.all(activeRows.map(async row => ({
+        row,
+        available: await imageIsAvailable(row.image_url)
+      })));
+      const availableRows = checks.filter(item => item.available).map(item => item.row);
+      if (!availableRows.length) return;
+
+      const slidesMarkup = availableRows.map((row, index) => {
         const article = document.createElement("article");
         article.className = "promo-slide" + (index === 0 ? " is-active" : "");
         article.setAttribute("aria-hidden", String(index !== 0));
         const img = document.createElement("img");
-        img.src = row.image_url; img.alt = row.alt_text || "صورة من GRAND DRY CLEAN"; img.loading = index === 0 ? "eager" : "lazy";
+        img.src = row.image_url;
+        img.alt = row.alt_text || "صورة من GRAND DRY CLEAN";
+        img.loading = index === 0 ? "eager" : "lazy";
         if (index === 0) img.fetchPriority = "high";
         article.append(img);
         return article;
       });
+
       const container = slider.querySelector(".slides");
       container.replaceChildren(...slidesMarkup);
       const dotsContainer = slider.querySelector("#sliderDots");
       if (dotsContainer) {
-        dotsContainer.replaceChildren(...data.map((_, index) => {
-          const dot = document.createElement("button"); dot.type = "button"; dot.className = "slider-dot" + (index === 0 ? " is-active" : "");
-          dot.setAttribute("aria-label", `الصورة ${index + 1}`); dot.setAttribute("aria-current", String(index === 0)); return dot;
+        dotsContainer.replaceChildren(...availableRows.map((_, index) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "slider-dot" + (index === 0 ? " is-active" : "");
+          dot.setAttribute("aria-label", `الصورة ${index + 1}`);
+          dot.setAttribute("aria-current", String(index === 0));
+          return dot;
         }));
       }
       slides = Array.from(slider.querySelectorAll(".promo-slide"));
       dots = Array.from(slider.querySelectorAll(".slider-dot"));
-      activeSlide = 0; bindCarouselControls(); showSlide(0); startRotation();
+      activeSlide = 0;
+      bindCarouselControls();
+      showSlide(0);
+      startRotation();
     } catch (error) {
-      console.warn("GDC managed homepage slides unavailable; using built-in slides.", error);
+      console.warn("GRAND DRY CLEAN local homepage slides unavailable; using built-in slides:", error);
+    }
+  }
+
+  async function loadBusinessSettings() {
+    try {
+      const settings = await readLocalJson("data/settings.json");
+      const phone = String(settings?.phone || "").replace(/\D/g, "");
+      if (phone) {
+        const walletLink = document.querySelector(".vodafone-tile[data-wallet-number]");
+        if (walletLink) {
+          walletLink.dataset.walletNumber = phone;
+          const number = walletLink.querySelector(".payment-copy small");
+          if (number) number.textContent = phone;
+        }
+        const whatsappLink = document.querySelector('.below-fold-contact a[href*="wa.me/"]');
+        if (whatsappLink) {
+          const whatsappPhone = phone.startsWith("20") ? phone : (phone.startsWith("0") ? `2${phone}` : phone);
+          whatsappLink.href = `https://wa.me/${whatsappPhone}`;
+        }
+      }
+      const mapsLink = document.querySelector('.below-fold-contact a[href*="maps.app.goo.gl"]');
+      if (mapsLink && settings?.location_url) mapsLink.href = settings.location_url;
+    } catch (error) {
+      console.warn("GRAND DRY CLEAN local settings unavailable; keeping page defaults:", error);
     }
   }
 
@@ -207,6 +252,7 @@
   startRotation();
   loadManagedSlides();
   loadPublicBranches();
+  loadBusinessSettings();
 
 
   // Same interaction pattern as Dina's Corner: copy the wallet number and
@@ -236,7 +282,7 @@
 
       const showCopyStatus = (copied) => {
         if (!numberLabel) return;
-        numberLabel.textContent = copied ? "تم نسخ الرقم" : "انسخ الرقم: 01037626070";
+        numberLabel.textContent = copied ? "تم نسخ الرقم" : `انسخ الرقم: ${walletNumber}`;
         window.setTimeout(() => { numberLabel.textContent = originalLabel; }, 2400);
       };
 

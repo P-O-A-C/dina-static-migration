@@ -242,45 +242,33 @@
       name: cleanName(row.name),
       category: displayCategory || canonicalCategory(row.category_name),
       description: String(row.description || ""),
-      price: row.price === undefined ? null : row.price,
-      image: String(row.image_url || "").trim()
+      price: row.price === undefined || row.price === null || row.price === "" ? null : Number(row.price),
+      image: String(row.image_url || "").trim() || localImageFor({
+        name: row.name,
+        category: displayCategory || canonicalCategory(row.category_name)
+      })
     };
   }
 
   render();
 
   async function loadManagedCatalog() {
-    const config = window.POA_CONFIG || {};
-    if (!window.supabase?.createClient || !config.SUPABASE_URL || !config.SUPABASE_PUBLISHABLE_KEY) {
-      status.textContent = "يتم عرض قائمة الأسعار والصور المحلية؛ تعذر الاتصال بقاعدة البيانات.";
-      return;
-    }
-
     try {
-      const client = window.__GDC_PUBLIC_CATALOG_CLIENT__ || window.supabase.createClient(
-        config.SUPABASE_URL,
-        config.SUPABASE_PUBLISHABLE_KEY,
-        { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } }
-      );
-      window.__GDC_PUBLIC_CATALOG_CLIENT__ = client;
+      const [categoryResponse, itemResponse] = await Promise.all([
+        fetch("data/service-categories.json", { cache: "no-cache" }),
+        fetch("data/service-items.json", { cache: "no-cache" })
+      ]);
+      if (!categoryResponse.ok) throw new Error(`service-categories.json: HTTP ${categoryResponse.status}`);
+      if (!itemResponse.ok) throw new Error(`service-items.json: HTTP ${itemResponse.status}`);
 
-      const [categoryResult, itemResult] = await Promise.all([
-        client.from("gdc_service_categories")
-          .select("name,is_active,sort_order")
-          .eq("is_active", true)
-          .order("sort_order", { ascending: true }),
-        client.from("gdc_service_items")
-          .select("id,name,category_name,description,price,image_url,image_path,is_active,sort_order")
-          .eq("is_active", true)
-          .order("sort_order", { ascending: true })
-          .order("created_at", { ascending: true })
+      const [categoryRows, itemRows] = await Promise.all([
+        categoryResponse.json(),
+        itemResponse.json()
       ]);
 
-      if (categoryResult.error) throw categoryResult.error;
-      if (itemResult.error) throw itemResult.error;
-
-      managedCategories = (categoryResult.data || [])
-        .filter(row => row.is_active !== false)
+      managedCategories = (Array.isArray(categoryRows) ? categoryRows : [])
+        .filter(row => row && row.is_active !== false)
+        .sort((a, b) => Number(a.sort_order || 0) - Number(b.sort_order || 0))
         .map(row => canonicalCategory(row.name))
         .filter(Boolean);
 
@@ -290,29 +278,32 @@
         if (key && !displayByKey.has(key)) displayByKey.set(key, name);
       });
       const allowed = new Set(displayByKey.keys());
-      const managedProducts = (itemResult.data || [])
+
+      const managedProducts = (Array.isArray(itemRows) ? itemRows : [])
+        .filter(row => row && row.is_active !== false)
         .filter(row => allowed.has(categoryKey(row.category_name)) && categoryKey(row.category_name) !== "express-service")
+        .sort((a, b) =>
+          Number(a.sort_order || 0) - Number(b.sort_order || 0) ||
+          String(a.created_at || "").localeCompare(String(b.created_at || ""))
+        )
         .map(row => normalizeProduct(
           row,
           displayByKey.get(categoryKey(row.category_name)) || canonicalCategory(row.category_name)
         ));
 
-      // If database rows are temporarily empty, retain the approved local menu instead of empty category cards.
-      if (managedProducts.length) {
-        products = managedProducts;
-      }
+      if (!managedProducts.length) throw new Error("لم يتم العثور على أصناف نشطة في ملفات البيانات المحلية.");
 
+      products = managedProducts;
       const availableCategories = categoryList();
       if (!availableCategories.some(name => categoryKey(name) === categoryKey(activeCategory))) {
         activeCategory = availableCategories[0] || "";
       }
       render();
-      status.textContent = managedProducts.length
-        ? ""
-        : "لا توجد أصناف منشورة في قاعدة البيانات؛ تظهر قائمة الأسعار المحلية المتاحة.";
+      status.textContent = "";
     } catch (error) {
-      console.error("GRAND DRY CLEAN catalogue could not be loaded:", error);
-      status.textContent = "تعذر تحديث البيانات من قاعدة البيانات؛ تظهر قائمة الأسعار المحلية المتاحة.";
+      console.error("GRAND DRY CLEAN local catalogue could not be loaded; using bundled fallback catalogue:", error);
+      status.textContent = "تُعرض قائمة الأسعار الاحتياطية؛ تعذر قراءة ملفات البيانات المحلية.";
+      render();
     }
   }
 

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "80efedd2-af1b-473c-b5a5-43fda5a9cd70",
+    "item_name": "قميص",
+    "price": 15,
+    "note": "",
+    "sort_order": 10,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "4e2dc9b6-f576-453c-a8fa-471bc3904dbd",
+    "item_name": "تيشيرت",
+    "price": 15,
+    "note": "",
+    "sort_order": 20,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "c4a30a23-141d-4d63-831c-82e1c29c1002",
+    "item_name": "بلوزة",
+    "price": 20,
+    "note": "",
+    "sort_order": 30,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "ece78de0-3b7a-4d7c-bffd-ca38e4e27db6",
+    "item_name": "بنطلون جينز",
+    "price": 20,
+    "note": "",
+    "sort_order": 40,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "a12b83ae-d580-4af8-b22f-409c2e630619",
+    "item_name": "بنطلون جبردين",
+    "price": 20,
+    "note": "",
+    "sort_order": 50,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "4efa3dc9-951a-407b-9708-d45d83f0eb05",
+    "item_name": "فستان كاجوال",
+    "price": 45,
+    "note": "",
+    "sort_order": 60,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "2815fd2e-50db-4152-a0a5-1916974c4744",
+    "item_name": "جيبة",
+    "price": 20,
+    "note": "",
+    "sort_order": 70,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "a8c06ab8-44a0-4398-afd6-fbf96a92866e",
+    "item_name": "عباية حريمي",
+    "price": 45,
+    "note": "",
+    "sort_order": 80,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "de5638f2-4b18-4974-9086-495832aacb4e",
+    "item_name": "جلابية",
+    "price": 40,
+    "note": "",
+    "sort_order": 90,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "43db1a83-f015-40ff-85c3-6c6b1899756c",
+    "item_name": "سويت شيرت",
+    "price": 20,
+    "note": "",
+    "sort_order": 100,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "18ae37f4-2842-4f80-b837-a93b36d6e491",
+    "item_name": "بلوفر",
+    "price": 20,
+    "note": "",
+    "sort_order": 110,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "85c75a9f-be55-4c3e-97a3-b526b172e30e",
+    "item_name": "هودي",
+    "price": 20,
+    "note": "",
+    "sort_order": 120,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "92874c04-7ba0-49a7-b92e-b5948d151f38",
+    "item_name": "بيجامة (قطعتين)",
+    "price": 40,
+    "note": "",
+    "sort_order": 130,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "043fd9f6-bb7f-4bda-aaa2-6b24fe371e16",
+    "item_name": "ترينج رياضي (قطعتين)",
+    "price": 40,
+    "note": "",
+    "sort_order": 140,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "bd93d55a-3da6-4acf-a01c-1a0d023dfdf5",
+    "item_name": "بدلة (قطعتين)",
+    "price": 65,
+    "note": "",
+    "sort_order": 150,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "db76d91f-5bb2-4711-9e27-9de55595d248",
+    "item_name": "بدلة (3 قطع)",
+    "price": 80,
+    "note": "",
+    "sort_order": 160,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "7dcce216-b362-45a2-b3ca-e998984be7c3",
+    "item_name": "جاكيت بدلة",
+    "price": 45,
+    "note": "",
+    "sort_order": 170,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "f88d625f-10d9-4db1-88cf-e73e26f4c1ae",
+    "item_name": "جاكيت بامب",
+    "price": 30,
+    "note": "",
+    "sort_order": 180,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "838cb9ee-a7a3-474f-8608-be42fa4c3ce5",
+    "item_name": "جاكيت جوخ",
+    "price": 40,
+    "note": "",
+    "sort_order": 190,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "59248801-06a3-413c-9388-456830924bd7",
+    "item_name": "بالطو طويل",
+    "price": 35,
+    "note": "",
+    "sort_order": 200,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "fff4aa19-0f7a-416e-b241-632eec3111cf",
+    "item_name": "فستان سواريه",
+    "price": 65,
+    "note": "",
+    "sort_order": 210,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "343068f2-4d91-4529-a376-9c9a7aa920d6",
+    "item_name": "فستان زفاف",
+    "price": null,
+    "note": "السعر عند المعاينة",
+    "sort_order": 220,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "2b851a25-2faa-4db8-9ae7-8f51f49c4d7c",
+    "item_name": "كرافتة",
+    "price": 30,
+    "note": "",
+    "sort_order": 230,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  },
+  {
+    "id": "d89b5494-ecd4-4afd-b279-d5c79dd72914",
+    "item_name": "شال",
+    "price": 15,
+    "note": "",
+    "sort_order": 240,
+    "is_active": true,
+    "created_at": "2026-11-19 23:38:40.108361+00",
+    "updated_at": "2026-11-21 00:59:54.414048+00"
+  }
+]

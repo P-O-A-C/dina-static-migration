@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 :root{--green:#07513A;--green-2:#0B6845;--gold:#D3A13D;--cream:#F7F1E7;--ink:#2E2922;--muted:#81786D;--line:#E8DFD2;--white:#fff;--shadow:0 12px 30px rgba(34,38,30,.08)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
