@@ -1,0 +1,958 @@
+[
+  {
+    "path": ".nojekyll",
+    "bytes": 0
+  },
+  {
+    "path": "Dina'sCorner/categories.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/dashboard.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/home.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/index.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/locations.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/login.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/menu.html",
+    "bytes": 510
+  },
+  {
+    "path": "Dina'sCorner/welcome.html",
+    "bytes": 442
+  },
+  {
+    "path": "GDC-GITHUB-MIGRATION-REPORT-AR.md",
+    "bytes": 1009
+  },
+  {
+    "path": "GITHUB-MIGRATION-REVIEW-AR.md",
+    "bytes": 1854
+  },
+  {
+    "path": "GITHUB-ONLY-FILE-MANIFEST.json",
+    "bytes": 17884
+  },
+  {
+    "path": "GITHUB-ONLY-SETUP-AR.md",
+    "bytes": 6029
+  },
+  {
+    "path": "GrandDryClean/BRAND-IDENTITY-AR.md",
+    "bytes": 1419
+  },
+  {
+    "path": "GrandDryClean/CUSTOMER-PAGE-README-AR.md",
+    "bytes": 1448
+  },
+  {
+    "path": "GrandDryClean/GDC-SLIDES-IMAGE-UPLOAD-MAP-AR.csv",
+    "bytes": 935
+  },
+  {
+    "path": "GrandDryClean/ORDER-PAGE-README-AR.md",
+    "bytes": 339
+  },
+  {
+    "path": "GrandDryClean/assets/dc-whatsapp-order.css",
+    "bytes": 9235
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-service-dryclean.jpg",
+    "bytes": 12639
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-service-furnishings.jpg",
+    "bytes": 14977
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-service-washing.jpg",
+    "bytes": 13631
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-slide-1.jpg",
+    "bytes": 167193
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-slide-2.jpg",
+    "bytes": 151751
+  },
+  {
+    "path": "GrandDryClean/assets/gdc-slide-3.jpg",
+    "bytes": 149964
+  },
+  {
+    "path": "GrandDryClean/assets/grand-dry-clean-logo.png",
+    "bytes": 644989
+  },
+  {
+    "path": "GrandDryClean/assets/products/apron.jpg",
+    "bytes": 65435
+  },
+  {
+    "path": "GrandDryClean/assets/products/blouse.jpg",
+    "bytes": 94338
+  },
+  {
+    "path": "GrandDryClean/assets/products/carpet.jpg",
+    "bytes": 251225
+  },
+  {
+    "path": "GrandDryClean/assets/products/casual-dress.jpg",
+    "bytes": 123730
+  },
+  {
+    "path": "GrandDryClean/assets/products/coat-long.jpg",
+    "bytes": 112904
+  },
+  {
+    "path": "GrandDryClean/assets/products/coat-wool.jpg",
+    "bytes": 137776
+  },
+  {
+    "path": "GrandDryClean/assets/products/evening-dress.jpg",
+    "bytes": 80245
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/01_blanket_single.png",
+    "bytes": 148028
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/02_blanket_double.png",
+    "bytes": 164707
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/03_fiber_duvet_large.png",
+    "bytes": 104206
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/04_fiber_duvet_small.png",
+    "bytes": 100486
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/05_quilt_coverlet.png",
+    "bytes": 158992
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/06_bedspread.png",
+    "bytes": 189220
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/07_pillow_large.png",
+    "bytes": 95925
+  },
+  {
+    "path": "GrandDryClean/assets/products/furnishings/08_pillow_small.png",
+    "bytes": 86761
+  },
+  {
+    "path": "GrandDryClean/assets/products/galabeya.jpg",
+    "bytes": 44453
+  },
+  {
+    "path": "GrandDryClean/assets/products/hoodie.jpg",
+    "bytes": 109255
+  },
+  {
+    "path": "GrandDryClean/assets/products/jacket.jpg",
+    "bytes": 64352
+  },
+  {
+    "path": "GrandDryClean/assets/products/leather-jacket.jpg",
+    "bytes": 109097
+  },
+  {
+    "path": "GrandDryClean/assets/products/pajama-2-piece.jpg",
+    "bytes": 74283
+  },
+  {
+    "path": "GrandDryClean/assets/products/polo-shirt.jpg",
+    "bytes": 54119
+  },
+  {
+    "path": "GrandDryClean/assets/products/pullover.jpg",
+    "bytes": 120732
+  },
+  {
+    "path": "GrandDryClean/assets/products/shawl.jpg",
+    "bytes": 152136
+  },
+  {
+    "path": "GrandDryClean/assets/products/shirt.jpg",
+    "bytes": 84330
+  },
+  {
+    "path": "GrandDryClean/assets/products/shorts-gabardine.jpg",
+    "bytes": 58805
+  },
+  {
+    "path": "GrandDryClean/assets/products/skirt.jpg",
+    "bytes": 103561
+  },
+  {
+    "path": "GrandDryClean/assets/products/socks.jpg",
+    "bytes": 69612
+  },
+  {
+    "path": "GrandDryClean/assets/products/suit-2-piece.jpg",
+    "bytes": 61868
+  },
+  {
+    "path": "GrandDryClean/assets/products/suit-3-piece.jpg",
+    "bytes": 65571
+  },
+  {
+    "path": "GrandDryClean/assets/products/suit-jacket.jpg",
+    "bytes": 59866
+  },
+  {
+    "path": "GrandDryClean/assets/products/tie.jpg",
+    "bytes": 60534
+  },
+  {
+    "path": "GrandDryClean/assets/products/towel.jpg",
+    "bytes": 170861
+  },
+  {
+    "path": "GrandDryClean/assets/products/tracksuit-2-piece.jpg",
+    "bytes": 68828
+  },
+  {
+    "path": "GrandDryClean/assets/products/trousers-gabardine.jpg",
+    "bytes": 49137
+  },
+  {
+    "path": "GrandDryClean/assets/products/trousers-jeans.jpg",
+    "bytes": 93099
+  },
+  {
+    "path": "GrandDryClean/assets/products/tshirt.jpg",
+    "bytes": 32799
+  },
+  {
+    "path": "GrandDryClean/assets/products/tunic.jpg",
+    "bytes": 59423
+  },
+  {
+    "path": "GrandDryClean/assets/products/wedding-dress.jpg",
+    "bytes": 67319
+  },
+  {
+    "path": "GrandDryClean/assets/products/womens-abaya.jpg",
+    "bytes": 49697
+  },
+  {
+    "path": "GrandDryClean/assets/slides/.gitkeep",
+    "bytes": 0
+  },
+  {
+    "path": "GrandDryClean/assets/slides/README-AR.md",
+    "bytes": 331
+  },
+  {
+    "path": "GrandDryClean/assets/slides/slide-01.jpg",
+    "bytes": 167193
+  },
+  {
+    "path": "GrandDryClean/assets/slides/slide-02.jpg",
+    "bytes": 151751
+  },
+  {
+    "path": "GrandDryClean/assets/slides/slide-03.jpg",
+    "bytes": 149964
+  },
+  {
+    "path": "GrandDryClean/css/customer.css",
+    "bytes": 21535
+  },
+  {
+    "path": "GrandDryClean/css/order.css",
+    "bytes": 11335
+  },
+  {
+    "path": "GrandDryClean/css/poac.css",
+    "bytes": 12165
+  },
+  {
+    "path": "GrandDryClean/customer-account.html",
+    "bytes": 420
+  },
+  {
+    "path": "GrandDryClean/dashboard.html",
+    "bytes": 510
+  },
+  {
+    "path": "GrandDryClean/data/README-AR.md",
+    "bytes": 1100
+  },
+  {
+    "path": "GrandDryClean/data/branches.json",
+    "bytes": 1592
+  },
+  {
+    "path": "GrandDryClean/data/home-slides.json",
+    "bytes": 3494
+  },
+  {
+    "path": "GrandDryClean/data/ironing-prices.json",
+    "bytes": 6684
+  },
+  {
+    "path": "GrandDryClean/data/service-categories.json",
+    "bytes": 956
+  },
+  {
+    "path": "GrandDryClean/data/service-items.json",
+    "bytes": 25701
+  },
+  {
+    "path": "GrandDryClean/data/settings.json",
+    "bytes": 211
+  },
+  {
+    "path": "GrandDryClean/gm.html",
+    "bytes": 510
+  },
+  {
+    "path": "GrandDryClean/index.html",
+    "bytes": 6320
+  },
+  {
+    "path": "GrandDryClean/js/customer.js",
+    "bytes": 11635
+  },
+  {
+    "path": "GrandDryClean/js/order.js",
+    "bytes": 15137
+  },
+  {
+    "path": "GrandDryClean/login.html",
+    "bytes": 510
+  },
+  {
+    "path": "GrandDryClean/order.html",
+    "bytes": 2334
+  },
+  {
+    "path": "GrandDryClean/readme.md",
+    "bytes": 178
+  },
+  {
+    "path": "GrandDryClean/vodafone-cash.html",
+    "bytes": 5727
+  },
+  {
+    "path": "GrandDryClean/welcome.html",
+    "bytes": 476
+  },
+  {
+    "path": "IMAGE-UPLOAD-GUIDE-AR.md",
+    "bytes": 2502
+  },
+  {
+    "path": "IMAGE-UPLOAD-MAP-AR.csv",
+    "bytes": 18432
+  },
+  {
+    "path": "POAC-Admin/index.html",
+    "bytes": 485
+  },
+  {
+    "path": "POAC-Admin/login.html",
+    "bytes": 485
+  },
+  {
+    "path": "README-AR.md",
+    "bytes": 813
+  },
+  {
+    "path": "README.md",
+    "bytes": 257
+  },
+  {
+    "path": "assets/dc-whatsapp-order.css",
+    "bytes": 10352
+  },
+  {
+    "path": "assets/dc-whatsapp-order.js",
+    "bytes": 16276
+  },
+  {
+    "path": "assets/dina-best-sellers.js",
+    "bytes": 4406
+  },
+  {
+    "path": "assets/dina-branch-maps.js",
+    "bytes": 1481
+  },
+  {
+    "path": "assets/dina-brand-identity.css",
+    "bytes": 9853
+  },
+  {
+    "path": "assets/dina-corner-icon-192.png",
+    "bytes": 31401
+  },
+  {
+    "path": "assets/dina-corner-icon-512.png",
+    "bytes": 166190
+  },
+  {
+    "path": "assets/dina-corner-icon.png",
+    "bytes": 166190
+  },
+  {
+    "path": "assets/dina-corner-logo-approved.png",
+    "bytes": 906587
+  },
+  {
+    "path": "assets/dina-corner-logo-new.jpeg",
+    "bytes": 178446
+  },
+  {
+    "path": "assets/dina-corner-logo-new.png",
+    "bytes": 799608
+  },
+  {
+    "path": "assets/dina-corner-logo-transparent.png",
+    "bytes": 906587
+  },
+  {
+    "path": "assets/dina-corner-logo.png",
+    "bytes": 222707
+  },
+  {
+    "path": "assets/dina-corner-official-logo.jpg",
+    "bytes": 222707
+  },
+  {
+    "path": "assets/dina-floral-bl.png",
+    "bytes": 86990
+  },
+  {
+    "path": "assets/dina-floral-br.png",
+    "bytes": 87208
+  },
+  {
+    "path": "assets/dina-floral-tl.png",
+    "bytes": 87015
+  },
+  {
+    "path": "assets/dina-floral-tr.png",
+    "bytes": 86861
+  },
+  {
+    "path": "assets/dina-theme.css",
+    "bytes": 9930
+  },
+  {
+    "path": "assets/dina-welcome-approved-artwork.jpg",
+    "bytes": 359664
+  },
+  {
+    "path": "assets/dina-welcome.css",
+    "bytes": 55841
+  },
+  {
+    "path": "assets/dina-welcome.js",
+    "bytes": 3841
+  },
+  {
+    "path": "assets/github-only-cleanup.js",
+    "bytes": 564
+  },
+  {
+    "path": "assets/menu-display.css",
+    "bytes": 25245
+  },
+  {
+    "path": "assets/menu-display.js",
+    "bytes": 21390
+  },
+  {
+    "path": "assets/public-menu-premium.css",
+    "bytes": 22785
+  },
+  {
+    "path": "assets/static-runtime.js",
+    "bytes": 1578
+  },
+  {
+    "path": "assets/style.css",
+    "bytes": 53096
+  },
+  {
+    "path": "assets/tenant-config.js",
+    "bytes": 729
+  },
+  {
+    "path": "category-images-verified.csv",
+    "bytes": 749
+  },
+  {
+    "path": "data/README-AR.md",
+    "bytes": 828
+  },
+  {
+    "path": "data/category-images-verified.csv",
+    "bytes": 859
+  },
+  {
+    "path": "data/home-featured-products.json",
+    "bytes": 4179
+  },
+  {
+    "path": "data/locations.json",
+    "bytes": 2098
+  },
+  {
+    "path": "data/menu-categories.json",
+    "bytes": 2755
+  },
+  {
+    "path": "data/menu-items.json",
+    "bytes": 44603
+  },
+  {
+    "path": "dina-brand-identity.css",
+    "bytes": 9748
+  },
+  {
+    "path": "home-featured-image-check.json",
+    "bytes": 394
+  },
+  {
+    "path": "images/categories/.gitkeep",
+    "bytes": 74
+  },
+  {
+    "path": "images/categories/category-01.webp",
+    "bytes": 152200
+  },
+  {
+    "path": "images/categories/category-02.webp",
+    "bytes": 187134
+  },
+  {
+    "path": "images/categories/category-03.webp",
+    "bytes": 112452
+  },
+  {
+    "path": "images/categories/category-04.webp",
+    "bytes": 111752
+  },
+  {
+    "path": "images/categories/category-05.webp",
+    "bytes": 175528
+  },
+  {
+    "path": "images/categories/category-06.webp",
+    "bytes": 196662
+  },
+  {
+    "path": "images/categories/category-07.webp",
+    "bytes": 67808
+  },
+  {
+    "path": "images/categories/category-08.webp",
+    "bytes": 197766
+  },
+  {
+    "path": "images/home-featured/.gitkeep",
+    "bytes": 74
+  },
+  {
+    "path": "images/home-featured/featured-01.jpg",
+    "bytes": 39201
+  },
+  {
+    "path": "images/home-featured/featured-02.jpg",
+    "bytes": 142086
+  },
+  {
+    "path": "images/home-featured/featured-03.jpg",
+    "bytes": 225672
+  },
+  {
+    "path": "images/home-featured/featured-04.jpg",
+    "bytes": 44664
+  },
+  {
+    "path": "images/home-featured/featured-06.jpg",
+    "bytes": 44478
+  },
+  {
+    "path": "images/home-featured/featured-07.jpg",
+    "bytes": 236206
+  },
+  {
+    "path": "images/home-featured/featured-08.jpg",
+    "bytes": 99347
+  },
+  {
+    "path": "images/home-featured/featured-09.jpg",
+    "bytes": 56997
+  },
+  {
+    "path": "images/home-featured/featured-10.jpg",
+    "bytes": 126660
+  },
+  {
+    "path": "images/home-featured/featured-11.jpg",
+    "bytes": 143902
+  },
+  {
+    "path": "images/home-featured/featured-12.jpg",
+    "bytes": 99510
+  },
+  {
+    "path": "images/home-featured/featured-13.jpg",
+    "bytes": 126356
+  },
+  {
+    "path": "images/home-featured/featured-14.jpg",
+    "bytes": 155645
+  },
+  {
+    "path": "images/items/.gitkeep",
+    "bytes": 74
+  },
+  {
+    "path": "images/items/item-001.jpg",
+    "bytes": 133108
+  },
+  {
+    "path": "images/items/item-002.jpg",
+    "bytes": 197462
+  },
+  {
+    "path": "images/items/item-003.jpg",
+    "bytes": 270249
+  },
+  {
+    "path": "images/items/item-004.jpg",
+    "bytes": 196024
+  },
+  {
+    "path": "images/items/item-005.jpg",
+    "bytes": 95795
+  },
+  {
+    "path": "images/items/item-006.jpeg",
+    "bytes": 234288
+  },
+  {
+    "path": "images/items/item-007.jpg",
+    "bytes": 13561
+  },
+  {
+    "path": "images/items/item-008.jpg",
+    "bytes": 190604
+  },
+  {
+    "path": "images/items/item-009.jpg",
+    "bytes": 16615
+  },
+  {
+    "path": "images/items/item-010.jpg",
+    "bytes": 195329
+  },
+  {
+    "path": "images/items/item-011.jpg",
+    "bytes": 178499
+  },
+  {
+    "path": "images/items/item-012.jpg",
+    "bytes": 301672
+  },
+  {
+    "path": "images/items/item-013.jpg",
+    "bytes": 270249
+  },
+  {
+    "path": "images/items/item-014.jpg",
+    "bytes": 232995
+  },
+  {
+    "path": "images/items/item-015.jpg",
+    "bytes": 128258
+  },
+  {
+    "path": "images/items/item-016.jpg",
+    "bytes": 161508
+  },
+  {
+    "path": "images/items/item-017.jpg",
+    "bytes": 141011
+  },
+  {
+    "path": "images/items/item-018.jpg",
+    "bytes": 142811
+  },
+  {
+    "path": "images/items/item-019.jpg",
+    "bytes": 183979
+  },
+  {
+    "path": "images/items/item-020.jpg",
+    "bytes": 116752
+  },
+  {
+    "path": "images/items/item-021.jpg",
+    "bytes": 147527
+  },
+  {
+    "path": "images/items/item-022.jpg",
+    "bytes": 47253
+  },
+  {
+    "path": "images/items/item-023.jpg",
+    "bytes": 324130
+  },
+  {
+    "path": "images/items/item-024.jpeg",
+    "bytes": 151332
+  },
+  {
+    "path": "images/items/item-025.jpg",
+    "bytes": 167982
+  },
+  {
+    "path": "images/items/item-026.jpg",
+    "bytes": 176073
+  },
+  {
+    "path": "images/items/item-027.jpg",
+    "bytes": 146542
+  },
+  {
+    "path": "images/items/item-028.jpg",
+    "bytes": 190020
+  },
+  {
+    "path": "images/items/item-029.jpg",
+    "bytes": 8105
+  },
+  {
+    "path": "images/items/item-030.jpg",
+    "bytes": 215112
+  },
+  {
+    "path": "images/items/item-031.jpg",
+    "bytes": 167469
+  },
+  {
+    "path": "images/items/item-032.jpg",
+    "bytes": 130021
+  },
+  {
+    "path": "images/items/item-033.jpg",
+    "bytes": 174579
+  },
+  {
+    "path": "images/items/item-034.jpg",
+    "bytes": 106872
+  },
+  {
+    "path": "images/items/item-035.jpg",
+    "bytes": 254789
+  },
+  {
+    "path": "images/items/item-036.jpg",
+    "bytes": 25473
+  },
+  {
+    "path": "images/items/item-037.jpg",
+    "bytes": 201344
+  },
+  {
+    "path": "images/items/item-038.jpeg",
+    "bytes": 186098
+  },
+  {
+    "path": "images/items/item-039.jpg",
+    "bytes": 8105
+  },
+  {
+    "path": "images/items/item-040.jpg",
+    "bytes": 116335
+  },
+  {
+    "path": "images/items/item-041.jpg",
+    "bytes": 48838
+  },
+  {
+    "path": "images/items/item-042.jpg",
+    "bytes": 59256
+  },
+  {
+    "path": "images/items/item-043.jpg",
+    "bytes": 188603
+  },
+  {
+    "path": "images/items/item-044.jpg",
+    "bytes": 221053
+  },
+  {
+    "path": "images/items/item-045.jpg",
+    "bytes": 182906
+  },
+  {
+    "path": "images/items/item-046.jpg",
+    "bytes": 163590
+  },
+  {
+    "path": "images/items/item-047.jpg",
+    "bytes": 189840
+  },
+  {
+    "path": "images/items/item-048.jpg",
+    "bytes": 36711
+  },
+  {
+    "path": "images/items/item-049.jpg",
+    "bytes": 166757
+  },
+  {
+    "path": "images/items/item-050.jpg",
+    "bytes": 330486
+  },
+  {
+    "path": "images/items/item-051.jpg",
+    "bytes": 40535
+  },
+  {
+    "path": "images/items/item-052.jpg",
+    "bytes": 123081
+  },
+  {
+    "path": "images/items/item-054.jpg",
+    "bytes": 26193
+  },
+  {
+    "path": "images/items/item-055.jpg",
+    "bytes": 146542
+  },
+  {
+    "path": "images/items/item-056.jpg",
+    "bytes": 188794
+  },
+  {
+    "path": "images/items/item-057.jpg",
+    "bytes": 9360
+  },
+  {
+    "path": "images/items/item-058.jpg",
+    "bytes": 35967
+  },
+  {
+    "path": "images/items/item-059.jpg",
+    "bytes": 145875
+  },
+  {
+    "path": "images/items/item-060.jpg",
+    "bytes": 7493
+  },
+  {
+    "path": "images/items/item-061.jpg",
+    "bytes": 48838
+  },
+  {
+    "path": "images/items/item-062.jpg",
+    "bytes": 161508
+  },
+  {
+    "path": "images/items/item-063.jpg",
+    "bytes": 221865
+  },
+  {
+    "path": "images/items/item-064.jpg",
+    "bytes": 17010
+  },
+  {
+    "path": "images/items/item-065.jpg",
+    "bytes": 221054
+  },
+  {
+    "path": "images/items/item-066.jpg",
+    "bytes": 127802
+  },
+  {
+    "path": "images/items/item-067.jpg",
+    "bytes": 208378
+  },
+  {
+    "path": "images/items/item-068.jpg",
+    "bytes": 31925
+  },
+  {
+    "path": "images/items/item-069.jpg",
+    "bytes": 7269
+  },
+  {
+    "path": "images/items/item-070.jpg",
+    "bytes": 20836
+  },
+  {
+    "path": "images/items/item-071.jpg",
+    "bytes": 173070
+  },
+  {
+    "path": "index.html",
+    "bytes": 2262
+  },
+  {
+    "path": "login.html",
+    "bytes": 448
+  },
+  {
+    "path": "manifest.webmanifest",
+    "bytes": 540
+  },
+  {
+    "path": "menu.html",
+    "bytes": 2430
+  },
+  {
+    "path": "poac-github-admin/admin.css",
+    "bytes": 7209
+  },
+  {
+    "path": "poac-github-admin/admin.js",
+    "bytes": 16941
+  },
+  {
+    "path": "poac-github-admin/config.js",
+    "bytes": 1698
+  },
+  {
+    "path": "poac-github-admin/index.html",
+    "bytes": 4439
+  },
+  {
+    "path": "product-images-verified.csv",
+    "bytes": 16721
+  },
+  {
+    "path": "sw.js",
+    "bytes": 2428
+  },
+  {
+    "path": "welcome.html",
+    "bytes": 28063
+  }
+]
