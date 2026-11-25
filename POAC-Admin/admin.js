@@ -1,3 +1,4 @@
+/* POAC GITHUB ADMIN DIAGNOSTICS V3 */
 (() => {
   "use strict";
   const CFG = window.POAC_GITHUB_ADMIN_CONFIG;
