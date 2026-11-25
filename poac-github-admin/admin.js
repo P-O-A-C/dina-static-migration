@@ -1,3 +1,4 @@
+/* POAC GITHUB ADMIN DIAGNOSTICS V3 */
 (() => {
   "use strict";
   const CFG = window.POAC_GITHUB_ADMIN_CONFIG;
@@ -21,12 +22,43 @@
     }});
     const body = await response.json().catch(()=>({}));
     if(!response.ok){
-      let message=body.message||`GitHub API error ${response.status}`;
-      if(response.status===401) message="المفتاح غير صحيح أو منتهي. أنشئ Fine-grained token بصلاحيات المستودع المحدد.";
-      if(response.status===403) message="GitHub رفض العملية. راجع صلاحية Contents: Read and write وحدود API.";
-      if(response.status===404) message="المستودع أو الملف أو الفرع غير موجود، أو أن المفتاح لا يملك صلاحية الوصول.";
-      if(response.status===409||response.status===422) message="حدث تعارض في نسخة الملف. أعد تحميل الملف قبل الحفظ.";
-      throw new Error(message);
+      const apiMessage=String(body.message||`GitHub API error ${response.status}`);
+      const remaining=response.headers.get("x-ratelimit-remaining");
+      const reset=response.headers.get("x-ratelimit-reset");
+      const retryAfter=response.headers.get("retry-after");
+      const accepted=response.headers.get("x-accepted-github-permissions");
+      const requestId=response.headers.get("x-github-request-id");
+      const isRateLimited=response.status===429 || remaining==="0" || /rate limit|secondary rate limit/i.test(apiMessage);
+      let guidance="";
+      if(response.status===401){
+        guidance="المفتاح غير صحيح أو منتهي. أنشئ Fine-grained token جديدًا وتأكد أنك أدخلت قيمته كاملة.";
+      } else if(isRateLimited){
+        if(retryAfter) guidance=`تجاوزت حدود الطلبات الثانوية. انتظر ${retryAfter} ثانية على الأقل قبل إعادة المحاولة.`;
+        else if(remaining==="0" && reset){
+          const resetAt=new Date(Number(reset)*1000);
+          guidance=`انتهى الحد الأساسي للطلبات. انتظر حتى ${resetAt.toLocaleString("ar-EG",{timeZone:"UTC"})} بتوقيت UTC قبل إعادة المحاولة.`;
+        } else guidance="قد يكون GitHub فرض حدًا ثانويًا. أوقف المحاولات وانتظر دقيقة على الأقل قبل المحاولة مرة أخرى.";
+      } else if(response.status===403 && /resource not accessible|personal access token|integration/i.test(apiMessage)){
+        guidance="المفتاح وصل إلى GitHub لكنه غير مخوّل لهذا المستودع أو للمسار المطلوب. راجع Resource owner، وحدد المستودع نفسه داخل Fine-grained token، واجعل Contents = Read and write. إذا كان المستودع تابعًا لمؤسسة، تحقق من موافقة المؤسسة على المفتاح.";
+      } else if(response.status===403 && /protected branch|branch protection|ruleset/i.test(apiMessage)){
+        guidance="الفرع محمي بقواعد تمنع هذا التعديل. راجع قواعد حماية الفرع أو استخدم فرعًا مسموحًا به؛ لا توسّع صلاحيات المفتاح لتجاوز الحماية.";
+      } else if(response.status===403){
+        guidance="رفض GitHub الطلب. قد يكون السبب سياسة مؤسسة، أو صلاحية المستودع، أو حماية الفرع، أو حدود الطلبات. راجع رسالة GitHub الأصلية أدناه.";
+      } else if(response.status===404){
+        guidance="المستودع أو الملف أو الفرع غير موجود، أو أن بيانات المالك/اسم المستودع غير صحيحة، أو أن المفتاح لا يملك حق رؤيته.";
+      } else if(response.status===409 || response.status===422){
+        guidance="تعذر تحديث الملف. قد تكون نسخة الملف تغيرت منذ تحميلها أو توجد قواعد تحقق تمنع الحفظ. أعد تحميل الملف واقرأ رسالة GitHub الأصلية.";
+      } else {
+        guidance="تعذر إكمال طلب GitHub. راجع التفاصيل أدناه.";
+      }
+      const diagnostics=[`HTTP ${response.status}`, `رسالة GitHub: ${apiMessage}`];
+      if(remaining!==null) diagnostics.push(`الطلبات المتبقية في الحد الأساسي: ${remaining}`);
+      if(retryAfter) diagnostics.push(`Retry-After: ${retryAfter} ثانية`);
+      if(accepted) diagnostics.push(`الصلاحيات المطلوبة حسب GitHub: ${accepted}`);
+      if(requestId) diagnostics.push(`Request ID: ${requestId}`);
+      const err=new Error(`${guidance}\n\n${diagnostics.join("\n")}`);
+      err.status=response.status; err.apiMessage=apiMessage; err.rateLimitRemaining=remaining; err.rateLimitReset=reset; err.retryAfter=retryAfter; err.acceptedPermissions=accepted; err.requestId=requestId;
+      throw err;
     }
     return body;
   }
@@ -45,10 +77,15 @@
     if(!result.content) throw new Error(`ملف البيانات فارغ أو أكبر من الحد المدعوم: ${path}`);
     return {value:JSON.parse(decodeContent(result.content)),sha:result.sha};
   }
+  let lastMutationAt=0;
   async function putEncodedFile(path, encodedContent, sha, message){
+    const wait=Math.max(0,1100-(Date.now()-lastMutationAt));
+    if(wait) await new Promise(resolve=>setTimeout(resolve,wait));
     const body={message,content:encodedContent,branch:state.branch};
     if(sha) body.sha=sha;
-    return github(endpoint(path),{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    const result=await github(endpoint(path),{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    lastMutationAt=Date.now();
+    return result;
   }
   async function putFile(path, content, sha, message){
     return putEncodedFile(path,encodeContent(content),sha,message);
