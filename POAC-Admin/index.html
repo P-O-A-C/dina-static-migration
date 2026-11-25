@@ -1,1 +1,56 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../poac-github-admin/index.html"><title>POAC Admin</title><script>location.replace("../poac-github-admin/index.html"+location.search+location.hash);</script></head><body>جاري فتح لوحة إدارة POAC عبر GitHub… <a href="../poac-github-admin/index.html">فتح اللوحة</a></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102d25">
+  <meta name="robots" content="noindex,nofollow">
+  <title>POAC | الإدارة عبر GitHub</title>
+  <link rel="stylesheet" href="admin.css?v=1">
+  <script src="config.js?v=1"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">P</span><span><b>POAC</b><small>GITHUB MANAGEMENT</small></span></a>
+    <div class="top-actions"><span class="github-mark">GitHub only</span><button id="lockBtn" class="btn ghost" hidden>قفل الإدارة</button></div>
+  </header>
+  <main class="shell">
+    <section id="connectPanel" class="connect-panel">
+      <div class="eyebrow">إدارة مباشرة من مستودع GitHub</div>
+      <h1>لوحة إدارة دينا كورنر والمغسلة</h1>
+      <p class="lead">اختَر المستودع والفرع، ثم أدخل Fine-grained Personal Access Token بصلاحية محتويات هذا المستودع فقط. المفتاح لا يُحفظ في الموقع أو المتصفح.</p>
+      <div class="connect-grid">
+        <label>مالك المستودع / Organization<input id="ownerInput" autocomplete="off" placeholder="مثال: P-O-A-C"></label>
+        <label>اسم المستودع<input id="repoInput" autocomplete="off" placeholder="اسم المستودع"></label>
+        <label>اسم الفرع<input id="branchInput" autocomplete="off" value="main"></label>
+        <label class="token-field">GitHub Fine-grained Token<input id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="الصق المفتاح هنا وقت الإدارة فقط"></label>
+      </div>
+      <div class="connect-bottom"><button id="connectBtn" class="btn primary">الاتصال بالمستودع</button><span id="connectStatus" role="status"></span></div>
+      <div class="security-note"><b>إعداد الصلاحيات:</b> اختر مستودعًا واحدًا فقط، واجعل <code>Contents: Read and write</code> و<code>Metadata: Read-only</code>. لا تستخدم Classic token بصلاحيات واسعة، ولا ترسل المفتاح لأي شخص.</div>
+    </section>
+
+    <section id="workspace" hidden>
+      <div class="workspace-heading">
+        <div><div class="eyebrow">POAC CONTROL PANEL</div><h1>إدارة المشروعين</h1><p id="repoStatus">متصل بالمستودع</p></div>
+        <div class="project-switch"><button class="project-btn active" data-project="dina">Dina’s Corner</button><button class="project-btn" data-project="gdc">Grand Dry Clean</button></div>
+      </div>
+      <div class="workspace-grid">
+        <aside class="collections-panel"><h2 id="projectLabel">DINA’S CORNER</h2><p>اختر ملف البيانات الذي تريد تعديله.</p><nav id="collectionList"></nav><div class="aside-note">كل عملية حفظ تنشئ Commit في GitHub. لا توجد قاعدة بيانات أو خدمة خارجية.</div></aside>
+        <section class="editor-panel">
+          <div class="editor-head"><div><div class="eyebrow">ملف البيانات</div><h2 id="collectionTitle">اختر ملفًا</h2><code id="filePath"></code></div><div class="editor-actions"><button id="reloadBtn" class="btn ghost" disabled>إعادة تحميل</button><button id="addRowBtn" class="btn ghost" disabled>＋ إضافة سجل</button><button id="saveBtn" class="btn primary" disabled>حفظ في GitHub</button></div></div>
+          <div id="editorMessage" class="message" role="status"></div>
+          <div id="emptyState" class="empty-state">اختر أحد ملفات البيانات من القائمة.</div>
+          <div id="rows" class="rows"></div>
+          <div class="editor-foot"><span id="statusLine">لم يتم تحميل ملف بعد.</span><span id="recordCount"></span></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="footer-notes">
+      <span>لا توجد حسابات عملاء أو موظفين أو مكافآت أو عروض مرتبطة بقاعدة بيانات.</span>
+      <span>لا Supabase · لا Cloudflare · لا Worker · لا خادم خارجي</span>
+    </section>
+  </main>
+  <script src="admin.js?v=2"></script>
+</body>
+</html>
