@@ -1205,5 +1205,22 @@
     "sizes": null,
     "extras": null,
     "allergen_notes": "القطعه لا تتعدى 60 سعره حراريه"
+  },
+  {
+    "id": "8546e9c1-cd08-4af8-8e0a-da6d75b0696c",
+    "category_id": "163123c2-b1cf-41a3-90d3-1c67000765e4",
+    "name": "تمر مجدول ",
+    "description": "تمر مغطي بالدرك شوكلت \nمع اللوز وعين الجمل \nذبده بيستاشيو و ذبده فول سوداني ونوتيلا ولوز ",
+    "price": 300,
+    "price_display": null,
+    "image_url": "images/admin-uploads/20261125201209-beefcc13-30c7b840-8155-44b5-836c-8c9124682db.jpg",
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-11-25T20:06:26.747Z",
+    "updated_at": "2026-11-25T20:06:26.747Z",
+    "ingredients": "تمر  \nبالدرك شوكلت \nاللوز \nعين الجمل \nذبده بيستاشيو\nذبده فول سوداني\nنوتيلا ولوز ",
+    "sizes": null,
+    "extras": null,
+    "allergen_notes": "القطعه ٥٠ سعره حراريه"
   }
 ]
