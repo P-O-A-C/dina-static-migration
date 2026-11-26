@@ -225,6 +225,15 @@
     try {
       const settings = await readLocalJson("data/settings.json");
       const phone = String(settings?.phone || "").replace(/\D/g, "");
+      const instapayNumber = String(settings?.instapay_number || settings?.phone || "").replace(/\D/g, "");
+      if (instapayNumber) {
+        const instapayButton = document.querySelector(".instapay-tile[data-copy-number]");
+        if (instapayButton) {
+          instapayButton.dataset.copyNumber = instapayNumber;
+          const number = instapayButton.querySelector(".payment-copy small");
+          if (number) number.textContent = instapayNumber;
+        }
+      }
       if (phone) {
         const walletLink = document.querySelector(".vodafone-tile[data-wallet-number]");
         if (walletLink) {
@@ -255,7 +264,54 @@
   loadBusinessSettings();
 
 
-  // Same interaction pattern as Dina's Corner: copy the wallet number and
+  // InstaPay tile is copy-only: it never opens an external app or payment URL.
+  const instapayButton = document.querySelector(".instapay-tile[data-copy-number]");
+  if (instapayButton && !instapayButton.dataset.copyBound) {
+    instapayButton.dataset.copyBound = "true";
+    instapayButton.addEventListener("click", async () => {
+      const instapayNumber = String(instapayButton.dataset.copyNumber || "").replace(/\D/g, "");
+      const numberLabel = instapayButton.querySelector(".payment-copy small");
+      if (!instapayNumber) {
+        if (numberLabel) numberLabel.textContent = "الرقم غير متاح";
+        return;
+      }
+
+      const originalLabel = numberLabel?.textContent || instapayNumber;
+      const legacyCopy = () => {
+        const helper = document.createElement("textarea");
+        helper.value = instapayNumber;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "fixed";
+        helper.style.left = "-9999px";
+        helper.style.top = "0";
+        document.body.append(helper);
+        helper.select();
+        let copied = false;
+        try { copied = document.execCommand("copy"); } catch (_) { copied = false; }
+        helper.remove();
+        return copied;
+      };
+
+      let copied = false;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(instapayNumber);
+          copied = true;
+        } else {
+          copied = legacyCopy();
+        }
+      } catch (_) {
+        copied = legacyCopy();
+      }
+
+      if (numberLabel) {
+        numberLabel.textContent = copied ? "تم نسخ الرقم" : "تعذر النسخ";
+        window.setTimeout(() => { numberLabel.textContent = originalLabel; }, 2400);
+      }
+    });
+  }
+
+  // Same interaction pattern as before: copy the wallet number and
   // open Vodafone's official money-transfer page using the anchor destination.
   const vodafoneCashLink = document.querySelector(".vodafone-tile[data-wallet-number]");
   if (vodafoneCashLink && !vodafoneCashLink.dataset.copyOpenBound) {

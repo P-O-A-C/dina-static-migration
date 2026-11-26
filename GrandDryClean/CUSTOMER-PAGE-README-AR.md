@@ -18,3 +18,5 @@
 عدّل مصفوفة `PRODUCTS` داخل `js/customer.js`.
 لكل صنف: `id`, `name`, `category`, `description`, `icon`, `price`.
 اترك `price: null` إلى أن يتم اعتماد السعر. عند وضع رقم ستحتاج لاحقًا إلى تحديث واجهة عرض السعر وطريقة حساب الطلب إذا رغبت في إظهار الإجمالي.
+- زر InstaPay في الصفحة الرئيسية ينسخ رقم InstaPay فقط ولا يفتح رابط تحويل أو تطبيقًا.
+- رقم InstaPay يُقرأ من `data/settings.json` من الحقل `instapay_number`، مع الرجوع إلى `phone` عند عدم وجوده.
