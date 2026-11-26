@@ -838,20 +838,5 @@
     "sort_order": 260,
     "created_at": "2026-11-26T15:29:53.530Z",
     "updated_at": "2026-11-26T15:29:53.530Z"
-  },
-  {
-    "id": "1673d81f-3428-49de-a181-e5e215f6b353",
-    "name": "بلوفر",
-    "category_name": "تنظيف جاف",
-    "price": 15,
-    "description": "",
-    "is_active": true,
-    "is_featured": false,
-    "icon": "♧",
-    "image_url": "assets/admin-uploads/20261126153738-8821a680-بلوفر.jpeg",
-    "image_path": "assets/admin-uploads/20261126153738-8821a680-بلوفر.jpeg",
-    "sort_order": 270,
-    "created_at": "2026-11-26T15:29:55.134Z",
-    "updated_at": "2026-11-26T15:29:55.134Z"
   }
 ]
