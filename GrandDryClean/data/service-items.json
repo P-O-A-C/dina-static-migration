@@ -1528,5 +1528,50 @@
     "sort_order": 740,
     "created_at": "2026-11-26T20:12:44.661Z",
     "updated_at": "2026-11-26T20:12:44.661Z"
+  },
+  {
+    "id": "a5f2063c-2929-4aa1-8b8a-4a31093c9028",
+    "name": "أنتريه",
+    "category_name": "مفروشات",
+    "price": null,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126203436-18c2b44f-images-19-.jpg",
+    "image_path": "assets/admin-uploads/20261126203436-18c2b44f-images-19-.jpg",
+    "sort_order": 750,
+    "created_at": "2026-11-26T20:34:14.100Z",
+    "updated_at": "2026-11-26T20:34:14.100Z"
+  },
+  {
+    "id": "a09aec53-fc3b-49d8-b114-80377dbd196a",
+    "name": "صالون",
+    "category_name": "مفروشات",
+    "price": null,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126203453-5be07527-images-20-.jpg",
+    "image_path": "assets/admin-uploads/20261126203453-5be07527-images-20-.jpg",
+    "sort_order": 760,
+    "created_at": "2026-11-26T20:34:39.828Z",
+    "updated_at": "2026-11-26T20:34:39.828Z"
+  },
+  {
+    "id": "cd6afc98-5b53-4f7a-9e4d-2241f0cc2c90",
+    "name": "سفرة",
+    "category_name": "مفروشات",
+    "price": null,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "",
+    "image_path": "",
+    "sort_order": 770,
+    "created_at": "2026-11-26T20:35:40.973Z",
+    "updated_at": "2026-11-26T20:35:40.973Z"
   }
 ]
