@@ -973,5 +973,20 @@
     "sort_order": 350,
     "created_at": "2026-11-26T19:00:19.004Z",
     "updated_at": "2026-11-26T19:00:19.004Z"
+  },
+  {
+    "id": "80888a51-2ece-4674-8d31-e2a1663d5627",
+    "name": "شورت",
+    "category_name": "مكواة فقط",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126190326-7380b8d2-images-4-.jpg",
+    "image_path": "assets/admin-uploads/20261126190326-7380b8d2-images-4-.jpg",
+    "sort_order": 360,
+    "created_at": "2026-11-26T19:02:46.627Z",
+    "updated_at": "2026-11-26T19:02:46.627Z"
   }
 ]
