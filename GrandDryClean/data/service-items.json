@@ -1603,5 +1603,35 @@
     "sort_order": 790,
     "created_at": "2026-11-26T23:50:19.633Z",
     "updated_at": "2026-11-26T23:50:19.633Z"
+  },
+  {
+    "id": "09341b84-dd31-4371-a526-e41a36b69309",
+    "name": "7 قطع ملابس + قطعتين من اختيارك ",
+    "category_name": "عروض الشتاء",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126235405-9040fd37-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "image_path": "assets/admin-uploads/20261126235405-9040fd37-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "sort_order": 800,
+    "created_at": "2026-11-26T23:52:42.606Z",
+    "updated_at": "2026-11-26T23:52:42.606Z"
+  },
+  {
+    "id": "0ce50945-ac6c-4ce9-9284-b82d8c04fff0",
+    "name": "2 بطانيه + بطانيه من اختيارك ",
+    "category_name": "عروض الشتاء",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126235609-91f2460d-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "image_path": "assets/admin-uploads/20261126235609-91f2460d-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "sort_order": 810,
+    "created_at": "2026-11-26T23:54:27.014Z",
+    "updated_at": "2026-11-26T23:54:27.014Z"
   }
 ]
