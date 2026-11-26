@@ -913,5 +913,50 @@
     "sort_order": 310,
     "created_at": "2026-11-26T18:45:35.076Z",
     "updated_at": "2026-11-26T18:45:35.076Z"
+  },
+  {
+    "id": "5d6d034a-6b78-4e03-bcc0-c450ff5abf3c",
+    "name": "ملايه سرير",
+    "category_name": "مكواة فقط",
+    "price": 35,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126184930-f3253e7d-images.jpg",
+    "image_path": "assets/admin-uploads/20261126184930-f3253e7d-images.jpg",
+    "sort_order": 320,
+    "created_at": "2026-11-26T18:48:16.871Z",
+    "updated_at": "2026-11-26T18:48:16.871Z"
+  },
+  {
+    "id": "03273840-4fd8-4ce8-a760-6d6b1869e5e7",
+    "name": "ملابس إحرام",
+    "category_name": "مكواة فقط",
+    "price": 45,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126185028-58c8d5cf-images-1-.jpg",
+    "image_path": "assets/admin-uploads/20261126185028-58c8d5cf-images-1-.jpg",
+    "sort_order": 330,
+    "created_at": "2026-11-26T18:49:03.779Z",
+    "updated_at": "2026-11-26T18:49:03.779Z"
+  },
+  {
+    "id": "7a9ad369-7908-4a2e-94fb-07f24fde04d5",
+    "name": "شال",
+    "category_name": "مكواة فقط",
+    "price": 25,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126185155-e1d86ce3-images-2-.jpg",
+    "image_path": "assets/admin-uploads/20261126185155-e1d86ce3-images-2-.jpg",
+    "sort_order": 340,
+    "created_at": "2026-11-26T18:50:32.915Z",
+    "updated_at": "2026-11-26T18:50:32.915Z"
   }
 ]
