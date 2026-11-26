@@ -1573,5 +1573,35 @@
     "sort_order": 770,
     "created_at": "2026-11-26T20:35:40.973Z",
     "updated_at": "2026-11-26T20:35:40.973Z"
+  },
+  {
+    "id": "fd6352b9-2431-4883-915c-50b388626da7",
+    "name": "2 ستارة بسعر واحدة",
+    "category_name": "عروض الشتاء",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126234937-a06d1dc0-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "image_path": "assets/admin-uploads/20261126234937-a06d1dc0-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "sort_order": 780,
+    "created_at": "2026-11-26T23:47:21.968Z",
+    "updated_at": "2026-11-26T23:47:21.968Z"
+  },
+  {
+    "id": "034c3c34-074f-4ff6-b007-0d50344bfe3a",
+    "name": "5 سجاد +2 سجاد من اختيارك ",
+    "category_name": "عروض الشتاء",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126235223-fbd79774-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "image_path": "assets/admin-uploads/20261126235223-fbd79774-WhatsApp-Image-2026-11-27-at-1-32-1.jpeg",
+    "sort_order": 790,
+    "created_at": "2026-11-26T23:50:19.633Z",
+    "updated_at": "2026-11-26T23:50:19.633Z"
   }
 ]
