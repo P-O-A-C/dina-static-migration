@@ -958,5 +958,20 @@
     "sort_order": 340,
     "created_at": "2026-11-26T18:50:32.915Z",
     "updated_at": "2026-11-26T18:50:32.915Z"
+  },
+  {
+    "id": "dc7e39cb-0ce1-4f32-b073-17af81532fa0",
+    "name": "اسم جديد",
+    "category_name": "مكواة فقط",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "",
+    "image_path": "",
+    "sort_order": 350,
+    "created_at": "2026-11-26T19:00:19.004Z",
+    "updated_at": "2026-11-26T19:00:19.004Z"
   }
 ]
