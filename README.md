@@ -1,3 +1,22 @@
-# POAC GitHub-only websites
+# Jad Craft — POAC
 
-Dina’s Corner and Grand Dry Clean customer pages and their content are hosted in this GitHub repository. Use `GITHUB-ONLY-SETUP-AR.md` for setup and `poac-github-admin/index.html` for editing JSON and images using GitHub API.
+واجهة عربية RTL أولية لصفحة جاد كرافت المتخصصة في الأعمال اليدوية والمشغولات والهدايا.
+
+## الملفات
+- `index.html` الصفحة الرئيسية.
+- `styles.css` التصميم والتجاوب مع الهاتف.
+- `script.js` إعداد رابط واتساب والسنة الحالية.
+
+## التشغيل
+افتح `index.html` في المتصفح، أو ارفع الملفات إلى مستودع GitHub Pages.
+
+## إعداد واتساب
+افتح `script.js` وضع رقم واتساب بصيغة دولية داخل المتغير `JAD_CRAFT_WHATSAPP` دون علامة + أو مسافات.
+
+## النشر على GitHub Pages
+1. أنشئ مستودعاً جديداً باسم `jad-craft`.
+2. ارفع محتويات هذا المجلد إلى جذر المستودع.
+3. من Settings ثم Pages اختر النشر من الفرع `main` والمجلد `/root`.
+4. احفظ الإعدادات وانتظر رابط GitHub Pages.
+
+هذه نسخة واجهة أولية؛ المنتجات والأسعار والصور الحقيقية ولوحة الإدارة وربط الطلبات لم تتم إضافتها بعد.
