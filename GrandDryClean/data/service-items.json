@@ -898,5 +898,20 @@
     "sort_order": 300,
     "created_at": "2026-11-26T18:44:03.732Z",
     "updated_at": "2026-11-26T18:44:03.733Z"
+  },
+  {
+    "id": "8d6da6a5-d9e1-4fbc-a111-dee5351faeb5",
+    "name": "جيبه أطفال",
+    "category_name": "مكواة فقط",
+    "price": 15,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126184701-ac745b64-e22b5100ff97312efdbcaed484d14dbf_e8.avif",
+    "image_path": "assets/admin-uploads/20261126184701-ac745b64-e22b5100ff97312efdbcaed484d14dbf_e8.avif",
+    "sort_order": 310,
+    "created_at": "2026-11-26T18:45:35.076Z",
+    "updated_at": "2026-11-26T18:45:35.076Z"
   }
 ]
