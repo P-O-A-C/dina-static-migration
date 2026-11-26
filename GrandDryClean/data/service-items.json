@@ -988,5 +988,35 @@
     "sort_order": 360,
     "created_at": "2026-11-26T19:02:46.627Z",
     "updated_at": "2026-11-26T19:02:46.627Z"
+  },
+  {
+    "id": "baa4124c-258a-4ba8-a3e0-0804d7cb79ba",
+    "name": "كاب",
+    "category_name": "مكواة فقط",
+    "price": 10,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126190420-b9fe837e-download.jpg",
+    "image_path": "assets/admin-uploads/20261126190420-b9fe837e-download.jpg",
+    "sort_order": 370,
+    "created_at": "2026-11-26T19:03:51.591Z",
+    "updated_at": "2026-11-26T19:03:51.591Z"
+  },
+  {
+    "id": "74c7c5c1-27b7-474d-9379-cbf02bedda40",
+    "name": "بالطو  صوف",
+    "category_name": "مكواة فقط",
+    "price": 85,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126190538-81792ebf-images-5-.jpg",
+    "image_path": "assets/admin-uploads/20261126190538-81792ebf-images-5-.jpg",
+    "sort_order": 380,
+    "created_at": "2026-11-26T19:04:48.930Z",
+    "updated_at": "2026-11-26T19:04:48.930Z"
   }
 ]
