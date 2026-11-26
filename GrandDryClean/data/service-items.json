@@ -838,5 +838,20 @@
     "sort_order": 260,
     "created_at": "2026-11-26T15:29:53.530Z",
     "updated_at": "2026-11-26T15:29:53.530Z"
+  },
+  {
+    "id": "70e4a74c-08b6-42b8-9c1c-d3ceb037656e",
+    "name": "روب ",
+    "category_name": "غسيل ومكواة",
+    "price": 160,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126161234-a1d9af4a-روب-حريمي.webp",
+    "image_path": "assets/admin-uploads/20261126161234-a1d9af4a-روب-حريمي.webp",
+    "sort_order": 270,
+    "created_at": "2026-11-26T16:11:18.679Z",
+    "updated_at": "2026-11-26T16:11:18.679Z"
   }
 ]
