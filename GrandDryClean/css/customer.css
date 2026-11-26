@@ -168,8 +168,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold-light); ou
 .branch-public-card small { display: block; max-width: 100%; color: var(--muted); font-size: 9px; font-weight: 700; line-height: 1.5; text-align: right; }
 .branch-public-card:disabled { opacity: .62; cursor: default; box-shadow: none; }
 .branches-loading, .branches-empty { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
-.payment-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.payment-tile { min-height: 68px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px; border: 1px solid; border-radius: 14px; background: #fff; text-align: center; }
+.payment-stack { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.payment-tile { width: min(100%, 190px); box-sizing: border-box; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 10px; border: 1px solid; border-radius: 12px; background: #fff; text-align: center; }
 button.payment-tile { width: 100%; appearance: none; -webkit-appearance: none; font: inherit; cursor: pointer; }
 button.payment-tile:focus-visible { outline: 3px solid rgba(25,60,152,.22); outline-offset: 2px; }
 button.payment-tile:active { transform: translateY(1px); }
@@ -387,9 +387,9 @@ button.payment-tile:active { transform: translateY(1px); }
   .branch-public-card { min-height: 33px; padding: 6px 8px; border-radius: 9px; }
   .branch-public-card strong { font-size: 10px; }
   .branch-public-card small { font-size: 8px; }
-  .payment-stack { grid-template-columns: 1fr; gap: 6px; }
-  .payment-tile { min-height: 44px; justify-content: flex-start; padding: 6px 8px; border-radius: 10px; }
-  .payment-symbol { width: 24px; height: 24px; flex-basis: 24px; font-size: 9px; }
+  .payment-stack { align-items: center; gap: 6px; }
+  .payment-tile { width: min(100%, 155px); min-height: 38px; justify-content: center; padding: 5px 7px; border-radius: 9px; }
+  .payment-symbol { width: 22px; height: 22px; flex-basis: 22px; font-size: 9px; }
   .payment-tile strong { font-size: 10px; }
   .brand-slogan { width: calc(100% - 28px); margin-top: 13px; padding: 14px 12px 11px; border-radius: 16px; }
   .brand-slogan h2 { font-size: 25px; }
@@ -408,7 +408,6 @@ button.payment-tile:active { transform: translateY(1px); }
 @media (max-width: 330px) {
   .home-feature-grid { grid-template-columns: 1fr; }
   .home-media-column .promo-slider { min-height: 185px; aspect-ratio: 16 / 9; }
-  .payment-stack { grid-template-columns: 1fr 1fr; }
 }
 
 /* Display-only services catalogue CTA */
