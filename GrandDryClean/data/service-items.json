@@ -883,5 +883,20 @@
     "sort_order": 290,
     "created_at": "2026-11-26T18:42:29.889Z",
     "updated_at": "2026-11-26T18:42:29.889Z"
+  },
+  {
+    "id": "a46cd712-4adc-416b-8d90-3e96821ad7ac",
+    "name": "ملابس اطفال",
+    "category_name": "مكواة فقط",
+    "price": 12,
+    "description": "",
+    "is_active": true,
+    "is_featured": false,
+    "icon": "♧",
+    "image_url": "assets/admin-uploads/20261126184521-7854c137-IMG_0948.jpg",
+    "image_path": "assets/admin-uploads/20261126184521-7854c137-IMG_0948.jpg",
+    "sort_order": 300,
+    "created_at": "2026-11-26T18:44:03.732Z",
+    "updated_at": "2026-11-26T18:44:03.733Z"
   }
 ]
