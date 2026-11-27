@@ -174,6 +174,9 @@ button.payment-tile { width: 100%; appearance: none; -webkit-appearance: none; f
 button.payment-tile:focus-visible { outline: 3px solid rgba(25,60,152,.22); outline-offset: 2px; }
 button.payment-tile:active { transform: translateY(1px); }
 .payment-tile strong { font-size: clamp(11px, 1.5vw, 14px); font-weight: 900; direction: ltr; }
+.payment-copy { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-width: 0; }
+.payment-copy-status { min-height: 0; color: #18834b; font-size: 10px; font-weight: 800; line-height: 1.25; direction: rtl; }
+.payment-copy-status:empty { display: none; }
 .payment-symbol { width: 29px; height: 29px; flex: 0 0 29px; display: grid; place-items: center; border-radius: 9px; color: white; font-size: 11px; font-weight: 900; }
 .instapay-tile { border-color: #cbd7f2; color: #193c98; }
 .instapay-tile .payment-symbol { background: #193c98; }
