@@ -1,23 +1,5 @@
 [
   {
-    "id": "401d2ecf-117c-4a6d-a13b-39d60b70d469",
-    "image_url": "images/items/item-045.jpg",
-    "image_name": "كنافه اساور",
-    "sort_order": 1,
-    "is_active": true,
-    "created_at": "2026-11-15 19:45:43.574582+00",
-    "updated_at": "2026-11-18 04:30:53.436+00"
-  },
-  {
-    "id": "8b16d1af-5b5a-4ca4-9a35-7ca0870ffe73",
-    "image_url": "images/home-featured/featured-08.jpg",
-    "image_name": "IMG_E1233.JPG",
-    "sort_order": 2,
-    "is_active": true,
-    "created_at": "2026-11-15 19:50:47.836988+00",
-    "updated_at": "2026-11-18 04:30:53.621+00"
-  },
-  {
     "id": "d62ab58e-cb4c-4777-8c49-7a1e627a80b0",
     "image_url": "images/home-featured/featured-13.jpg",
     "image_name": "9d20ea0d-3944-42a6-ab76-4ae1b26eeefc.png",
@@ -124,5 +106,23 @@
     "is_active": true,
     "created_at": "2026-11-15 21:50:16.153571+00",
     "updated_at": "2026-11-18 04:30:55.71+00"
+  },
+  {
+    "id": "d051aa82-8b0a-49a6-a2db-70af31eb35f7",
+    "image_url": "images/admin-uploads/20261127155517-9846aefd-WhatsApp-Image-2026-11-27-at-5-48-3.jpeg",
+    "image_name": "20261127155517-9846aefd-WhatsApp-Image-2026-11-27-at-5-48-3.jpeg",
+    "sort_order": 24,
+    "is_active": true,
+    "created_at": "2026-11-27T15:45:14.650Z",
+    "updated_at": "2026-11-27T15:45:14.650Z"
+  },
+  {
+    "id": "96c94b17-3cfc-4c1a-90e6-62bbdc00b222",
+    "image_url": "images/admin-uploads/20261127155523-7510f4f3-WhatsApp-Image-2026-11-27-at-5-46-3.jpeg",
+    "image_name": "20261127155523-7510f4f3-WhatsApp-Image-2026-11-27-at-5-46-3.jpeg",
+    "sort_order": 34,
+    "is_active": true,
+    "created_at": "2026-11-27T15:45:15.911Z",
+    "updated_at": "2026-11-27T15:45:15.911Z"
   }
 ]
