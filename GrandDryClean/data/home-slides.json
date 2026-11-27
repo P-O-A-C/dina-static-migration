@@ -4,7 +4,7 @@
     "image_url": "assets/slides/20261126164356-7c40318b-جاكيت.jpeg",
     "image_path": "assets/slides/20261126164356-7c40318b-جاكيت.jpeg",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 10,
+    "sort_order": 110,
     "is_active": true,
     "created_at": "2026-11-19 15:56:08.445062+00",
     "updated_at": "2026-11-19 15:56:08.445062+00"
@@ -14,7 +14,7 @@
     "image_url": "assets/slides/20261126164403-febca0d9-بالطو-جوخ.jpeg",
     "image_path": "assets/slides/20261126164403-febca0d9-بالطو-جوخ.jpeg",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 20,
+    "sort_order": 120,
     "is_active": true,
     "created_at": "2026-11-19 15:56:16.675962+00",
     "updated_at": "2026-11-19 15:56:16.675962+00"
@@ -24,7 +24,7 @@
     "image_url": "assets/slides/20261126164413-08eef2da-Y41203s9.webp",
     "image_path": "assets/slides/20261126164413-08eef2da-Y41203s9.webp",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 30,
+    "sort_order": 130,
     "is_active": true,
     "created_at": "2026-11-19 15:56:21.237791+00",
     "updated_at": "2026-11-19 15:56:21.237791+00"
@@ -84,7 +84,7 @@
     "image_url": "assets/slides/20261127155704-cc8d2938-WhatsApp-Image-2026-11-27-at-5-48-3.jpeg",
     "image_path": "assets/slides/20261127155704-cc8d2938-WhatsApp-Image-2026-11-27-at-5-48-3.jpeg",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 110,
+    "sort_order": 30,
     "is_active": true,
     "created_at": "2026-11-27T15:56:49.822Z",
     "updated_at": "2026-11-27T15:56:49.822Z"
@@ -94,7 +94,7 @@
     "image_url": "assets/slides/20261127155956-5870c547-WhatsApp-Image-2026-11-27-at-5-46-3.jpeg",
     "image_path": "assets/slides/20261127155956-5870c547-WhatsApp-Image-2026-11-27-at-5-46-3.jpeg",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 120,
+    "sort_order": 20,
     "is_active": true,
     "created_at": "2026-11-27T15:56:50.818Z",
     "updated_at": "2026-11-27T15:56:50.818Z"
@@ -104,7 +104,7 @@
     "image_url": "assets/slides/20261127160648-30c9d592-WhatsApp-Image-2026-11-27-at-6-06-0.jpeg",
     "image_path": "assets/slides/20261127160648-30c9d592-WhatsApp-Image-2026-11-27-at-6-06-0.jpeg",
     "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 130,
+    "sort_order": 10,
     "is_active": true,
     "created_at": "2026-11-27T16:05:21.740Z",
     "updated_at": "2026-11-27T16:05:21.740Z"
