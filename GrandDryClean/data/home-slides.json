@@ -60,26 +60,6 @@
     "updated_at": "2026-11-19 21:36:51.069175+00"
   },
   {
-    "id": "0f6fb660-28d6-4f1a-97a3-0c9e8de8d4c1",
-    "image_url": "assets/slides/20261126164459-366239f2-روب-حريمي.webp",
-    "image_path": "assets/slides/20261126164459-366239f2-روب-حريمي.webp",
-    "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 70,
-    "is_active": true,
-    "created_at": "2026-11-19 21:53:25.164836+00",
-    "updated_at": "2026-11-19 21:53:25.164836+00"
-  },
-  {
-    "id": "b76d2dbb-79b3-4937-a988-375f55617410",
-    "image_url": "assets/slides/20261126164516-907b76b6-تونيك.avif",
-    "image_path": "assets/slides/20261126164516-907b76b6-تونيك.avif",
-    "alt_text": "صورة من GRAND DRY CLEAN",
-    "sort_order": 80,
-    "is_active": true,
-    "created_at": "2026-11-19 21:53:48.768356+00",
-    "updated_at": "2026-11-19 21:53:48.768356+00"
-  },
-  {
     "id": "3705b0f6-660f-4e73-a860-b8662c979776",
     "image_url": "assets/slides/20261126164529-251adddc-عبايه-حريمي.jpeg",
     "image_path": "assets/slides/20261126164529-251adddc-عبايه-حريمي.jpeg",
