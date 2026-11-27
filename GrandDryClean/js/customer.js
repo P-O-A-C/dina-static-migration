@@ -38,7 +38,7 @@
 
   let activeSlide = 0;
   let rotationTimer = null;
-  const rotationDelay = 1000;
+  const rotationDelay = 2000;
 
   function showSlide(index) {
     if (!slides.length) return;
