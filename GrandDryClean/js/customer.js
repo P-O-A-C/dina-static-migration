@@ -38,7 +38,7 @@
 
   let activeSlide = 0;
   let rotationTimer = null;
-  const rotationDelay = 2000;
+  const rotationDelay = 1000;
 
   function showSlide(index) {
     if (!slides.length) return;
@@ -75,8 +75,109 @@
     startRotation();
   }
 
+  // Full-screen image viewer with navigation and zoom controls.
+  let imageViewer = null;
+  let viewerImage = null;
+  let viewerIndex = 0;
+  let viewerZoom = 1;
+
+  function ensureImageViewer() {
+    if (imageViewer) return;
+    imageViewer = document.createElement("div");
+    imageViewer.className = "gdc-image-viewer";
+    imageViewer.setAttribute("role", "dialog");
+    imageViewer.setAttribute("aria-modal", "true");
+    imageViewer.setAttribute("aria-label", "عرض الصورة بالحجم الكامل");
+    imageViewer.hidden = true;
+    imageViewer.innerHTML = `
+      <div class="gdc-viewer-toolbar">
+        <button type="button" class="gdc-viewer-close" aria-label="إغلاق">×</button>
+        <div class="gdc-viewer-tools">
+          <button type="button" class="gdc-viewer-zoom-out" aria-label="تصغير">−</button>
+          <button type="button" class="gdc-viewer-zoom-reset" aria-label="إعادة الحجم">100%</button>
+          <button type="button" class="gdc-viewer-zoom-in" aria-label="تكبير">+</button>
+        </div>
+      </div>
+      <button type="button" class="gdc-viewer-prev" aria-label="الصورة السابقة">‹</button>
+      <div class="gdc-viewer-stage"><img alt="" /></div>
+      <button type="button" class="gdc-viewer-next" aria-label="الصورة التالية">›</button>
+      <div class="gdc-viewer-counter" aria-live="polite"></div>`;
+    document.body.append(imageViewer);
+    viewerImage = imageViewer.querySelector(".gdc-viewer-stage img");
+
+    const close = () => {
+      imageViewer.hidden = true;
+      document.body.classList.remove("gdc-viewer-open");
+      showSlide(viewerIndex);
+      startRotation();
+    };
+    const changeViewerImage = (step) => {
+      if (!slides.length) return;
+      viewerIndex = (viewerIndex + step + slides.length) % slides.length;
+      viewerZoom = 1;
+      updateViewerImage();
+    };
+    imageViewer.querySelector(".gdc-viewer-close").addEventListener("click", close);
+    imageViewer.querySelector(".gdc-viewer-prev").addEventListener("click", () => changeViewerImage(-1));
+    imageViewer.querySelector(".gdc-viewer-next").addEventListener("click", () => changeViewerImage(1));
+    imageViewer.querySelector(".gdc-viewer-zoom-in").addEventListener("click", () => setViewerZoom(viewerZoom + .25));
+    imageViewer.querySelector(".gdc-viewer-zoom-out").addEventListener("click", () => setViewerZoom(viewerZoom - .25));
+    imageViewer.querySelector(".gdc-viewer-zoom-reset").addEventListener("click", () => setViewerZoom(1));
+    imageViewer.addEventListener("click", (event) => { if (event.target === imageViewer) close(); });
+    document.addEventListener("keydown", (event) => {
+      if (imageViewer.hidden) return;
+      if (event.key === "Escape") close();
+      if (event.key === "ArrowLeft") changeViewerImage(1);
+      if (event.key === "ArrowRight") changeViewerImage(-1);
+      if (event.key === "+" || event.key === "=") setViewerZoom(viewerZoom + .25);
+      if (event.key === "-") setViewerZoom(viewerZoom - .25);
+    });
+  }
+
+  function setViewerZoom(value) {
+    viewerZoom = Math.min(4, Math.max(.5, value));
+    if (viewerImage) viewerImage.style.transform = `scale(${viewerZoom})`;
+    const reset = imageViewer?.querySelector(".gdc-viewer-zoom-reset");
+    if (reset) reset.textContent = `${Math.round(viewerZoom * 100)}%`;
+  }
+
+  function updateViewerImage() {
+    const slide = slides[viewerIndex];
+    const image = slide?.querySelector("img");
+    if (!image || !viewerImage) return;
+    viewerImage.src = image.currentSrc || image.src;
+    viewerImage.alt = image.alt || "صورة من GRAND DRY CLEAN";
+    setViewerZoom(1);
+    const counter = imageViewer.querySelector(".gdc-viewer-counter");
+    if (counter) counter.textContent = `${viewerIndex + 1} / ${slides.length}`;
+  }
+
+  function openImageViewer(index) {
+    ensureImageViewer();
+    if (!slides.length) return;
+    viewerIndex = index;
+    updateViewerImage();
+    stopRotation();
+    imageViewer.hidden = false;
+    document.body.classList.add("gdc-viewer-open");
+    imageViewer.querySelector(".gdc-viewer-close")?.focus();
+  }
+
   function bindCarouselControls() {
     dots.forEach((dot, index) => { if (!dot.dataset.carouselBound) { dot.addEventListener("click", () => goToSlide(index)); dot.dataset.carouselBound = "true"; } });
+    slides.forEach((slide, index) => {
+      const image = slide.querySelector("img");
+      if (image && !image.dataset.viewerBound) {
+        image.dataset.viewerBound = "true";
+        image.addEventListener("click", () => openImageViewer(index));
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", "اضغط لفتح الصورة بالحجم الكامل");
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openImageViewer(index); }
+        });
+      }
+    });
     if (!slider?.dataset.carouselEventsBound) {
       document.addEventListener("visibilitychange", () => document.hidden ? stopRotation() : startRotation());
       if (slider) slider.dataset.carouselEventsBound = "true";

@@ -85,9 +85,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold-light); ou
 .slides, .promo-slide { position: absolute; inset: 0; }
 .promo-slide { opacity: 0; visibility: hidden; transition: opacity .75s ease, visibility .75s ease; }
 .promo-slide.is-active { opacity: 1; visibility: visible; }
-.promo-slide img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
-.promo-slide:nth-child(2) img { object-position: 52% center; }
-.promo-slide:nth-child(3) img { object-position: 74% center; }
+.promo-slide img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; cursor: zoom-in; background: #171717; }
 .slide-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(34, 18, 12, .30), rgba(35, 20, 14, .76) 38%, rgba(32, 17, 11, .43)); }
 .slide-copy {
   position: absolute;
@@ -491,3 +489,21 @@ button.payment-tile:active { transform: translateY(1px); }
 @media (max-width: 330px) {
   .home-menu-actions { grid-template-columns: 1fr; max-width: 270px; }
 }
+
+
+/* Full-screen promotional image viewer */
+.gdc-viewer-open { overflow: hidden; }
+.gdc-image-viewer[hidden] { display: none !important; }
+.gdc-image-viewer { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 68px 64px 54px; background: rgba(0,0,0,.94); }
+.gdc-viewer-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: auto; }
+.gdc-viewer-stage img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transform-origin: center; transition: transform .15s ease; }
+.gdc-viewer-toolbar { position: absolute; z-index: 2; top: 12px; left: 14px; right: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.gdc-viewer-tools { display: flex; align-items: center; gap: 8px; }
+.gdc-image-viewer button { min-width: 42px; min-height: 42px; border: 1px solid rgba(255,255,255,.45); border-radius: 12px; color: #fff; background: rgba(35,35,35,.88); font: 700 20px/1 Arial,sans-serif; cursor: pointer; }
+.gdc-image-viewer .gdc-viewer-close { font-size: 30px; }
+.gdc-image-viewer .gdc-viewer-zoom-reset { min-width: 64px; font-size: 13px; }
+.gdc-viewer-prev, .gdc-viewer-next { position: absolute; z-index: 2; top: 50%; transform: translateY(-50%); font-size: 32px !important; }
+.gdc-viewer-prev { left: 12px; }
+.gdc-viewer-next { right: 12px; }
+.gdc-viewer-counter { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; background: rgba(0,0,0,.55); padding: 6px 14px; border-radius: 20px; font: 600 13px Arial,sans-serif; }
+@media (max-width: 520px) { .gdc-image-viewer { padding: 66px 48px 52px; } .gdc-viewer-prev { left: 4px; } .gdc-viewer-next { right: 4px; } .gdc-image-viewer button { min-width: 38px; min-height: 38px; } }
